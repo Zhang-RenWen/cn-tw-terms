@@ -4,55 +4,60 @@
     {
       "cn": "小夥伴",
       "tw": "朋友",
-      "kind": "loaded",
-      "note": "有人解讀為暗示對方較小；屬個人解讀"
+      "kind": "vocab",
+      "note": "有人解讀為暗示對方較小；屬個人解讀",
+      "oneway": true
     },
     {
       "cn": "學霸",
       "tw": "資優生",
-      "kind": "loaded",
+      "kind": "vocab",
       "note": "；「霸」的意涵有人質疑"
     },
     {
       "cn": "大佬",
       "tw": "高手、大神",
-      "kind": "loaded",
-      "note": "地位高、有實力的人"
+      "kind": "vocab",
+      "note": "地位高、有實力的人",
+      "oneway": true
     },
     {
       "cn": "降維打擊",
       "tw": "完勝、輾壓",
-      "kind": "loaded",
-      "note": "從更高層級碾壓對手"
+      "kind": "vocab",
+      "note": "從更高層級碾壓對手",
+      "oneway": true
     },
     {
       "cn": "吊打",
       "tw": "電爆、完勝",
-      "kind": "loaded",
-      "note": "單方面壓倒"
+      "kind": "vocab",
+      "note": "單方面壓倒",
+      "oneway": true
     },
     {
       "cn": "天花板",
       "tw": "最強、第一",
-      "kind": "loaded",
-      "note": "某領域最頂的人"
+      "kind": "false",
+      "note": "某領域最頂的人；建築的天花板兩岸相同，只標示不替換"
     },
     {
       "cn": "C位",
-      "tw": "主角、中間位置",
-      "kind": "loaded",
-      "note": "團體中央最重要的位置"
+      "tw": "中心位置、主角",
+      "kind": "vocab",
+      "note": "團體中央最重要的位置",
+      "oneway": true
     },
     {
       "cn": "拿捏",
       "tw": "掌握、搞定",
-      "kind": "loaded",
-      "note": "掌控別人"
+      "kind": "false",
+      "note": "大陸指掌控別人（被拿捏）；台灣「拿捏」指掌握分寸"
     },
     {
       "cn": "超頂",
       "tw": "超讚、超強",
-      "kind": "loaded",
+      "kind": "vocab",
       "note": "影片標題提及"
     },
     {
@@ -64,7 +69,7 @@
     {
       "cn": "碾壓",
       "tw": "輾壓、完勝",
-      "kind": "loaded",
+      "kind": "vocab",
       "note": "單方面壓倒"
     }
   ]

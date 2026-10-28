@@ -3,9 +3,10 @@
   "terms": [
     {
       "cn": "社會底層",
-      "tw": "弱勢、基層",
-      "kind": "loaded",
-      "note": "以前台灣很少用；"
+      "tw": "社會弱勢、基層",
+      "kind": "vocab",
+      "note": "以前台灣很少用；",
+      "oneway": true
     },
     {
       "cn": "底層",
@@ -22,44 +23,49 @@
     {
       "cn": "一線城市",
       "tw": "大都市",
-      "kind": "loaded",
-      "note": "城市分等級；"
+      "kind": "vocab",
+      "note": "城市分等級；",
+      "oneway": true
     },
     {
       "cn": "二線城市",
       "tw": "中型城市",
-      "kind": "loaded",
-      "note": "城市分等級"
+      "kind": "vocab",
+      "note": "城市分等級",
+      "oneway": true
     },
     {
       "cn": "三線城市",
       "tw": "地方城市",
-      "kind": "loaded",
-      "note": "城市分等級"
+      "kind": "vocab",
+      "note": "城市分等級",
+      "oneway": true
     },
     {
       "cn": "下沉市場",
-      "tw": "偏鄉、地方市場",
-      "kind": "loaded",
-      "note": "把非大城市放在「下面」"
+      "tw": "地方市場、偏鄉",
+      "kind": "vocab",
+      "note": "把非大城市放在「下面」",
+      "oneway": true
     },
     {
       "cn": "屌絲",
       "tw": "魯蛇",
-      "kind": "loaded",
+      "kind": "vocab",
       "note": "沒錢沒背景的普通人；多為自嘲"
     },
     {
       "cn": "土豪",
       "tw": "暴發戶",
-      "kind": "loaded",
+      "kind": "vocab",
       "note": "沒品味的有錢人"
     },
     {
       "cn": "打工人",
       "tw": "上班族",
-      "kind": "loaded",
-      "note": "多為自嘲"
+      "kind": "vocab",
+      "note": "多為自嘲",
+      "oneway": true
     },
     {
       "cn": "社畜",
@@ -70,14 +76,14 @@
     {
       "cn": "割韭菜",
       "tw": "坑殺散戶",
-      "kind": "loaded",
+      "kind": "vocab",
       "note": "散戶被反覆收割"
     },
     {
       "cn": "韭菜",
       "tw": "散戶、冤大頭",
-      "kind": "loaded",
-      "note": "把人比成可一茬茬割的作物"
+      "kind": "false",
+      "note": "比喻被反覆收割的散戶；蔬菜的韭菜兩岸相同，只標示不替換"
     },
     {
       "cn": "小鎮做題家",
@@ -88,7 +94,7 @@
     {
       "cn": "拼爹",
       "tw": "靠爸",
-      "kind": "loaded",
+      "kind": "vocab",
       "note": "拼家世背景"
     },
     {

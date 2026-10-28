@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const DATA = join(dirname(fileURLToPath(import.meta.url)), '..', 'data');
 const KINDS = new Set(['vocab', 'loaded', 'false']);
-const FIELDS = new Set(['cn', 'tw', 'kind', 'note']);
+const FIELDS = new Set(['cn', 'tw', 'kind', 'note', 'oneway']);
 const errors = [];
 const err = (file, msg) => errors.push(`${file}: ${msg}`);
 
@@ -45,6 +45,7 @@ for (const file of listed) {
     if (!KINDS.has(t.kind)) err(file, `${at} 的 "kind" 必須是 vocab、loaded 或 false`);
     if (t.tw != null && typeof t.tw !== 'string') err(file, `${at} 的 "tw" 必須是文字`);
     if (t.note != null && typeof t.note !== 'string') err(file, `${at} 的 "note" 必須是文字`);
+    if (t.oneway != null && typeof t.oneway !== 'boolean') err(file, `${at} 的 "oneway" 必須是 true 或 false`);
     if (t.kind === 'vocab' && !(t.tw || '').trim()) err(file, `${at} 是一般用語，必須填 "tw"`);
     if (typeof t.cn === 'string') {
       if (seen.has(t.cn)) err(file, `${at} 和 ${seen.get(t.cn)} 重複`);

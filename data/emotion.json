@@ -3,20 +3,22 @@
   "terms": [
     {
       "cn": "情緒價值",
-      "tw": "同理心、陪伴、讓人開心",
-      "kind": "loaded",
-      "note": "把情感支持當成可提供的價值；"
+      "tw": "情感支持、陪伴、讓人開心",
+      "kind": "vocab",
+      "note": "把情感支持當成可提供的價值；",
+      "oneway": true
     },
     {
       "cn": "含金量",
-      "tw": "份量、價值",
-      "kind": "loaded",
-      "note": "有多少「真金」；"
+      "tw": "價值、份量",
+      "kind": "vocab",
+      "note": "有多少「真金」；",
+      "oneway": true
     },
     {
       "cn": "性價比",
       "tw": "CP值",
-      "kind": "loaded",
+      "kind": "vocab",
       "note": "價格與性能比，也被用來評人；台灣 CP值同類"
     },
     {
@@ -28,14 +30,16 @@
     {
       "cn": "人設",
       "tw": "形象",
-      "kind": "loaded",
-      "note": "形象被設定成產品"
+      "kind": "vocab",
+      "note": "形象被設定成產品",
+      "oneway": true
     },
     {
       "cn": "頂流",
-      "tw": "當紅明星、一線明星",
-      "kind": "loaded",
-      "note": "流量最高的明星"
+      "tw": "當紅、一線明星",
+      "kind": "vocab",
+      "note": "流量最高的明星",
+      "oneway": true
     },
     {
       "cn": "流量",
@@ -45,9 +49,10 @@
     },
     {
       "cn": "共情",
-      "tw": "同理心",
-      "kind": "loaded",
-      "note": "常與「情緒價值」並列提及"
+      "tw": "同理、同理心",
+      "kind": "vocab",
+      "note": "常與「情緒價值」並列提及",
+      "oneway": true
     }
   ]
 }

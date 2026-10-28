@@ -35,12 +35,14 @@
     {
       "cn": "段子",
       "tw": "笑話、梗",
-      "kind": "vocab"
+      "kind": "vocab",
+      "oneway": true
     },
     {
       "cn": "靠譜",
       "tw": "可靠",
-      "kind": "vocab"
+      "kind": "vocab",
+      "oneway": true
     },
     {
       "cn": "給力",
@@ -55,13 +57,15 @@
     {
       "cn": "走心",
       "tw": "用心",
-      "kind": "vocab"
+      "kind": "vocab",
+      "oneway": true
     },
     {
       "cn": "載體",
       "tw": "媒介、承載物",
       "kind": "vocab",
-      "note": "影片縮圖提及"
+      "note": "影片縮圖提及",
+      "oneway": true
     },
     {
       "cn": "破圈",

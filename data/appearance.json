@@ -28,8 +28,9 @@
     {
       "cn": "小鮮肉",
       "tw": "小帥哥",
-      "kind": "loaded",
-      "note": "以「肉」形容年輕男星"
+      "kind": "vocab",
+      "note": "以「肉」形容年輕男星",
+      "oneway": true
     },
     {
       "cn": "油膩",

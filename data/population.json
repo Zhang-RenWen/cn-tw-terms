@@ -16,8 +16,9 @@
     {
       "cn": "素質低",
       "tw": "沒水準",
-      "kind": "loaded",
-      "note": "用「素質」評價人"
+      "kind": "vocab",
+      "note": "用「素質」評價人",
+      "oneway": true
     }
   ]
 }

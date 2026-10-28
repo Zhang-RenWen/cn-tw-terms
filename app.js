@@ -45,7 +45,7 @@
     const toS = getConv('tw', 'cn'), toT = getConv('cn', 'tw');
     for (const t of terms) {
       if (m === 'tw-cn') {
-        if (t.kind !== 'vocab') continue;
+        if (t.kind !== 'vocab' || t.oneway) continue;
         const tw = firstAlt(t.tw);
         if (usable(tw)) add(tw, t, 'rev');
       } else {
@@ -245,7 +245,7 @@
       files = loaded.map(({ file, category }) => ({ file, category }));
       terms = loaded.flatMap(f => f.terms.filter(t => t && t.cn).map(t => ({
         cn: String(t.cn), tw: String(t.tw || ''), kind: KIND_LABEL[t.kind] ? t.kind : 'vocab',
-        note: String(t.note || ''), cat: f.category, file: f.file
+        note: String(t.note || ''), oneway: t.oneway === true, cat: f.category, file: f.file
       })));
       matcher = null;
       $('libEmpty').textContent = '沒有符合條件的詞。';

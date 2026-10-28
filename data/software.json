@@ -98,7 +98,8 @@
     {
       "cn": "調用",
       "tw": "呼叫",
-      "kind": "vocab"
+      "kind": "vocab",
+      "oneway": true
     },
     {
       "cn": "宏",
