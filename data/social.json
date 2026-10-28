@@ -130,6 +130,23 @@
       "cn": "發短信",
       "tw": "傳簡訊",
       "kind": "vocab"
+    },
+    {
+      "cn": "發消息",
+      "tw": "傳訊息",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "發信息",
+      "tw": "傳訊息",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "發郵件",
+      "tw": "寄電子郵件",
+      "kind": "vocab"
     }
   ]
 }
