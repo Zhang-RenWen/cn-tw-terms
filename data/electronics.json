@@ -1,0 +1,115 @@
+{
+  "category": "3C 與電子產品",
+  "terms": [
+    {
+      "cn": "充電寶",
+      "tw": "行動電源",
+      "kind": "vocab"
+    },
+    {
+      "cn": "攝像頭",
+      "tw": "鏡頭、視訊鏡頭",
+      "kind": "vocab"
+    },
+    {
+      "cn": "數據線",
+      "tw": "傳輸線、充電線",
+      "kind": "vocab"
+    },
+    {
+      "cn": "U盤",
+      "tw": "隨身碟",
+      "kind": "vocab"
+    },
+    {
+      "cn": "移動硬盤",
+      "tw": "外接硬碟",
+      "kind": "vocab"
+    },
+    {
+      "cn": "硬盤",
+      "tw": "硬碟",
+      "kind": "vocab"
+    },
+    {
+      "cn": "內存",
+      "tw": "記憶體",
+      "kind": "vocab"
+    },
+    {
+      "cn": "筆記本電腦",
+      "tw": "筆電",
+      "kind": "vocab"
+    },
+    {
+      "cn": "鼠標",
+      "tw": "滑鼠",
+      "kind": "vocab"
+    },
+    {
+      "cn": "屏幕",
+      "tw": "螢幕",
+      "kind": "vocab"
+    },
+    {
+      "cn": "打印機",
+      "tw": "印表機",
+      "kind": "vocab"
+    },
+    {
+      "cn": "芯片",
+      "tw": "晶片",
+      "kind": "vocab"
+    },
+    {
+      "cn": "集成電路",
+      "tw": "積體電路",
+      "kind": "vocab"
+    },
+    {
+      "cn": "硅",
+      "tw": "矽",
+      "kind": "vocab"
+    },
+    {
+      "cn": "激光",
+      "tw": "雷射",
+      "kind": "vocab"
+    },
+    {
+      "cn": "等離子",
+      "tw": "電漿",
+      "kind": "vocab"
+    },
+    {
+      "cn": "二維碼",
+      "tw": "QR碼",
+      "kind": "vocab"
+    },
+    {
+      "cn": "截屏",
+      "tw": "截圖",
+      "kind": "vocab"
+    },
+    {
+      "cn": "手機卡",
+      "tw": "SIM卡",
+      "kind": "vocab"
+    },
+    {
+      "cn": "視頻",
+      "tw": "影片",
+      "kind": "vocab"
+    },
+    {
+      "cn": "短視頻",
+      "tw": "短影音",
+      "kind": "vocab"
+    },
+    {
+      "cn": "視頻通話",
+      "tw": "視訊",
+      "kind": "vocab"
+    }
+  ]
+}

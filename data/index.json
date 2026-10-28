@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "files": [
+    "appearance.json",
+    "dating.json",
+    "class.json",
+    "emotion.json",
+    "hierarchy.json",
+    "population.json",
+    "slur.json",
+    "electronics.json",
+    "software.json",
+    "transport.json",
+    "food.json",
+    "living.json",
+    "work.json",
+    "social.json",
+    "false-friends.json"
+  ]
+}
