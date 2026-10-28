@@ -41,6 +41,12 @@
       "cn": "自行車",
       "tw": "腳踏車",
       "kind": "vocab"
+    },
+    {
+      "cn": "城鐵",
+      "tw": "捷運",
+      "kind": "vocab",
+      "oneway": true
     }
   ]
 }
