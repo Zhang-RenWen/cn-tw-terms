@@ -54,6 +54,41 @@
       "tw": "（中國俗語）妓女",
       "kind": "false",
       "note": "粵語、中國俗語指妓女；台灣「雞婆」指愛管閒事，只標示不替換"
+    },
+    {
+      "cn": "中國台灣",
+      "tw": "台灣",
+      "kind": "vocab",
+      "note": "把台灣列為中國一部分的稱呼",
+      "oneway": true
+    },
+    {
+      "cn": "中華台北",
+      "tw": "台灣",
+      "kind": "vocab",
+      "note": "國際體育賽事等場合使用的名稱（Chinese Taipei）；引用正式隊名時請手動改回",
+      "oneway": true
+    },
+    {
+      "cn": "中國臺灣",
+      "tw": "台灣",
+      "kind": "vocab",
+      "note": "把台灣列為中國一部分的稱呼",
+      "oneway": true
+    },
+    {
+      "cn": "中華臺北",
+      "tw": "台灣",
+      "kind": "vocab",
+      "note": "國際體育賽事等場合使用的名稱（Chinese Taipei）；引用正式隊名時請手動改回",
+      "oneway": true
+    },
+    {
+      "cn": "灣灣",
+      "tw": "台灣",
+      "kind": "vocab",
+      "note": "中國網路上對台灣的暱稱，常帶戲謔或貶低意味",
+      "oneway": true
     }
   ]
 }

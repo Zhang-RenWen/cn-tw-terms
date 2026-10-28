@@ -63,7 +63,7 @@ const page = ({ title, desc, url, body, jsonld }) => `<!doctype html>
     <div class="wrap doc">
 ${body}
       <footer>
-        <a href="../">簡繁轉換器</a>：簡體轉臺灣正體，並套用兩岸用語詞彙庫。詞彙庫由社群維護，<a href="https://github.com/${repo}">歡迎在 GitHub 提議或修正</a>。
+        <a href="../">簡繁轉換器</a>：簡體轉台灣正體，並套用兩岸用語詞彙庫。詞彙庫由社群維護，<a href="https://github.com/${repo}">歡迎在 GitHub 提議或修正</a>。
       </footer>
     </div>
   </body>
