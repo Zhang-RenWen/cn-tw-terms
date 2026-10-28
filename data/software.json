@@ -46,7 +46,7 @@
       "cn": "文檔",
       "tw": "文件、檔案",
       "kind": "vocab",
-      "note": "大陸「文檔」指 document，台灣說文件；大陸「文件」指 file，台灣說檔案",
+      "note": "中國「文檔」指 document，台灣說文件；中國「文件」指 file，台灣說檔案",
       "oneway": true
     },
     {
@@ -153,7 +153,7 @@
       "cn": "項目",
       "tw": "專案",
       "kind": "false",
-      "note": "大陸指 project，台灣叫「專案」；「比賽項目」等指 item 時兩岸相同"
+      "note": "中國指 project，台灣叫「專案」；「比賽項目」等指 item 時兩岸相同"
     },
     {
       "cn": "博客",

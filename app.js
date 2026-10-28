@@ -8,7 +8,7 @@
     'cn-twp': { from: 'cn', to: 'twp', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '簡體轉臺灣正體，並套用兩岸用語詞彙庫' },
     'cn-tw': { from: 'cn', to: 'tw', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '只轉臺灣正體字形，用語只標示建議' },
     'cn-hk': { from: 'cn', to: 'hk', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 香港繁體', desc: '簡體轉香港繁體字形' },
-    'tw-cn': { from: 'tw', to: 'cn', h: ['繁', '简'], inL: '原文 · 繁體', outL: '結果 · 简体', desc: '臺灣繁體轉簡體，並把台灣用語換回大陸用語' }
+    'tw-cn': { from: 'tw', to: 'cn', h: ['繁', '简'], inL: '原文 · 繁體', outL: '結果 · 简体', desc: '臺灣繁體轉簡體，並把台灣用語換回中國用語' }
   };
   const KIND_LABEL = { vocab: '一般用語', loaded: '評價意涵', false: '同字異義' };
   const SAMPLE = '我们的软件团队正在开发一个新的网络应用程序，默认使用充电宝供电的摄像头。\n这个项目的含金量很高，领导说要给用户提供情绪价值，下沉市场也要覆盖。\n请把文件发到我的邮箱，视频的质量也没有问题。';
@@ -116,7 +116,7 @@
       else if (t.kind === 'vocab' && mode === 'cn-twp' && usable(firstAlt(t.tw))) { shown = firstAlt(t.tw); cls = 't-vocab'; }
       else { shown = conv(raw); cls = t.kind === 'loaded' ? 't-loaded' : t.kind === 'false' ? 't-false' : 't-hint'; }
       let tip = hit.role === 'rev'
-        ? '台灣「' + raw + '」→ 大陸「' + t.cn + '」'
+        ? '台灣「' + raw + '」→ 中國「' + t.cn + '」'
         : '中國用語「' + t.cn + '」' + (t.tw ? '，台灣：' + t.tw : '') + (t.note ? '。' + t.note : '');
       const key = t.cn + '#' + (occ[t.cn] = (occ[t.cn] || 0) + 1), orig = conv(raw);
       const opts = canPick && hit.role === 'fwd' ? alts(t.tw).filter(x => x !== orig) : [];

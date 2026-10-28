@@ -1,0 +1,5 @@
+# 這些檔案維持原本的精簡寫法，存檔時不要自動排版
+app.js
+style.css
+scripts/
+*.md
