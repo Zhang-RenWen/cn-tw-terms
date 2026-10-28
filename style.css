@@ -125,6 +125,11 @@ a{color:var(--jade)}
 .intro{font-size:14px;color:var(--muted);max-width:70ch;margin:0}
 /* 點選其他說法 */
 .out .pick{cursor:pointer}
+/* 小箭頭提示可以點；用 ::after 不會被複製進結果 */
+.out .pick::after{content:"▾";font-size:.7em;color:var(--muted);margin-left:1px;vertical-align:.15em;text-decoration:none;display:inline-block}
+.out .pick:hover,.out .pick:focus-visible{outline:1px solid var(--jade);outline-offset:1px}
+.out.plain .pick::after{content:none}
+.legend .caret{color:var(--muted);font-size:.85em}
 .out .t-picked{background:var(--jade-soft);text-decoration:underline solid var(--jade)}
 .alt-menu{position:fixed;z-index:50;display:flex;flex-direction:column;min-width:140px;max-width:min(280px,calc(100vw - 16px));
   background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.18);padding:4px}
