@@ -1,2 +1,6 @@
 .DS_Store
 node_modules/
+# scripts/build-pages.mjs 的輸出，部署時由 GitHub Actions 產生
+terms/
+sitemap.xml
+_site/

@@ -227,12 +227,15 @@
   if (hasRepo) $('repoLine').innerHTML = ' 原始碼與詞彙：<a href="https://github.com/' + esc(CFG.repo) + '" target="_blank" rel="noopener">' + esc(CFG.repo) + '</a>';
 
   /* ---------- 啟動 ---------- */
+  // 詞彙頁的「用轉換器試試」會帶 ?q=詞，固定用「臺灣＋詞彙」模式顯示
+  const q = new URLSearchParams(location.search).get('q');
   const saved = load('s2t-mode'); if (saved && MODES[saved]) mode = saved;
-  input.value = load('s2t-draft') || SAMPLE;
+  if (q) mode = 'cn-twp';
+  input.value = q || load('s2t-draft') || SAMPLE;
   const status = $('status');
   if (!window.OpenCC) { status.textContent = '字典載入失敗，請檢查網路後重新整理'; status.classList.add('err'); }
   setMode(mode);
-  showTab(load('s2t-tab') === 'lib');
+  showTab(!q && load('s2t-tab') === 'lib');
 
   /* ---------- 載入詞彙庫 data/*.json ---------- */
   (async () => {
