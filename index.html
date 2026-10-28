@@ -1,150 +1,272 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>簡繁轉換器</title>
-<meta name="description" content="簡繁轉換加上社群維護的兩岸用語詞彙庫，標出用語替換、評價意涵與同字異義。">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WBQ0NRFC0S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>簡繁轉換器</title>
+    <meta
+      name="description"
+      content="簡繁轉換加上社群維護的兩岸用語詞彙庫，標出用語替換、評價意涵與同字異義。"
+    />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WBQ0NRFC0S"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-WBQ0NRFC0S');
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="wrap">
-  <header>
-    <div>
-      <h1><span class="from" id="hFrom">简</span><span class="arrow">→</span><span id="hTo">繁</span> 轉換器</h1>
-      <p class="sub" id="modeDesc">簡體轉臺灣正體，並套用兩岸用語詞彙庫</p>
-    </div>
-    <div class="modes" role="group" aria-label="轉換模式" id="modes">
-      <button class="mode" data-mode="cn-twp" aria-pressed="true">臺灣＋詞彙</button>
-      <button class="mode" data-mode="cn-tw" aria-pressed="false">臺灣字形</button>
-      <button class="mode" data-mode="cn-hk" aria-pressed="false">香港字形</button>
-      <button class="mode" data-mode="tw-cn" aria-pressed="false">繁→簡</button>
-    </div>
-  </header>
+      gtag("config", "G-WBQ0NRFC0S");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div>
+          <h1>
+            <span class="from" id="hFrom">简</span><span class="arrow">→</span
+            ><span id="hTo">繁</span> 轉換器
+          </h1>
+          <p class="sub" id="modeDesc">簡體轉臺灣正體，並套用兩岸用語詞彙庫</p>
+        </div>
+        <div class="modes" role="group" aria-label="轉換模式" id="modes">
+          <button class="mode" data-mode="cn-twp" aria-pressed="true">
+            臺灣＋詞彙
+          </button>
+          <button class="mode" data-mode="cn-tw" aria-pressed="false">
+            臺灣字形
+          </button>
+          <button class="mode" data-mode="cn-hk" aria-pressed="false">
+            香港字形
+          </button>
+          <button class="mode" data-mode="tw-cn" aria-pressed="false">
+            繁→簡
+          </button>
+        </div>
+      </header>
 
-  <div class="tabs" role="tablist">
-    <button class="tab" role="tab" id="tabConv" aria-selected="true" aria-controls="viewConv">轉換器</button>
-    <button class="tab" role="tab" id="tabLib" aria-selected="false" aria-controls="viewLib">詞彙庫<span class="n" id="libCount">0</span></button>
-  </div>
+      <div class="tabs" role="tablist">
+        <button
+          class="tab"
+          role="tab"
+          id="tabConv"
+          aria-selected="true"
+          aria-controls="viewConv"
+        >
+          轉換器
+        </button>
+        <button
+          class="tab"
+          role="tab"
+          id="tabLib"
+          aria-selected="false"
+          aria-controls="viewLib"
+        >
+          詞彙庫<span class="n" id="libCount">0</span>
+        </button>
+      </div>
 
-  <!-- 轉換器 -->
-  <section id="viewConv" role="tabpanel" style="display:flex;flex-direction:column;gap:16px">
-    <div class="grid">
-      <section class="pane">
-        <div class="pane-head"><span class="label" id="inLabel">原文 · 简体</span><span class="count" id="inCount">0 字</span></div>
-        <textarea class="main" id="input" spellcheck="false" aria-label="輸入原文"></textarea>
-        <div class="pane-foot">
-          <button class="btn" id="paste">貼上範例</button>
-          <button class="btn" id="clear">清除</button>
-          <span class="status" id="status">載入轉換字典中…</span>
+      <!-- 轉換器 -->
+      <section
+        id="viewConv"
+        role="tabpanel"
+        style="display: flex; flex-direction: column; gap: 16px"
+      >
+        <div class="grid">
+          <section class="pane">
+            <div class="pane-head">
+              <span class="label" id="inLabel">原文 · 简体</span
+              ><span class="count" id="inCount">0 字</span>
+            </div>
+            <textarea
+              class="main"
+              id="input"
+              spellcheck="false"
+              aria-label="輸入原文"
+            ></textarea>
+            <div class="pane-foot">
+              <button class="btn" id="paste">貼上範例</button>
+              <button class="btn" id="clear">清除</button>
+              <span class="status" id="status">載入轉換字典中…</span>
+            </div>
+          </section>
+
+          <button
+            class="swap"
+            id="swap"
+            title="把結果放回輸入並反向轉換"
+            aria-label="反向轉換"
+          >
+            ⇄
+          </button>
+
+          <section class="pane">
+            <div class="pane-head">
+              <span class="label" id="outLabel">結果 · 繁體</span
+              ><span class="count" id="outCount">0 字變更</span>
+            </div>
+            <div class="out" id="output" aria-live="polite"></div>
+            <div class="pane-foot">
+              <button class="btn primary" id="copy">複製結果</button>
+              <span class="toast" id="toast"></span>
+              <label class="toggle"
+                ><input type="checkbox" id="hl" checked /> 標示變更</label
+              >
+            </div>
+          </section>
+        </div>
+
+        <div class="legend">
+          <span><i class="sw c"></i>字形轉換</span>
+          <span><i class="sw v"></i>用語替換</span>
+          <span><i class="sw l"></i>帶評價意涵</span>
+          <span><i class="sw f"></i>同字異義</span>
+        </div>
+
+        <section class="found" id="found" hidden>
+          <h2>這段文字裡的兩岸用語</h2>
+          <ul id="foundList"></ul>
+        </section>
+      </section>
+
+      <!-- 詞彙庫 -->
+      <section
+        id="viewLib"
+        role="tabpanel"
+        hidden
+        style="flex-direction: column; gap: 16px"
+      >
+        <div class="lib-bar">
+          <input
+            type="search"
+            id="q"
+            placeholder="搜尋中國或台灣用語、備註"
+            aria-label="搜尋詞彙"
+          />
+          <select id="catSel" aria-label="分類">
+            <option value="">全部分類</option>
+          </select>
+          <div class="chips" id="kindChips" role="group" aria-label="類型">
+            <button class="chip" data-kind="" aria-pressed="true">全部</button>
+            <button class="chip" data-kind="vocab" aria-pressed="false">
+              一般用語
+            </button>
+            <button class="chip" data-kind="loaded" aria-pressed="false">
+              評價意涵
+            </button>
+            <button class="chip" data-kind="false" aria-pressed="false">
+              同字異義
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>中國用語</th>
+                <th>台灣用語</th>
+                <th>類型</th>
+                <th>分類</th>
+                <th>備註</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <div class="empty" id="libEmpty">詞彙庫載入中…</div>
+        </div>
+
+        <div class="cols">
+          <form class="form" id="termForm">
+            <h2>提議新增詞彙</h2>
+            <div class="row">
+              <label
+                >中國用語<input id="fCn" required placeholder="充電寶"
+              /></label>
+              <label
+                >台灣用語<input id="fTw" placeholder="行動電源（多個用、分隔）"
+              /></label>
+            </div>
+            <div class="row">
+              <label
+                >類型
+                <select id="fKind">
+                  <option value="vocab">一般用語（轉換時直接替換）</option>
+                  <option value="loaded">評價意涵（只標示、不替換）</option>
+                  <option value="false">同字異義（只標示、不替換）</option>
+                </select>
+              </label>
+              <label>分類<select id="fCat"></select></label>
+            </div>
+            <label
+              >備註<input id="fNote" placeholder="意涵、出處或使用提醒"
+            /></label>
+            <div class="actions">
+              <button class="btn primary" type="submit">產生 JSON</button>
+              <span class="toast" id="fMsg"></span>
+            </div>
+          </form>
+
+          <div class="form">
+            <h2>送出 Pull Request</h2>
+            <ol>
+              <li>在左邊填好詞彙，按「產生 JSON」並複製。</li>
+              <li>
+                按「在 GitHub 編輯」打開對應分類的檔案，GitHub 會自動幫你 fork。
+              </li>
+              <li>把這段貼進 <code>terms</code> 陣列，送出 Pull Request。</li>
+            </ol>
+            <pre id="snippet">填好左邊表單後，這裡會出現要貼上的內容。</pre>
+            <div class="actions">
+              <button class="btn" id="copySnippet" type="button" disabled>
+                複製 JSON
+              </button>
+              <a
+                class="btn"
+                id="editLink"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                hidden
+                >在 GitHub 編輯</a
+              >
+              <a
+                class="btn"
+                id="issueLink"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                hidden
+                >改用 Issue 提議</a
+              >
+              <span class="toast" id="sMsg"></span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <button class="swap" id="swap" title="把結果放回輸入並反向轉換" aria-label="反向轉換">⇄</button>
-
-      <section class="pane">
-        <div class="pane-head"><span class="label" id="outLabel">結果 · 繁體</span><span class="count" id="outCount">0 字變更</span></div>
-        <div class="out" id="output" aria-live="polite"></div>
-        <div class="pane-foot">
-          <button class="btn primary" id="copy">複製結果</button>
-          <span class="toast" id="toast"></span>
-          <label class="toggle"><input type="checkbox" id="hl" checked> 標示變更</label>
-        </div>
-      </section>
+      <footer>
+        字形轉換使用開源字典
+        <code>OpenCC</code>，在瀏覽器內完成，文字不會上傳。詞彙庫是
+        <code>data/</code> 資料夾裡的 JSON 檔，歡迎提交 Pull Request
+        擴充。「一般用語」在「臺灣＋詞彙」模式會直接替換，其他模式只標示；「評價意涵」與「同字異義」永遠只標示，滑過可看備註。台灣文字也可以貼進來檢查有沒有中國用語。<span
+          id="repoLine"
+        ></span>
+      </footer>
     </div>
 
-    <div class="legend">
-      <span><i class="sw c"></i>字形轉換</span>
-      <span><i class="sw v"></i>用語替換</span>
-      <span><i class="sw l"></i>帶評價意涵</span>
-      <span><i class="sw f"></i>同字異義</span>
-    </div>
-
-    <section class="found" id="found" hidden>
-      <h2>這段文字裡的兩岸用語</h2>
-      <ul id="foundList"></ul>
-    </section>
-  </section>
-
-  <!-- 詞彙庫 -->
-  <section id="viewLib" role="tabpanel" hidden style="flex-direction:column;gap:16px">
-    <div class="lib-bar">
-      <input type="search" id="q" placeholder="搜尋中國或台灣用語、備註" aria-label="搜尋詞彙">
-      <select id="catSel" aria-label="分類"><option value="">全部分類</option></select>
-      <div class="chips" id="kindChips" role="group" aria-label="類型">
-        <button class="chip" data-kind="" aria-pressed="true">全部</button>
-        <button class="chip" data-kind="vocab" aria-pressed="false">一般用語</button>
-        <button class="chip" data-kind="loaded" aria-pressed="false">評價意涵</button>
-        <button class="chip" data-kind="false" aria-pressed="false">同字異義</button>
-      </div>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>中國用語</th><th>台灣用語</th><th>類型</th><th>分類</th><th>備註</th></tr></thead>
-        <tbody id="rows"></tbody>
-      </table>
-      <div class="empty" id="libEmpty">詞彙庫載入中…</div>
-    </div>
-
-    <div class="cols">
-      <form class="form" id="termForm">
-        <h2>提議新增詞彙</h2>
-        <div class="row">
-          <label>中國用語<input id="fCn" required placeholder="充電寶"></label>
-          <label>台灣用語<input id="fTw" placeholder="行動電源（多個用、分隔）"></label>
-        </div>
-        <div class="row">
-          <label>類型
-            <select id="fKind">
-              <option value="vocab">一般用語（轉換時直接替換）</option>
-              <option value="loaded">評價意涵（只標示、不替換）</option>
-              <option value="false">同字異義（只標示、不替換）</option>
-            </select>
-          </label>
-          <label>分類<select id="fCat"></select></label>
-        </div>
-        <label>備註<input id="fNote" placeholder="意涵、出處或使用提醒"></label>
-        <div class="actions">
-          <button class="btn primary" type="submit">產生 JSON</button>
-          <span class="toast" id="fMsg"></span>
-        </div>
-      </form>
-
-      <div class="form">
-        <h2>送出 Pull Request</h2>
-        <ol>
-          <li>在左邊填好詞彙，按「產生 JSON」並複製。</li>
-          <li>按「在 GitHub 編輯」打開對應分類的檔案，GitHub 會自動幫你 fork。</li>
-          <li>把這段貼進 <code>terms</code> 陣列，送出 Pull Request。</li>
-        </ol>
-        <pre id="snippet">填好左邊表單後，這裡會出現要貼上的內容。</pre>
-        <div class="actions">
-          <button class="btn" id="copySnippet" type="button" disabled>複製 JSON</button>
-          <a class="btn" id="editLink" href="#" target="_blank" rel="noopener" hidden>在 GitHub 編輯</a>
-          <a class="btn" id="issueLink" href="#" target="_blank" rel="noopener" hidden>改用 Issue 提議</a>
-          <span class="toast" id="sMsg"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>字形轉換使用開源字典 <code>OpenCC</code>，在瀏覽器內完成，文字不會上傳。詞彙庫是 <code>data/</code> 資料夾裡的 JSON 檔，歡迎提交 Pull Request 擴充。「一般用語」在「臺灣＋詞彙」模式會直接替換，其他模式只標示；「評價意涵」與「同字異義」永遠只標示，滑過可看備註。台灣文字也可以貼進來檢查有沒有中國用語。<span id="repoLine"></span></footer>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js"></script>
-<script src="config.js"></script>
-<script src="app.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
