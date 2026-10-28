@@ -43,6 +43,13 @@
       "kind": "vocab"
     },
     {
+      "cn": "文檔",
+      "tw": "文件、檔案",
+      "kind": "vocab",
+      "note": "大陸「文檔」指 document，台灣說文件；大陸「文件」指 file，台灣說檔案",
+      "oneway": true
+    },
+    {
       "cn": "默認",
       "tw": "預設",
       "kind": "vocab",
