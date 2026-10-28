@@ -42,6 +42,11 @@ const page = ({ title, desc, url, body, jsonld }) => `<!doctype html>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(desc)}" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="簡繁轉換" />
+    <meta name="application-name" content="簡繁轉換" />
     <link rel="canonical" href="${url}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="兩岸用語對照・簡繁轉換器" />

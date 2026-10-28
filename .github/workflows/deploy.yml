@@ -29,7 +29,7 @@ jobs:
           node-version: 20
       - run: node scripts/validate.mjs
       - run: node scripts/build-pages.mjs
-      - run: mkdir _site && cp -r index.html style.css app.js config.js sitemap.xml data terms _site/
+      - run: mkdir _site && cp -r index.html style.css app.js config.js favicon.svg favicon-32.png apple-touch-icon.png sitemap.xml data terms _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
