@@ -147,6 +147,12 @@
       "cn": "發郵件",
       "tw": "寄電子郵件",
       "kind": "vocab"
+    },
+    {
+      "cn": "播客",
+      "tw": "Podcast",
+      "kind": "vocab",
+      "note": "英文 podcast 的大陸譯名；台灣通常直接說 Podcast"
     }
   ]
 }
