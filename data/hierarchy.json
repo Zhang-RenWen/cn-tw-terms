@@ -36,6 +36,13 @@
       "oneway": true
     },
     {
+      "cn": "幹翻",
+      "tw": "打爆、打趴、電爆、推翻",
+      "kind": "vocab",
+      "note": "口語，指打敗、擊倒對手，語氣較粗",
+      "oneway": true
+    },
+    {
       "cn": "天花板",
       "tw": "最強、第一",
       "kind": "false",

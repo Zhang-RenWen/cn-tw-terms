@@ -179,6 +179,37 @@
       "kind": "vocab"
     },
     {
+      "cn": "公安",
+      "tw": "警察",
+      "kind": "vocab",
+      "note": "大陸的警察機關叫公安",
+      "oneway": true
+    },
+    {
+      "cn": "公安意外",
+      "tw": "公安意外",
+      "kind": "false",
+      "note": "台灣「公安」指公共安全（公安意外），保留原文"
+    },
+    {
+      "cn": "公安事故",
+      "tw": "公安事故",
+      "kind": "false",
+      "note": "台灣「公安」指公共安全（公安意外），保留原文"
+    },
+    {
+      "cn": "公安事件",
+      "tw": "公安事件",
+      "kind": "false",
+      "note": "台灣「公安」指公共安全（公安意外），保留原文"
+    },
+    {
+      "cn": "公安問題",
+      "tw": "公安問題",
+      "kind": "false",
+      "note": "台灣「公安」指公共安全（公安意外），保留原文"
+    },
+    {
       "cn": "宰客",
       "tw": "敲竹槓、坑殺顧客",
       "kind": "vocab"
@@ -223,6 +254,229 @@
       "cn": "查體",
       "tw": "健康檢查、體檢",
       "kind": "vocab"
+    },
+    {
+      "cn": "民政局",
+      "tw": "戶政事務所",
+      "kind": "vocab",
+      "note": "大陸辦結婚、離婚登記在民政局的婚姻登記處；台灣在戶政事務所。台灣各縣市也有「民政局」（督導戶政），談台灣機關時請手動改回",
+      "oneway": true
+    },
+    {
+      "cn": "領證",
+      "tw": "登記、登記結婚、結婚",
+      "kind": "vocab",
+      "note": "指去民政局領結婚證，也就是登記結婚",
+      "oneway": true
+    },
+    {
+      "cn": "結婚證",
+      "tw": "結婚證書",
+      "kind": "vocab"
+    },
+    {
+      "cn": "裡頭",
+      "tw": "裡面",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "早上好",
+      "tw": "早安",
+      "kind": "vocab"
+    },
+    {
+      "cn": "聯繫",
+      "tw": "聯絡",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "保安",
+      "tw": "保全",
+      "kind": "vocab",
+      "note": "台灣「保安」多指保安警察",
+      "oneway": true
+    },
+    {
+      "cn": "趕緊",
+      "tw": "趕快",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "區別",
+      "tw": "差別",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "小臂",
+      "tw": "前臂、下手臂",
+      "kind": "vocab"
+    },
+    {
+      "cn": "大臂",
+      "tw": "上臂、上手臂",
+      "kind": "vocab"
+    },
+    {
+      "cn": "打錢",
+      "tw": "匯款、轉帳",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "打飯",
+      "tw": "盛飯、裝飯",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "不捨得",
+      "tw": "捨不得",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "合適",
+      "tw": "適合",
+      "kind": "vocab",
+      "note": "很合適 → 很適合",
+      "oneway": true
+    },
+    {
+      "cn": "衛生巾",
+      "tw": "衛生棉",
+      "kind": "vocab"
+    },
+    {
+      "cn": "酒店",
+      "tw": "飯店",
+      "kind": "vocab",
+      "note": "台灣「酒店」多指有陪酒的店，大陸指旅館",
+      "oneway": true
+    },
+    {
+      "cn": "抑鬱",
+      "tw": "憂鬱",
+      "kind": "vocab",
+      "note": "抑鬱症 → 憂鬱症"
+    },
+    {
+      "cn": "頭疼",
+      "tw": "頭痛",
+      "kind": "vocab"
+    },
+    {
+      "cn": "牙疼",
+      "tw": "牙痛",
+      "kind": "vocab"
+    },
+    {
+      "cn": "肚子疼",
+      "tw": "肚子痛",
+      "kind": "vocab"
+    },
+    {
+      "cn": "好疼",
+      "tw": "好痛",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "很疼",
+      "tw": "很痛",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "疼死了",
+      "tw": "痛死了",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "水平",
+      "tw": "水準",
+      "kind": "false",
+      "note": "程度、能力的意思台灣說「水準」；「水平線」「水平方向」兩岸相同，只標示，可點選替換"
+    },
+    {
+      "cn": "有水平",
+      "tw": "有水準",
+      "kind": "vocab"
+    },
+    {
+      "cn": "沒水平",
+      "tw": "沒水準",
+      "kind": "vocab"
+    },
+    {
+      "cn": "生活水平",
+      "tw": "生活水準",
+      "kind": "vocab"
+    },
+    {
+      "cn": "技術水平",
+      "tw": "技術水準",
+      "kind": "vocab"
+    },
+    {
+      "cn": "專業水平",
+      "tw": "專業水準",
+      "kind": "vocab"
+    },
+    {
+      "cn": "千米",
+      "tw": "公里",
+      "kind": "vocab"
+    },
+    {
+      "cn": "平方米",
+      "tw": "平方公尺",
+      "kind": "vocab"
+    },
+    {
+      "cn": "釐米",
+      "tw": "公分",
+      "kind": "vocab"
+    },
+    {
+      "cn": "毫米",
+      "tw": "公釐",
+      "kind": "vocab"
+    },
+    {
+      "cn": "斤",
+      "tw": "台斤",
+      "kind": "false",
+      "note": "台灣 1 台斤＝600 公克；大陸 1 斤＝500 公克，同字但重量不同"
+    },
+    {
+      "cn": "給你打電話",
+      "tw": "打電話給你",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "給我打電話",
+      "tw": "打電話給我",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "給他打電話",
+      "tw": "打電話給他",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "立馬",
+      "tw": "馬上、立刻",
+      "kind": "vocab",
+      "note": "北方口語，意思是馬上",
+      "oneway": true
     }
   ]
 }

@@ -32,6 +32,8 @@
   // 「行動電源、移動電源」取第一個；「交流道（高架橋）」去掉括號
   const firstAlt = s => (s || '').split(/[、，,／/]/)[0].replace(/[（(].*$/, '').trim();
   const usable = s => !!s && !/^(無|—|-$)/.test(s);
+  // 點選用的全部說法：「電腦；資訊、資工（科系）」→ 電腦、資訊、資工
+  const alts = s => [...new Set((s || '').split(/[、，,／/；;]/).map(x => x.replace(/[（(][^）)]*[）)]/g, '').trim()).filter(usable))];
 
   /* 詞彙索引：首字 → 候選詞（長詞優先），同時收簡體與繁體寫法 */
   function buildMatcher(m) {
@@ -85,12 +87,19 @@
     return { html, changed };
   }
 
+  /* 使用者點選的說法：「詞#第幾次出現」→ 文字；原文或模式改變就清空 */
+  const picks = new Map(), pickOpts = new Map();
+  let pickedFor = '';
+
   function render() {
     const src = input.value;
     $('inCount').textContent = [...src.replace(/\s/g, '')].length + ' 字';
     const M = MODES[mode], conv = getConv(M.from, M.to);
     if (!conv) { output.textContent = ''; $('found').hidden = true; return; }
     const { idx } = buildMatcher(mode);
+    if (pickedFor !== mode + '\n' + src) { picks.clear(); pickedFor = mode + '\n' + src; }
+    pickOpts.clear();
+    const canPick = mode === 'cn-twp' || mode === 'cn-tw', occ = {};
     let html = '', changed = 0, plain = '';
     const hits = new Map();
     const flush = () => { if (!plain) return; const d = diffHtml(plain, conv(plain)); html += d.html; changed += d.changed; plain = ''; };
@@ -106,10 +115,20 @@
       if (hit.role === 'rev') { shown = conv(t.cn); cls = 't-vocab'; }
       else if (t.kind === 'vocab' && mode === 'cn-twp' && usable(firstAlt(t.tw))) { shown = firstAlt(t.tw); cls = 't-vocab'; }
       else { shown = conv(raw); cls = t.kind === 'loaded' ? 't-loaded' : t.kind === 'false' ? 't-false' : 't-hint'; }
-      const tip = hit.role === 'rev'
+      let tip = hit.role === 'rev'
         ? '台灣「' + raw + '」→ 大陸「' + t.cn + '」'
         : '中國用語「' + t.cn + '」' + (t.tw ? '，台灣：' + t.tw : '') + (t.note ? '。' + t.note : '');
-      html += '<span class="t ' + cls + '" title="' + esc(tip) + '">' + esc(shown) + '</span>';
+      const key = t.cn + '#' + (occ[t.cn] = (occ[t.cn] || 0) + 1), orig = conv(raw);
+      const opts = canPick && hit.role === 'fwd' ? alts(t.tw).filter(x => x !== orig) : [];
+      let attrs = '';
+      if (opts.length) {
+        pickOpts.set(key, { opts, orig });
+        if (picks.has(key)) { shown = picks.get(key); cls = 't-picked ' + (shown === orig ? 't-hint' : 't-vocab'); }
+        tip += '（點一下選擇其他說法）';
+        attrs = ' data-k="' + esc(key) + '" tabindex="0" role="button" aria-haspopup="menu"';
+        cls += ' pick';
+      }
+      html += '<span class="t ' + cls + '" title="' + esc(tip) + '"' + attrs + '>' + esc(shown) + '</span>';
       if (shown !== raw) changed += [...shown].length;
       hits.set(t.cat + '/' + t.cn, t);
       i += raw.length;
@@ -209,6 +228,54 @@
     try { navigator.clipboard.writeText(t).then(() => flash('sMsg', '已複製'), () => flash('sMsg', '請手動選取複製')); }
     catch (e) { flash('sMsg', '請手動選取複製'); }
   });
+
+  /* ---------- 點選其他說法 ---------- */
+  const menu = document.createElement('div');
+  menu.className = 'alt-menu'; menu.setAttribute('role', 'menu'); menu.hidden = true;
+  document.body.appendChild(menu);
+  let menuKey = null;
+  const closeMenu = () => { if (!menu.hidden) { menu.hidden = true; menuKey = null; } };
+  const findSpan = k => [...output.querySelectorAll('.pick')].find(s => s.dataset.k === k);
+
+  function openMenu(span) {
+    const k = span.dataset.k, o = pickOpts.get(k);
+    if (!o) return;
+    const cur = span.textContent;
+    menu.innerHTML = '<div class="hd">選擇說法</div>' +
+      o.opts.map(x => '<button type="button" role="menuitem" data-v="' + esc(x) + '"' + (x === cur ? ' class="cur"' : '') + '>' + esc(x) + '</button>').join('') +
+      '<button type="button" role="menuitem" data-v="' + esc(o.orig) + '"' + (o.orig === cur ? ' class="cur"' : '') + '>保留「' + esc(o.orig) + '」</button>';
+    menu.hidden = false; menuKey = k;
+    const r = span.getBoundingClientRect(), w = menu.offsetWidth, h = menu.offsetHeight;
+    menu.style.left = Math.max(8, Math.min(r.left, innerWidth - w - 8)) + 'px';
+    menu.style.top = (r.bottom + h + 8 > innerHeight ? Math.max(8, r.top - h - 4) : r.bottom + 4) + 'px';
+    (menu.querySelector('.cur') || menu.querySelector('button')).focus({ preventScroll: true });
+  }
+
+  output.addEventListener('click', e => {
+    const s = e.target.closest('.pick');
+    if (s) { if (menuKey === s.dataset.k) closeMenu(); else openMenu(s); }
+  });
+  output.addEventListener('keydown', e => {
+    const s = e.target.closest('.pick');
+    if (s && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openMenu(s); }
+  });
+  menu.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b || !menuKey) return;
+    const k = menuKey;
+    picks.set(k, b.dataset.v); closeMenu(); render();
+    const s = findSpan(k); if (s) s.focus();
+  });
+  menu.addEventListener('keydown', e => {
+    const bs = [...menu.querySelectorAll('button')], i = bs.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') { e.preventDefault(); bs[(i + 1) % bs.length].focus(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length].focus(); }
+    else if (e.key === 'Escape') { const k = menuKey; closeMenu(); const s = findSpan(k); if (s) s.focus(); }
+  });
+  document.addEventListener('mousedown', e => { if (!menu.contains(e.target) && !e.target.closest('.pick')) closeMenu(); });
+  addEventListener('resize', closeMenu);
+  output.addEventListener('scroll', closeMenu);
+  addEventListener('scroll', closeMenu, true);
 
   /* ---------- 轉換器事件 ---------- */
   document.querySelectorAll('.mode').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
