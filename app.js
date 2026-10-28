@@ -151,7 +151,7 @@
   }
 
   function setMode(m) {
-    mode = m; store('s2t-mode', m);
+    mode = m;
     const M = MODES[m];
     document.querySelectorAll('.mode').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m));
     $('hFrom').textContent = M.h[0]; $('hTo').textContent = M.h[1];
@@ -294,10 +294,9 @@
   if (hasRepo) $('repoLine').innerHTML = ' 原始碼與詞彙：<a href="https://github.com/' + esc(CFG.repo) + '" target="_blank" rel="noopener">' + esc(CFG.repo) + '</a>';
 
   /* ---------- 啟動 ---------- */
-  // 詞彙頁的「用轉換器試試」會帶 ?q=詞，固定用「臺灣＋詞彙」模式顯示
+  // 每次打開都從「簡→繁＋台灣詞彙」開始，不沿用上次的模式；詞彙頁的「用轉換器試試」會帶 ?q=詞
   const q = new URLSearchParams(location.search).get('q');
-  const saved = load('s2t-mode'); if (saved && MODES[saved]) mode = saved;
-  if (q) mode = 'cn-twp';
+  try { localStorage.removeItem('s2t-mode'); } catch (e) {}
   input.value = q || load('s2t-draft') || SAMPLE;
   const status = $('status');
   if (!window.OpenCC) { status.textContent = '字典載入失敗，請檢查網路後重新整理'; status.classList.add('err'); }
