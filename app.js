@@ -186,7 +186,7 @@
       (!q || [t.cn, t.tw, t.note, t.cat].join(' ').toLowerCase().includes(q)));
     $('rows').innerHTML = list.map(t =>
       '<tr><td class="cn">' + esc(t.cn) + '</td><td>' + esc(t.tw || '—') + '</td><td><span class="kind ' + t.kind + '">' +
-      esc(KIND_LABEL[t.kind]) + '</span></td><td>' + esc(t.cat) + '</td><td class="note">' + esc(t.note || '') + '</td></tr>').join('');
+      esc(KIND_LABEL[t.kind]) + '</span></td><td class="category">' + esc(t.cat) + '</td><td class="note">' + esc(t.note || '') + '</td></tr>').join('');
     const empty = $('libEmpty');
     empty.hidden = list.length > 0;
     if (!list.length && terms.length) empty.textContent = '沒有符合條件的詞。';
