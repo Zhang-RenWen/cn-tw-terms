@@ -58,7 +58,7 @@ python3 -m http.server 8000
 
 ### 參考資料
 
-- [聯合新聞網：閨蜜、顏值都是大陸用語](https://udn.com/news/story/120912/7955289)
+- [聯合新聞網：閨蜜、顏值都是中國用語](https://udn.com/news/story/120912/7955289)
 - [Sixth Tone：Young Chinese Buy to Feel Better](https://www.sixthtone.com/news/1017590)
 - [Sixth Tone：Young Chinese Bemoan Rat Race](https://www.sixthtone.com/news/1006336/)
 - [Language Log：Chinese terms of address for single ladies](https://languagelog.ldc.upenn.edu/nll/?p=4116)
