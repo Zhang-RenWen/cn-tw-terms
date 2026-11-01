@@ -216,6 +216,48 @@
       "tw": "大陸妹",
       "kind": "false",
       "note": "台灣常指一種萵苣（菜名）；也有人用來指中國女性，帶貶意，保留原文"
+    },
+    {
+      "cn": "大媽",
+      "tw": "歐巴桑、阿姨",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "丁克",
+      "tw": "頂客",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "綠茶婊",
+      "tw": "心機女",
+      "kind": "loaded",
+      "note": "指外表清純、實則有心機的女性，帶貶意的標籤"
+    },
+    {
+      "cn": "白蓮花",
+      "tw": "裝無辜的人、裝純",
+      "kind": "loaded",
+      "note": "指表面純潔善良、實則心機重的人，帶貶意的標籤"
+    },
+    {
+      "cn": "小姐姐",
+      "tw": "小姐、正妹",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "小哥哥",
+      "tw": "帥哥、小帥哥",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "妹紙",
+      "tw": "女生、正妹",
+      "kind": "vocab",
+      "oneway": true
     }
   ]
 }

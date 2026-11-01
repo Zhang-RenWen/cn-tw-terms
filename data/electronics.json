@@ -161,6 +161,311 @@
       "cn": "高清畫質",
       "tw": "高畫質",
       "kind": "vocab"
+    },
+    {
+      "cn": "掃碼",
+      "tw": "掃 QR Code、掃描條碼",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "觸控屏",
+      "tw": "觸控螢幕",
+      "kind": "vocab"
+    },
+    {
+      "cn": "觸摸屏",
+      "tw": "觸控螢幕",
+      "kind": "vocab"
+    },
+    {
+      "cn": "安卓",
+      "tw": "Android",
+      "kind": "vocab"
+    },
+    {
+      "cn": "手柄",
+      "tw": "手把、搖桿",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "主板",
+      "tw": "主機板",
+      "kind": "vocab"
+    },
+    {
+      "cn": "光盤",
+      "tw": "光碟",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "全屏",
+      "tw": "全螢幕",
+      "kind": "vocab"
+    },
+    {
+      "cn": "全面屏",
+      "tw": "全螢幕",
+      "kind": "vocab"
+    },
+    {
+      "cn": "彩信",
+      "tw": "多媒體簡訊",
+      "kind": "vocab"
+    },
+    {
+      "cn": "移動設備",
+      "tw": "行動裝置",
+      "kind": "vocab"
+    },
+    {
+      "cn": "移動數據",
+      "tw": "行動數據、行動網路",
+      "kind": "vocab"
+    },
+    {
+      "cn": "移動電源",
+      "tw": "行動電源",
+      "kind": "vocab"
+    },
+    {
+      "cn": "移動網絡",
+      "tw": "行動網路",
+      "kind": "vocab"
+    },
+    {
+      "cn": "流媒體",
+      "tw": "串流、串流媒體",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "低端",
+      "tw": "低階",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "納米",
+      "tw": "奈米",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "保修",
+      "tw": "保固",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "相冊",
+      "tw": "相簿",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "刷新率",
+      "tw": "更新率、更新頻率",
+      "kind": "vocab"
+    },
+    {
+      "cn": "音頻",
+      "tw": "音訊",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "飛行模式",
+      "tw": "飛航模式",
+      "kind": "vocab"
+    },
+    {
+      "cn": "數碼",
+      "tw": "數位",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "臺式機",
+      "tw": "桌機、桌上型電腦",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "信號",
+      "tw": "訊號",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "掃描儀",
+      "tw": "掃描器",
+      "kind": "vocab"
+    },
+    {
+      "cn": "推送",
+      "tw": "推播",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "視頻會議",
+      "tw": "視訊會議",
+      "kind": "vocab"
+    },
+    {
+      "cn": "智能化",
+      "tw": "智慧化",
+      "kind": "vocab"
+    },
+    {
+      "cn": "智能手錶",
+      "tw": "智慧型手錶",
+      "kind": "vocab"
+    },
+    {
+      "cn": "智能音箱",
+      "tw": "智慧喇叭、智慧音箱",
+      "kind": "vocab"
+    },
+    {
+      "cn": "智能電視",
+      "tw": "智慧電視",
+      "kind": "vocab"
+    },
+    {
+      "cn": "智能家居",
+      "tw": "智慧家庭",
+      "kind": "vocab"
+    },
+    {
+      "cn": "虛擬現實",
+      "tw": "虛擬實境",
+      "kind": "vocab"
+    },
+    {
+      "cn": "黑屏",
+      "tw": "黑畫面",
+      "kind": "vocab"
+    },
+    {
+      "cn": "傳感器",
+      "tw": "感測器",
+      "kind": "vocab"
+    },
+    {
+      "cn": "死機",
+      "tw": "當機",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "分辨率",
+      "tw": "解析度",
+      "kind": "vocab"
+    },
+    {
+      "cn": "寬帶",
+      "tw": "寬頻",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "數字化",
+      "tw": "數位化",
+      "kind": "vocab"
+    },
+    {
+      "cn": "數字貨幣",
+      "tw": "數位貨幣",
+      "kind": "vocab"
+    },
+    {
+      "cn": "英偉達",
+      "tw": "輝達、NVIDIA",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "人臉識別",
+      "tw": "人臉辨識",
+      "kind": "vocab"
+    },
+    {
+      "cn": "語音識別",
+      "tw": "語音辨識",
+      "kind": "vocab"
+    },
+    {
+      "cn": "錄像帶",
+      "tw": "錄影帶",
+      "kind": "vocab"
+    },
+    {
+      "cn": "增強現實",
+      "tw": "擴增實境",
+      "kind": "vocab"
+    },
+    {
+      "cn": "噪聲",
+      "tw": "雜訊、噪音",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "攝像機",
+      "tw": "攝影機",
+      "kind": "vocab"
+    },
+    {
+      "cn": "鎖屏",
+      "tw": "鎖定畫面、螢幕鎖定",
+      "kind": "vocab"
+    },
+    {
+      "cn": "回放",
+      "tw": "重播",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "視頻電話",
+      "tw": "視訊電話",
+      "kind": "vocab"
+    },
+    {
+      "cn": "屏保",
+      "tw": "螢幕保護程式",
+      "kind": "vocab"
+    },
+    {
+      "cn": "掉線",
+      "tw": "斷線",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "臺式電腦",
+      "tw": "桌上型電腦",
+      "kind": "vocab"
+    },
+    {
+      "cn": "只讀存儲器",
+      "tw": "唯讀記憶體",
+      "kind": "vocab"
+    },
+    {
+      "cn": "單反",
+      "tw": "單眼",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "超清",
+      "tw": "超高畫質",
+      "kind": "vocab"
     }
   ]
 }

@@ -472,6 +472,526 @@
       "tw": "對她有意思",
       "kind": "false",
       "note": "這裡的「有意思」指有好感，兩岸相同，保留原文"
+    },
+    {
+      "cn": "樓主",
+      "tw": "原PO、版主",
+      "kind": "vocab"
+    },
+    {
+      "cn": "追評",
+      "tw": "追加評價",
+      "kind": "vocab"
+    },
+    {
+      "cn": "群聊",
+      "tw": "群組聊天、群組",
+      "kind": "vocab"
+    },
+    {
+      "cn": "打call",
+      "tw": "應援、加油",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "谷歌",
+      "tw": "Google",
+      "kind": "vocab"
+    },
+    {
+      "cn": "私信",
+      "tw": "私訊",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "取消關注",
+      "tw": "取消追蹤",
+      "kind": "vocab"
+    },
+    {
+      "cn": "社交媒體",
+      "tw": "社群媒體",
+      "kind": "vocab"
+    },
+    {
+      "cn": "表情包",
+      "tw": "梗圖、貼圖",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "刷屏",
+      "tw": "洗版",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "帖子",
+      "tw": "貼文、文章",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "網民",
+      "tw": "網友、鄉民",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "家人們",
+      "tw": "大家、各位",
+      "kind": "false",
+      "note": "直播、短影音的開場稱呼，例如「家人們誰懂啊」"
+    },
+    {
+      "cn": "氛圍感",
+      "tw": "氣氛好、很有感覺",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "帶貨",
+      "tw": "業配、直播銷售",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "邪修",
+      "tw": "旁門左道、走捷徑的怪招",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "顯眼包",
+      "tw": "愛現的人、搞笑擔當",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "取關",
+      "tw": "退追、取消追蹤",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "甩鍋",
+      "tw": "推卸責任、卸責",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "偷感",
+      "tw": "無固定對應",
+      "kind": "loaded",
+      "note": "形容很怕引人注目，做什麼都想低調、不被看見的心態"
+    },
+    {
+      "cn": "硬核",
+      "tw": "很硬派、超專業、hardcore",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "搭子",
+      "tw": "夥伴、伴",
+      "kind": "vocab",
+      "note": "例如「飯搭子」「健身搭子」，指只在某件事上結伴的人",
+      "oneway": true
+    },
+    {
+      "cn": "暈碳",
+      "tw": "吃飽想睡",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "槓精",
+      "tw": "抬槓王、凡事都要反駁的人",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "高光時刻",
+      "tw": "最精彩的時候、巔峰時刻",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "漂亮飯",
+      "tw": "好拍的餐點、拍照用的美食",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "網暴",
+      "tw": "網路霸凌、網路公審",
+      "kind": "vocab"
+    },
+    {
+      "cn": "高級感",
+      "tw": "質感、高雅",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "社死",
+      "tw": "超丟臉、丟臉丟到家",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "頭像",
+      "tw": "大頭貼、頭貼",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "銳評",
+      "tw": "犀利點評、毒舌評論",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "慌得一批",
+      "tw": "超慌、慌得要命",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "拉滿",
+      "tw": "開到最大、全開",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "懵逼",
+      "tw": "傻眼、一頭霧水",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "活人感",
+      "tw": "真實、不像在演",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "巴適",
+      "tw": "舒服、很讚",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "互噴",
+      "tw": "互罵、互嗆",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "幾個意思",
+      "tw": "什麼意思",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "貓膩",
+      "tw": "內情、有鬼",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "底層邏輯",
+      "tw": "根本道理、本質",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "嘴替",
+      "tw": "替我說出心裡話的人",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "YYDS",
+      "tw": "永遠的神",
+      "kind": "vocab"
+    },
+    {
+      "cn": "有一說一",
+      "tw": "老實說、說真的",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "帶感",
+      "tw": "很有感覺、很帶勁",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "嘎了",
+      "tw": "死了、掛了",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "開盒",
+      "tw": "肉搜、人肉搜索",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "踩一捧一",
+      "tw": "捧一踩一、踩低捧高",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "貌似",
+      "tw": "好像、似乎",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "白嫖",
+      "tw": "免費享用、不付錢就拿",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "繃不住",
+      "tw": "忍不住、崩潰",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "也是醉了",
+      "tw": "真是夠了、傻眼",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "奇葩",
+      "tw": "怪胎、奇人",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "玩脫了",
+      "tw": "玩過頭",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "封禁",
+      "tw": "封鎖、停權",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "拉黑",
+      "tw": "封鎖",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "扯淡",
+      "tw": "胡扯、亂講",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "逼格",
+      "tw": "格調、質感",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "高大上",
+      "tw": "高級、有質感",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "碰瓷",
+      "tw": "假車禍、敲詐",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "帶節奏",
+      "tw": "帶風向",
+      "kind": "vocab"
+    },
+    {
+      "cn": "憋屈",
+      "tw": "委屈、悶",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "打醬油",
+      "tw": "路過、湊熱鬧",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "絕絕子",
+      "tw": "超讚、太神了",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "沒誰了",
+      "tw": "無人能及",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "魔怔",
+      "tw": "走火入魔、著魔",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "細思極恐",
+      "tw": "越想越毛",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "硬控",
+      "tw": "被定住、看到入迷",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "蹭熱度",
+      "tw": "搭熱點、趁勢炒作",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "辣眼睛",
+      "tw": "慘不忍睹、傷眼",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "噴子",
+      "tw": "酸民",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "頂不住",
+      "tw": "撐不住",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "艾特",
+      "tw": "標註、tag",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "社牛",
+      "tw": "社交高手、自來熟",
+      "kind": "vocab"
+    },
+    {
+      "cn": "放飛自我",
+      "tw": "完全放開、做自己",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "蛋疼",
+      "tw": "很煩、無言",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "舉報",
+      "tw": "檢舉",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "拉胯",
+      "tw": "很遜、糟糕",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "屏蔽",
+      "tw": "封鎖、隱藏",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "贏麻",
+      "tw": "贏爛、一直贏",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "實錘",
+      "tw": "證據確鑿、坐實",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "難繃",
+      "tw": "很難忍住、笑死",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "三觀",
+      "tw": "價值觀",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "網紅",
+      "tw": "網路名人、YouTuber",
+      "kind": "loaded",
+      "note": "「網絡紅人」的簡稱，從中國傳入；現在台灣也很常用"
+    },
+    {
+      "cn": "沒事兒",
+      "tw": "沒關係、不客氣",
+      "kind": "vocab",
+      "note": "北方口語，回應道歉或道謝時用",
+      "oneway": true
+    },
+    {
+      "cn": "巨美",
+      "tw": "超美",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "巨帥",
+      "tw": "超帥",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "巨可愛",
+      "tw": "超可愛",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "巨多",
+      "tw": "超多",
+      "kind": "vocab",
+      "oneway": true
     }
   ]
 }

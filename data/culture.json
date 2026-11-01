@@ -44,6 +44,42 @@
       "tw": "文法",
       "kind": "false",
       "note": "中國「語法」即台灣的文法；程式語法、語言學的「語法」兩岸相同"
+    },
+    {
+      "cn": "氪金",
+      "tw": "課金",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "愛豆",
+      "tw": "偶像",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "塌房",
+      "tw": "偶像幻滅、形象崩盤",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "萌新",
+      "tw": "新手、新人",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "手辦",
+      "tw": "公仔、模型",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "娛樂圈",
+      "tw": "演藝圈",
+      "kind": "vocab",
+      "oneway": true
     }
   ]
 }

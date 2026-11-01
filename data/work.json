@@ -241,6 +241,107 @@
       "cn": "小白鼠",
       "tw": "白老鼠",
       "kind": "vocab"
+    },
+    {
+      "cn": "績點",
+      "tw": "成績、GPA",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "刷題",
+      "tw": "大量練習題目、狂寫題庫",
+      "kind": "vocab"
+    },
+    {
+      "cn": "應屆生",
+      "tw": "應屆畢業生",
+      "kind": "vocab"
+    },
+    {
+      "cn": "合同",
+      "tw": "合約",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "營銷",
+      "tw": "行銷",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "首席技術官",
+      "tw": "技術長",
+      "kind": "vocab"
+    },
+    {
+      "cn": "首席執行官",
+      "tw": "執行長",
+      "kind": "vocab"
+    },
+    {
+      "cn": "招聘",
+      "tw": "招募、徵才",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "項目管理",
+      "tw": "專案管理",
+      "kind": "vocab"
+    },
+    {
+      "cn": "掛科",
+      "tw": "被當",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "單詞",
+      "tw": "單字",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "遠程辦公",
+      "tw": "遠距工作、遠端工作",
+      "kind": "vocab"
+    },
+    {
+      "cn": "工資",
+      "tw": "薪水、薪資",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "我司",
+      "tw": "本公司、我們公司",
+      "kind": "vocab"
+    },
+    {
+      "cn": "短板",
+      "tw": "弱點、缺點",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "對接",
+      "tw": "接洽、串接",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "復盤",
+      "tw": "檢討、回顧",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "調研",
+      "tw": "調查、研究",
+      "kind": "vocab",
+      "oneway": true
     }
   ]
 }

@@ -47,6 +47,46 @@
       "tw": "捷運",
       "kind": "vocab",
       "oneway": true
+    },
+    {
+      "cn": "堵車",
+      "tw": "塞車",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "駕校",
+      "tw": "駕訓班",
+      "kind": "vocab"
+    },
+    {
+      "cn": "換乘",
+      "tw": "轉乘",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "手動檔",
+      "tw": "手排",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "自動檔",
+      "tw": "自排",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "小電驢",
+      "tw": "電動自行車、電動機車",
+      "kind": "vocab"
+    },
+    {
+      "cn": "公交",
+      "tw": "公車",
+      "kind": "vocab",
+      "oneway": true
     }
   ]
 }

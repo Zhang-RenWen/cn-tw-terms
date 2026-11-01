@@ -201,6 +201,101 @@
       "tw": "打菜",
       "kind": "false",
       "note": "學校、自助餐取菜台灣也說打菜"
+    },
+    {
+      "cn": "硬菜",
+      "tw": "大菜、主菜",
+      "kind": "vocab",
+      "note": "指份量足、撐場面的大菜",
+      "oneway": true
+    },
+    {
+      "cn": "點外賣",
+      "tw": "叫外送",
+      "kind": "vocab"
+    },
+    {
+      "cn": "冰激凌",
+      "tw": "冰淇淋",
+      "kind": "vocab"
+    },
+    {
+      "cn": "冰棍",
+      "tw": "冰棒",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "涼菜",
+      "tw": "冷盤、涼拌菜",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "奶酪",
+      "tw": "乳酪、起司",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "咖喱",
+      "tw": "咖哩",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "蛋黃醬",
+      "tw": "美乃滋",
+      "kind": "vocab"
+    },
+    {
+      "cn": "夜宵",
+      "tw": "宵夜",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "圓白菜",
+      "tw": "高麗菜",
+      "kind": "vocab"
+    },
+    {
+      "cn": "捲心菜",
+      "tw": "高麗菜",
+      "kind": "vocab"
+    },
+    {
+      "cn": "華夫餅",
+      "tw": "鬆餅",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "海蠣煎",
+      "tw": "蚵仔煎",
+      "kind": "vocab"
+    },
+    {
+      "cn": "全家桶",
+      "tw": "全家餐、套餐",
+      "kind": "vocab"
+    },
+    {
+      "cn": "魔芋",
+      "tw": "蒟蒻",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "麻辣火鍋",
+      "tw": "麻辣鍋",
+      "kind": "vocab"
+    },
+    {
+      "cn": "八爪魚",
+      "tw": "章魚",
+      "kind": "vocab",
+      "oneway": true
     }
   ]
 }

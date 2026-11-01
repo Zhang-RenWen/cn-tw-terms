@@ -477,6 +477,460 @@
       "kind": "vocab",
       "note": "北方口語，意思是馬上",
       "oneway": true
+    },
+    {
+      "cn": "破壁機",
+      "tw": "果汁機、調理機",
+      "kind": "vocab"
+    },
+    {
+      "cn": "蹦極",
+      "tw": "高空彈跳",
+      "kind": "vocab"
+    },
+    {
+      "cn": "滿減",
+      "tw": "滿額折扣",
+      "kind": "vocab"
+    },
+    {
+      "cn": "網銀",
+      "tw": "網路銀行",
+      "kind": "vocab"
+    },
+    {
+      "cn": "阿迪達斯",
+      "tw": "愛迪達",
+      "kind": "vocab"
+    },
+    {
+      "cn": "宜家",
+      "tw": "IKEA",
+      "kind": "vocab"
+    },
+    {
+      "cn": "耐克",
+      "tw": "Nike、耐吉",
+      "kind": "vocab"
+    },
+    {
+      "cn": "創口貼",
+      "tw": "OK繃",
+      "kind": "vocab"
+    },
+    {
+      "cn": "優衣庫",
+      "tw": "UNIQLO",
+      "kind": "vocab"
+    },
+    {
+      "cn": "七天無理由",
+      "tw": "七天鑑賞期",
+      "kind": "vocab"
+    },
+    {
+      "cn": "千克",
+      "tw": "公斤",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "加息",
+      "tw": "升息",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "月供",
+      "tw": "月繳、房貸月付",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "發貨",
+      "tw": "出貨",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "老年痴呆",
+      "tw": "失智症",
+      "kind": "vocab"
+    },
+    {
+      "cn": "普拉提",
+      "tw": "皮拉提斯",
+      "kind": "vocab"
+    },
+    {
+      "cn": "返現",
+      "tw": "現金回饋",
+      "kind": "vocab"
+    },
+    {
+      "cn": "步行街",
+      "tw": "行人徒步區",
+      "kind": "vocab"
+    },
+    {
+      "cn": "移動支付",
+      "tw": "行動支付",
+      "kind": "vocab"
+    },
+    {
+      "cn": "手機銀行",
+      "tw": "行動銀行",
+      "kind": "vocab"
+    },
+    {
+      "cn": "衛生筷",
+      "tw": "免洗筷",
+      "kind": "vocab"
+    },
+    {
+      "cn": "包郵",
+      "tw": "免運",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "電吹風",
+      "tw": "吹風機",
+      "kind": "vocab"
+    },
+    {
+      "cn": "壞賬",
+      "tw": "呆帳",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "抓娃娃機",
+      "tw": "夾娃娃機",
+      "kind": "vocab"
+    },
+    {
+      "cn": "代金券",
+      "tw": "折價券、抵用券",
+      "kind": "vocab"
+    },
+    {
+      "cn": "剃鬚刀",
+      "tw": "刮鬍刀",
+      "kind": "vocab"
+    },
+    {
+      "cn": "垃圾箱",
+      "tw": "垃圾桶",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "按揭",
+      "tw": "房貸",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "易拉罐",
+      "tw": "易開罐",
+      "kind": "vocab"
+    },
+    {
+      "cn": "服務員",
+      "tw": "服務生",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "榨汁機",
+      "tw": "果汁機",
+      "kind": "vocab"
+    },
+    {
+      "cn": "快遞單號",
+      "tw": "物流單號、追蹤碼",
+      "kind": "vocab"
+    },
+    {
+      "cn": "空氣淨化器",
+      "tw": "空氣清淨機",
+      "kind": "vocab"
+    },
+    {
+      "cn": "門店",
+      "tw": "門市",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "避孕套",
+      "tw": "保險套",
+      "kind": "vocab"
+    },
+    {
+      "cn": "訂單號",
+      "tw": "訂單編號",
+      "kind": "vocab"
+    },
+    {
+      "cn": "首單",
+      "tw": "首購",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "哮喘",
+      "tw": "氣喘",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "送貨上門",
+      "tw": "送貨到府",
+      "kind": "vocab"
+    },
+    {
+      "cn": "醫保",
+      "tw": "健保",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "詳情頁",
+      "tw": "商品頁、詳細頁面",
+      "kind": "vocab"
+    },
+    {
+      "cn": "通脹",
+      "tw": "通膨",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "衛衣",
+      "tw": "帽T、大學T",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "棉籤",
+      "tw": "棉花棒",
+      "kind": "vocab"
+    },
+    {
+      "cn": "艾滋",
+      "tw": "愛滋",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "煙花",
+      "tw": "煙火",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "當日達",
+      "tw": "當日到貨",
+      "kind": "vocab"
+    },
+    {
+      "cn": "假肢",
+      "tw": "義肢",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "次日達",
+      "tw": "隔日到貨",
+      "kind": "vocab"
+    },
+    {
+      "cn": "捲髮棒",
+      "tw": "電棒捲",
+      "kind": "vocab"
+    },
+    {
+      "cn": "電飯鍋",
+      "tw": "電鍋",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "拼團",
+      "tw": "團購",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "網吧",
+      "tw": "網咖",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "直髮器",
+      "tw": "離子夾、直髮夾",
+      "kind": "vocab"
+    },
+    {
+      "cn": "藥店",
+      "tw": "藥局",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "魔方",
+      "tw": "魔術方塊",
+      "kind": "vocab"
+    },
+    {
+      "cn": "鑰匙扣",
+      "tw": "鑰匙圈",
+      "kind": "vocab"
+    },
+    {
+      "cn": "標配",
+      "tw": "標準配備、基本款",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "人字拖",
+      "tw": "夾腳拖",
+      "kind": "vocab"
+    },
+    {
+      "cn": "大面積",
+      "tw": "大範圍",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "面料",
+      "tw": "布料",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "高光",
+      "tw": "打亮、精彩片段",
+      "kind": "false",
+      "note": "化妝的「高光」是打亮；也常指「高光時刻」"
+    },
+    {
+      "cn": "志願者",
+      "tw": "志工",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "二哈",
+      "tw": "哈士奇",
+      "kind": "vocab"
+    },
+    {
+      "cn": "洗髮水",
+      "tw": "洗髮精",
+      "kind": "vocab"
+    },
+    {
+      "cn": "沐浴露",
+      "tw": "沐浴乳",
+      "kind": "vocab"
+    },
+    {
+      "cn": "護髮素",
+      "tw": "潤髮乳",
+      "kind": "vocab"
+    },
+    {
+      "cn": "高端",
+      "tw": "高階、高檔",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "晚上好",
+      "tw": "晚安",
+      "kind": "vocab",
+      "note": "台灣晚上見面打招呼也說「晚安」",
+      "oneway": true
+    },
+    {
+      "cn": "中午好",
+      "tw": "午安",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "平替",
+      "tw": "平價替代品",
+      "kind": "vocab"
+    },
+    {
+      "cn": "跳閘",
+      "tw": "跳電",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "爆款",
+      "tw": "熱銷商品、爆紅商品",
+      "kind": "vocab"
+    },
+    {
+      "cn": "薅羊毛",
+      "tw": "佔便宜、蒐集優惠",
+      "kind": "vocab"
+    },
+    {
+      "cn": "螺絲刀",
+      "tw": "螺絲起子",
+      "kind": "vocab"
+    },
+    {
+      "cn": "掙錢",
+      "tw": "賺錢",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "啞光",
+      "tw": "霧面",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "圈錢",
+      "tw": "騙錢、斂財",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "攢錢",
+      "tw": "存錢",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "高壓鍋",
+      "tw": "壓力鍋",
+      "kind": "vocab"
+    },
+    {
+      "cn": "散粉",
+      "tw": "蜜粉",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "扒臉",
+      "tw": "服貼",
+      "kind": "vocab",
+      "note": "形容妝容很貼合皮膚",
+      "oneway": true
     }
   ]
 }

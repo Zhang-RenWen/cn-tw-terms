@@ -146,8 +146,9 @@
     },
     {
       "cn": "優化",
-      "tw": "最佳化",
-      "kind": "vocab"
+      "tw": "改善、最佳化、改進",
+      "kind": "vocab",
+      "note": "依語意選：一般說「改善、改進」，技術上的 optimization 才是「最佳化」"
     },
     {
       "cn": "項目",
@@ -215,6 +216,680 @@
       "tw": "全球資訊網",
       "kind": "vocab",
       "note": "即 WWW"
+    },
+    {
+      "cn": "教程",
+      "tw": "教學",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "彈窗",
+      "tw": "彈出視窗",
+      "kind": "vocab"
+    },
+    {
+      "cn": "下拉菜單",
+      "tw": "下拉式選單",
+      "kind": "vocab"
+    },
+    {
+      "cn": "任務管理器",
+      "tw": "工作管理員",
+      "kind": "vocab"
+    },
+    {
+      "cn": "工具欄",
+      "tw": "工具列",
+      "kind": "vocab"
+    },
+    {
+      "cn": "已禁用",
+      "tw": "已停用",
+      "kind": "vocab"
+    },
+    {
+      "cn": "交互式",
+      "tw": "互動式",
+      "kind": "vocab"
+    },
+    {
+      "cn": "內置",
+      "tw": "內建",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "分割線",
+      "tw": "分隔線",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "文本編輯器",
+      "tw": "文字編輯器",
+      "kind": "vocab"
+    },
+    {
+      "cn": "文本文件",
+      "tw": "文字檔",
+      "kind": "vocab"
+    },
+    {
+      "cn": "文字處理器",
+      "tw": "文書處理器",
+      "kind": "vocab"
+    },
+    {
+      "cn": "另存為",
+      "tw": "另存新檔",
+      "kind": "vocab"
+    },
+    {
+      "cn": "插件",
+      "tw": "外掛、外掛程式、擴充功能",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "海量",
+      "tw": "大量、巨量",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "反饋",
+      "tw": "回饋",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "本地化",
+      "tw": "在地化",
+      "kind": "vocab"
+    },
+    {
+      "cn": "字符",
+      "tw": "字元",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "後綴",
+      "tw": "字尾",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "前綴",
+      "tw": "字首",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "安裝包",
+      "tw": "安裝檔",
+      "kind": "vocab"
+    },
+    {
+      "cn": "自定義",
+      "tw": "自訂",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "移動版",
+      "tw": "行動版",
+      "kind": "vocab"
+    },
+    {
+      "cn": "移動端",
+      "tw": "行動版、手機版",
+      "kind": "vocab"
+    },
+    {
+      "cn": "移動應用",
+      "tw": "行動應用程式、App",
+      "kind": "vocab"
+    },
+    {
+      "cn": "編程",
+      "tw": "程式設計、寫程式",
+      "kind": "vocab"
+    },
+    {
+      "cn": "編程語言",
+      "tw": "程式語言",
+      "kind": "vocab"
+    },
+    {
+      "cn": "操作系統",
+      "tw": "作業系統",
+      "kind": "vocab"
+    },
+    {
+      "cn": "端口",
+      "tw": "連接埠",
+      "kind": "vocab"
+    },
+    {
+      "cn": "緩存",
+      "tw": "快取",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "快捷鍵",
+      "tw": "快速鍵",
+      "kind": "vocab"
+    },
+    {
+      "cn": "批量",
+      "tw": "批次、大量",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "殺毒",
+      "tw": "防毒",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "用戶界面",
+      "tw": "使用者介面",
+      "kind": "vocab"
+    },
+    {
+      "cn": "用戶名",
+      "tw": "使用者名稱",
+      "kind": "vocab"
+    },
+    {
+      "cn": "命令行",
+      "tw": "命令列",
+      "kind": "vocab"
+    },
+    {
+      "cn": "密鑰",
+      "tw": "金鑰",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "創建",
+      "tw": "建立",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "構建",
+      "tw": "建置",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "重置",
+      "tw": "重設",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "重命名",
+      "tw": "重新命名",
+      "kind": "vocab"
+    },
+    {
+      "cn": "重啟",
+      "tw": "重新啟動、重開機",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "刷新頁面",
+      "tw": "重新整理頁面",
+      "kind": "vocab"
+    },
+    {
+      "cn": "頁腳",
+      "tw": "頁尾",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "頁眉",
+      "tw": "頁首",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "主頁",
+      "tw": "首頁",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "存儲",
+      "tw": "儲存",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "調試",
+      "tw": "除錯",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "剪切",
+      "tw": "剪下",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "剪貼板",
+      "tw": "剪貼簿",
+      "kind": "vocab"
+    },
+    {
+      "cn": "擴展名",
+      "tw": "副檔名",
+      "kind": "vocab"
+    },
+    {
+      "cn": "只讀",
+      "tw": "唯讀",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "快捷方式",
+      "tw": "捷徑",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "控制面板",
+      "tw": "控制台",
+      "kind": "vocab"
+    },
+    {
+      "cn": "可視化",
+      "tw": "視覺化",
+      "kind": "vocab"
+    },
+    {
+      "cn": "配置文件",
+      "tw": "設定檔",
+      "kind": "vocab"
+    },
+    {
+      "cn": "查找",
+      "tw": "搜尋、尋找",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "光標",
+      "tw": "游標",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "隱身模式",
+      "tw": "無痕模式",
+      "kind": "vocab"
+    },
+    {
+      "cn": "程序設計",
+      "tw": "程式設計",
+      "kind": "vocab"
+    },
+    {
+      "cn": "程序員",
+      "tw": "程式設計師、工程師",
+      "kind": "vocab"
+    },
+    {
+      "cn": "代碼",
+      "tw": "程式碼",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "退出登錄",
+      "tw": "登出",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "虛擬專用網",
+      "tw": "虛擬私人網路、VPN",
+      "kind": "vocab"
+    },
+    {
+      "cn": "粘貼",
+      "tw": "貼上",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "進度條",
+      "tw": "進度列",
+      "kind": "vocab"
+    },
+    {
+      "cn": "開始菜單",
+      "tw": "開始功能表",
+      "kind": "vocab"
+    },
+    {
+      "cn": "雲服務器",
+      "tw": "雲端伺服器",
+      "kind": "vocab"
+    },
+    {
+      "cn": "雲服務",
+      "tw": "雲端服務",
+      "kind": "vocab"
+    },
+    {
+      "cn": "雲盤",
+      "tw": "雲端硬碟",
+      "kind": "vocab"
+    },
+    {
+      "cn": "雲計算",
+      "tw": "雲端運算",
+      "kind": "vocab"
+    },
+    {
+      "cn": "雲存儲",
+      "tw": "雲端儲存",
+      "kind": "vocab"
+    },
+    {
+      "cn": "固件",
+      "tw": "韌體",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "搜索",
+      "tw": "搜尋",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "居中",
+      "tw": "置中",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "數據中心",
+      "tw": "資料中心",
+      "kind": "vocab"
+    },
+    {
+      "cn": "數據分析",
+      "tw": "資料分析",
+      "kind": "vocab"
+    },
+    {
+      "cn": "數據集",
+      "tw": "資料集",
+      "kind": "vocab"
+    },
+    {
+      "cn": "回收站",
+      "tw": "資源回收筒",
+      "kind": "vocab"
+    },
+    {
+      "cn": "加載",
+      "tw": "載入",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "連接超時",
+      "tw": "連線逾時",
+      "kind": "vocab"
+    },
+    {
+      "cn": "請求超時",
+      "tw": "請求逾時",
+      "kind": "vocab"
+    },
+    {
+      "cn": "電子表格",
+      "tw": "試算表",
+      "kind": "vocab"
+    },
+    {
+      "cn": "打印預覽",
+      "tw": "預覽列印",
+      "kind": "vocab"
+    },
+    {
+      "cn": "圖標",
+      "tw": "圖示",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "對話框",
+      "tw": "對話方塊",
+      "kind": "vocab"
+    },
+    {
+      "cn": "算法",
+      "tw": "演算法",
+      "kind": "vocab"
+    },
+    {
+      "cn": "故障排除",
+      "tw": "疑難排解",
+      "kind": "vocab"
+    },
+    {
+      "cn": "安裝向導",
+      "tw": "安裝精靈",
+      "kind": "vocab"
+    },
+    {
+      "cn": "地址欄",
+      "tw": "網址列",
+      "kind": "vocab"
+    },
+    {
+      "cn": "域名",
+      "tw": "網域",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "在線",
+      "tw": "線上",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "高亮",
+      "tw": "醒目提示、突顯",
+      "kind": "vocab"
+    },
+    {
+      "cn": "幫助文檔",
+      "tw": "說明文件",
+      "kind": "vocab"
+    },
+    {
+      "cn": "遠程桌面",
+      "tw": "遠端桌面",
+      "kind": "vocab"
+    },
+    {
+      "cn": "儀表盤",
+      "tw": "儀表板",
+      "kind": "vocab"
+    },
+    {
+      "cn": "彈出窗口",
+      "tw": "彈出式視窗",
+      "kind": "vocab"
+    },
+    {
+      "cn": "模塊",
+      "tw": "模組",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "回車鍵",
+      "tw": "Enter 鍵",
+      "kind": "vocab"
+    },
+    {
+      "cn": "示例",
+      "tw": "範例",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "集成",
+      "tw": "整合",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "圖像識別",
+      "tw": "影像辨識",
+      "kind": "vocab"
+    },
+    {
+      "cn": "單元格",
+      "tw": "儲存格",
+      "kind": "vocab"
+    },
+    {
+      "cn": "壓縮包",
+      "tw": "壓縮檔",
+      "kind": "vocab"
+    },
+    {
+      "cn": "文件名",
+      "tw": "檔名",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "資源管理器",
+      "tw": "檔案總管",
+      "kind": "vocab"
+    },
+    {
+      "cn": "視圖",
+      "tw": "檢視、視圖",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "縮進",
+      "tw": "縮排",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "縮略圖",
+      "tw": "縮圖",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "關鍵詞",
+      "tw": "關鍵字",
+      "kind": "vocab"
+    },
+    {
+      "cn": "驅動程序",
+      "tw": "驅動程式",
+      "kind": "vocab"
+    },
+    {
+      "cn": "Google文檔",
+      "tw": "Google 文件",
+      "kind": "vocab"
+    },
+    {
+      "cn": "補丁",
+      "tw": "修補程式、更新檔",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "摳圖",
+      "tw": "去背",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "實時",
+      "tw": "即時",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "適配",
+      "tw": "相容、適用",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "回車",
+      "tw": "Enter、換行",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "任務欄",
+      "tw": "工作列",
+      "kind": "vocab"
+    },
+    {
+      "cn": "演示",
+      "tw": "示範、展示、簡報",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "幻燈片",
+      "tw": "投影片",
+      "kind": "vocab"
+    },
+    {
+      "cn": "個性化",
+      "tw": "個人化",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "黏貼",
+      "tw": "貼上",
+      "kind": "vocab",
+      "oneway": true
+    },
+    {
+      "cn": "裝系統",
+      "tw": "灌系統、重灌",
+      "kind": "vocab"
+    },
+    {
+      "cn": "演算法",
+      "tw": "演算法",
+      "kind": "false",
+      "note": "台灣用語，保留不換（避免「算法」重複替換）"
     }
   ]
 }
