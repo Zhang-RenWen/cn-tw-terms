@@ -18,8 +18,6 @@
   let mode = 'cn-twp', terms = [], files = [], matcher = null;
   const convCache = {};
 
-  const store = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
-  const load = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const flash = (id, msg) => { const el = $(id); el.textContent = msg; setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 2400); };
 
@@ -171,7 +169,6 @@
     $('viewConv').hidden = lib; $('viewLib').hidden = !lib;
     $('viewLib').style.display = lib ? 'flex' : '';
     $('modes').style.visibility = lib ? 'hidden' : 'visible';
-    store('s2t-tab', lib ? 'lib' : 'conv');
   }
   $('tabConv').addEventListener('click', () => showTab(false));
   $('tabLib').addEventListener('click', () => showTab(true));
@@ -285,8 +282,8 @@
 
   /* ---------- 轉換器事件 ---------- */
   document.querySelectorAll('.mode').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
-  input.addEventListener('input', () => { render(); store('s2t-draft', input.value.slice(0, 20000)); });
-  $('clear').addEventListener('click', () => { input.value = ''; render(); store('s2t-draft', ''); input.focus(); });
+  input.addEventListener('input', render);
+  $('clear').addEventListener('click', () => { input.value = ''; render(); input.focus(); });
   $('paste').addEventListener('click', () => { input.value = SAMPLE; if (mode === 'tw-cn') setMode('cn-twp'); else render(); });
   $('hl').addEventListener('change', e => output.classList.toggle('plain', !e.target.checked));
   $('swap').addEventListener('click', () => { input.value = output.textContent; setMode(mode === 'tw-cn' ? 'cn-twp' : 'tw-cn'); });
@@ -300,14 +297,15 @@
   if (hasRepo) $('repoLine').innerHTML = ' 原始碼與詞彙：<a href="https://github.com/' + esc(CFG.repo) + '" target="_blank" rel="noopener">' + esc(CFG.repo) + '</a>';
 
   /* ---------- 啟動 ---------- */
-  // 每次打開都從「簡→繁＋台灣詞彙」開始，不沿用上次的模式；詞彙頁的「用轉換器試試」會帶 ?q=詞
+  // 每次打開都從轉換器、「簡→繁＋台灣詞彙」與示範文字開始，不記錄上次的內容；詞彙頁的「用轉換器試試」會帶 ?q=詞
   const q = new URLSearchParams(location.search).get('q');
-  try { localStorage.removeItem('s2t-mode'); } catch (e) {}
-  input.value = q || load('s2t-draft') || SAMPLE;
+  // 清掉舊版留下的紀錄
+  try { ['s2t-mode', 's2t-draft', 's2t-tab'].forEach(k => localStorage.removeItem(k)); } catch (e) {}
+  input.value = q || SAMPLE;
   const status = $('status');
   if (!window.OpenCC) { status.textContent = '字典載入失敗，請檢查網路後重新整理'; status.classList.add('err'); }
   setMode(mode);
-  showTab(!q && load('s2t-tab') === 'lib');
+  showTab(false);
 
   /* ---------- 載入詞彙庫 data/*.json ---------- */
   (async () => {

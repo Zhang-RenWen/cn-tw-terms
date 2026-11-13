@@ -35,14 +35,13 @@ h2{font-family:var(--f-display);font-weight:600;font-size:20px;margin:0}
 .mode[aria-pressed="true"],.chip[aria-pressed="true"]{background:var(--jade);border-color:var(--jade);color:var(--panel);font-weight:500}
 button:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
 .grid{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:stretch}
-@media (max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}.swap{justify-self:center;transform:rotate(90deg)}}
+@media (max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}.swap{justify-self:center;transform:rotate(90deg)}textarea.main,.out{min-height:160px;max-height:30vh}}
 .pane{background:var(--panel);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;min-width:0}
 .pane-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line)}
 .label{font-size:12px;letter-spacing:.12em;color:var(--muted);font-weight:700}
 .count{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
-textarea.main,.out{flex:1;min-height:300px;width:100%;border:0;background:transparent;color:var(--ink);font:inherit;font-size:17px;line-height:1.9;padding:14px;resize:vertical;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere}
+textarea.main,.out{flex:1;min-height:220px;max-height:40vh;overflow:auto;width:100%;border:0;background:transparent;color:var(--ink);font:inherit;font-size:17px;line-height:1.9;padding:14px;resize:vertical;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere}
 textarea.main:focus{outline:none}
-.out{overflow:auto;max-height:70vh}
 .out mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
 .out .t{border-radius:2px;padding:0 1px;cursor:help;text-decoration-thickness:2px;text-underline-offset:4px}
 .out .t-vocab{background:var(--jade-soft);text-decoration:underline var(--vocab)}
