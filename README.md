@@ -19,15 +19,19 @@ config.js                  你的 GitHub repo 名稱（用來產生編輯連結�
 data/index.json            要載入的詞彙檔清單
 data/<分類>.json           每個分類一個檔案
 scripts/validate.mjs       檢查詞彙檔格式
-.github/workflows/         PR 自動檢查
+scripts/build-pages.mjs    產生 SEO 用的詞彙頁與 sitemap.xml
+docs/ARCHITECTURE.md       使用的技術與架構圖
+.github/workflows/         PR 自動檢查、部署到 GitHub Pages
 ```
+
+使用的技術、架構圖與轉換流程請看 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)。
 
 ## 上線（GitHub Pages）
 
 1. 建立 repo，把整個資料夾推上去。
 2. 編輯 `config.js`，把 `repo` 改成 `你的帳號/repo名稱`。
-3. 到 repo 的 **Settings → Pages**，Source 選 **Deploy from a branch**，分支選 `main`、資料夾選 `/ (root)`。
-4. 約一分鐘後網址會出現在同一頁，通常是 `https://你的帳號.github.io/repo名稱/`。
+3. 到 repo 的 **Settings → Pages**，Source 選 **GitHub Actions**。
+4. 推到 `main` 後，`deploy.yml` 會檢查詞彙庫、產生詞彙頁與 `sitemap.xml`，再部署。完成後網址會出現在同一頁，通常是 `https://你的帳號.github.io/repo名稱/`。
 
 之後每次合併 PR，網站就會自動更新。
 
