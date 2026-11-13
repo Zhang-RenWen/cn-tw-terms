@@ -18,6 +18,11 @@
   let mode = 'cn-twp', terms = [], files = [], matcher = null;
   const convCache = {};
 
+  // 只在這個分頁（session）內記住原文、模式與分頁；關掉分頁或重新打開網站就回到示範文字
+  const ss = {
+    get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+    set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} }
+  };
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const flash = (id, msg) => { const el = $(id); el.textContent = msg; setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 2400); };
 
@@ -97,6 +102,7 @@
 
   function render() {
     const src = input.value;
+    ss.set('s2t-draft', src.slice(0, 20000));
     $('inCount').textContent = [...src.replace(/\s/g, '')].length + ' 字';
     const M = MODES[mode], conv = getConv(M.from, M.to);
     if (!conv) { output.textContent = ''; $('found').hidden = true; return; }
@@ -156,6 +162,7 @@
 
   function setMode(m) {
     mode = m;
+    ss.set('s2t-mode', m);
     const M = MODES[m];
     document.querySelectorAll('.mode').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m));
     $('hFrom').textContent = M.h[0]; $('hTo').textContent = M.h[1];
@@ -168,7 +175,9 @@
     $('tabConv').setAttribute('aria-selected', !lib); $('tabLib').setAttribute('aria-selected', lib);
     $('viewConv').hidden = lib; $('viewLib').hidden = !lib;
     $('viewLib').style.display = lib ? 'flex' : '';
-    $('modes').style.visibility = lib ? 'hidden' : 'visible';
+    // 詞彙庫分頁不需要轉換器的標題、說明與模式按鈕，切回轉換器才顯示
+    $('top').style.display = lib ? 'none' : '';
+    ss.set('s2t-tab', lib ? 'lib' : 'conv');
   }
   $('tabConv').addEventListener('click', () => showTab(false));
   $('tabLib').addEventListener('click', () => showTab(true));
@@ -297,15 +306,18 @@
   if (hasRepo) $('repoLine').innerHTML = ' 原始碼與詞彙：<a href="https://github.com/' + esc(CFG.repo) + '" target="_blank" rel="noopener">' + esc(CFG.repo) + '</a>';
 
   /* ---------- 啟動 ---------- */
-  // 每次打開都從轉換器、「簡→繁＋台灣詞彙」與示範文字開始，不記錄上次的內容；詞彙頁的「用轉換器試試」會帶 ?q=詞
+  // 新打開網站時從轉換器、「簡→繁＋台灣詞彙」與示範文字開始；同一個分頁內重新整理會沿用這次的原文、模式與分頁。
+  // 詞彙頁的「用轉換器試試」會帶 ?q=詞，這時一律從轉換器與預設模式開始
   const q = new URLSearchParams(location.search).get('q');
   // 清掉舊版留下的紀錄
   try { ['s2t-mode', 's2t-draft', 's2t-tab'].forEach(k => localStorage.removeItem(k)); } catch (e) {}
-  input.value = q || SAMPLE;
+  const draft = ss.get('s2t-draft');
+  input.value = q || (draft != null ? draft : SAMPLE);
+  if (!q && MODES[ss.get('s2t-mode')]) mode = ss.get('s2t-mode');
   const status = $('status');
   if (!window.OpenCC) { status.textContent = '字典載入失敗，請檢查網路後重新整理'; status.classList.add('err'); }
   setMode(mode);
-  showTab(false);
+  showTab(!q && ss.get('s2t-tab') === 'lib');
 
   /* ---------- 載入詞彙庫 data/*.json ---------- */
   (async () => {
