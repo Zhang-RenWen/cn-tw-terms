@@ -15,7 +15,6 @@
 | CI／部署 | GitHub Actions、GitHub Pages | PR 自動檢查；合併到 `main` 後產生靜態頁並部署 |
 | SEO | `canonical`、Open Graph、JSON-LD（`DefinedTerm`／`DefinedTermSet`） | 讓每個詞彙頁可以被搜尋到 |
 | 統計 | Google Analytics（gtag） | 網站流量統計，詞彙頁沿用 `index.html` 裡的同一組 ID |
-| 暫存 | `sessionStorage` | 只在同一個瀏覽器分頁內記住原文、模式與目前分頁；關掉分頁就清空，讀不到時照常運作 |
 
 整個網站沒有後端與資料庫，也不需要 `npm install`，Node.js 只用在 CI。
 
@@ -123,7 +122,7 @@ sequenceDiagram
   participant P as GitHub Pages
   B->>CDN: 載入 opencc-js
   B->>P: 載入 config.js、app.js
-  Note over B: 有 ?q= 就用它；否則沿用這個分頁的暫存，<br/>沒有暫存就放示範文字<br/>先只做字形轉換
+  Note over B: 有 ?q= 就用它，否則放示範文字<br/>先只做字形轉換
   B->>P: fetch data/index.json
   B->>P: 並行 fetch 每個 data/<分類>.json
   Note over B: 合併成詞彙清單、重建索引<br/>重新轉換並顯示詞彙庫
