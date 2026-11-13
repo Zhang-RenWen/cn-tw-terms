@@ -164,11 +164,24 @@
   }
 
   /* ---------- 分頁 ---------- */
+  // 切到詞彙庫：把原文與模式存進 sessionStorage，再隱藏轉換器（display: none，元件不會被移除）
+  // 切回轉換器：從 sessionStorage 復原原文與模式，再顯示
+  const ss = {
+    get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+    set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} }
+  };
   function showTab(lib) {
+    if (lib) { ss.set('s2t-draft', input.value); ss.set('s2t-mode', mode); }
     $('tabConv').setAttribute('aria-selected', !lib); $('tabLib').setAttribute('aria-selected', lib);
-    $('viewConv').hidden = lib; $('viewLib').hidden = !lib;
-    $('viewLib').style.display = lib ? 'flex' : '';
+    // #viewConv 的 inline style 有 display:flex，hidden 屬性會被蓋掉，所以直接設 display
+    $('viewConv').hidden = lib; $('viewConv').style.display = lib ? 'none' : 'flex';
+    $('viewLib').hidden = !lib; $('viewLib').style.display = lib ? 'flex' : '';
     $('modes').style.visibility = lib ? 'hidden' : 'visible';
+    if (!lib) {
+      const d = ss.get('s2t-draft'), m = ss.get('s2t-mode');
+      if (d != null) input.value = d;
+      if (MODES[m]) setMode(m); else render();
+    }
   }
   $('tabConv').addEventListener('click', () => showTab(false));
   $('tabLib').addEventListener('click', () => showTab(true));
@@ -301,6 +314,8 @@
   const q = new URLSearchParams(location.search).get('q');
   // 清掉舊版留下的紀錄
   try { ['s2t-mode', 's2t-draft', 's2t-tab'].forEach(k => localStorage.removeItem(k)); } catch (e) {}
+  // 進入頁面一律從示範文字開始：清掉 sessionStorage 裡上次切換分頁留下的紀錄
+  try { ['s2t-draft', 's2t-mode'].forEach(k => sessionStorage.removeItem(k)); } catch (e) {}
   input.value = q || SAMPLE;
   const status = $('status');
   if (!window.OpenCC) { status.textContent = '字典載入失敗，請檢查網路後重新整理'; status.classList.add('err'); }
