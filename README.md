@@ -1,13 +1,10 @@
-# 簡繁轉換器＋兩岸用語詞彙庫
+# 兩岸用語對照・簡繁轉換器｜CN–TW Terms Converter
 
-純 HTML＋JavaScript 的簡繁轉換工具，不需要後端或資料庫。
+**CN–TW Terms Converter** converts Simplified to Traditional Chinese and flags Mainland Chinese terms with their Taiwan equivalents. Character conversion uses OpenCC (opencc-js) and runs entirely in the browser, so no text is uploaded and there is no backend. Terms fall into three groups: everyday terms are replaced (充電寶 → 行動電源), evaluative terms are flagged with an explanation (顏值, 內卷, 社畜), and false friends are flagged only (窩心, 愛人, 研究所). The term list lives as JSON in `data/`; pull requests are welcome.
 
-- 字形轉換使用 [OpenCC](https://github.com/nk2028/opencc-js)，全部在瀏覽器內完成。
-- 兩岸用語詞彙庫放在 `data/` 資料夾的 JSON 檔，任何人都可以提交 Pull Request 擴充。
-- 轉換時會標出三種用語：
-  - **一般用語**：例如 充電寶 → 行動電源，「簡→繁＋台灣詞彙」模式會直接替換。
-  - **評價意涵**：例如 顏值、情緒價值、下沉市場，只標示並附上意涵說明，不替換。
-  - **同字異義**：例如 窩心、愛人、研究所，只標示提醒。
+**兩岸用語對照・簡繁轉換器**：簡體轉繁體，同時把中國用語標示或轉成台灣用語。字形轉換使用 OpenCC（opencc-js），全部在瀏覽器內完成，不會上傳文字，也沒有後端。用語分三類：一般用語直接替換（充電寶 → 行動電源）、評價意涵只標示並附說明（顏值、內卷、社畜）、同字異義只標示提醒（窩心、愛人、研究所）。詞彙庫放在 `data/` 的 JSON 檔，歡迎提交 Pull Request 擴充。
+
+網站 Live：[zhang-renwen.github.io/cn-tw-terms](https://zhang-renwen.github.io/cn-tw-terms/)
 
 ## 專案結構
 
