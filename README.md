@@ -1,8 +1,8 @@
 # 兩岸用語對照・簡繁轉換器｜CN–TW Terms Converter
 
-**CN–TW Terms Converter** converts Simplified to Traditional Chinese and flags Mainland Chinese terms with their Taiwan equivalents. Character conversion uses OpenCC (opencc-js) and runs entirely in the browser, so no text is uploaded and there is no backend. Terms fall into three groups: everyday terms are replaced (充電寶 → 行動電源), evaluative terms are flagged with an explanation (顏值, 內卷, 社畜), and false friends are flagged only (窩心, 愛人, 研究所). The term list lives as JSON in `data/`; pull requests are welcome.
+**CN–TW Terms Converter** converts Simplified to Traditional Chinese and flags Mainland Chinese terms with their Taiwan equivalents. Character conversion uses OpenCC (opencc-js) and runs entirely in the browser, so no text is uploaded and there is no backend. Terms fall into three groups: everyday terms are replaced (充電寶 → 行動電源), evaluative terms are flagged with an explanation (顏值, 內卷, 牛馬), and false friends are flagged only (窩心, 愛人, 研究所). The term list lives as JSON in `data/`; pull requests are welcome.
 
-**兩岸用語對照・簡繁轉換器**：簡體轉繁體，同時把中國用語標示或轉成台灣用語。字形轉換使用 OpenCC（opencc-js），全部在瀏覽器內完成，不會上傳文字，也沒有後端。用語分三類：一般用語直接替換（充電寶 → 行動電源）、評價意涵只標示並附說明（顏值、內卷、社畜）、同字異義只標示提醒（窩心、愛人、研究所）。詞彙庫放在 `data/` 的 JSON 檔，歡迎提交 Pull Request 擴充。
+**兩岸用語對照・簡繁轉換器**：簡體轉繁體，同時把中國用語標示或轉成台灣用語。字形轉換使用 OpenCC（opencc-js），全部在瀏覽器內完成，不會上傳文字，也沒有後端。用語分三類：一般用語直接替換（充電寶 → 行動電源）、評價意涵只標示並附說明（顏值、內卷、牛馬）、同字異義只標示提醒（窩心、愛人、研究所）。詞彙庫放在 `data/` 的 JSON 檔，歡迎提交 Pull Request 擴充。
 
 網站 Live：[zhang-renwen.github.io/cn-tw-terms](https://zhang-renwen.github.io/cn-tw-terms/)
 
@@ -51,7 +51,7 @@ python3 -m http.server 8000
 
 ### 收錄時的立場
 
-- **不少詞原本是自嘲或諷刺**：屌絲、打工人、社畜、韭菜多半是在抱怨處境；普信男是女性諷刺男性過度自信。標為「評價意涵」是說明它帶有分級或物化的框架，不等於使用者在宣揚階級。
+- **不少詞原本是自嘲或諷刺**：屌絲、打工人、牛馬、韭菜多半是在抱怨處境；普信男是女性諷刺男性過度自信。標為「評價意涵」是說明它帶有分級或物化的框架，不等於使用者在宣揚階級。
 - **台灣自己也有類似的詞**：CP值、魯蛇／溫拿、人生勝利組、天龍人、草莓族、恐龍妹、工具人。評分與分類的語言不只來自單一方向。
 - **字面推論只是個人解讀**：「小夥伴暗示對方較小」「默認暗示沒發言權」「學霸隱含反知識份子」等說法來自留言，不是語言學定論，備註裡都有註明。
 - **使用者未必在乎來源**：東海大學一份學生調查發現，多數受訪者認為用詞與政治無關、屬個人自由；因身分認同刻意不用中國用語的約一成。
