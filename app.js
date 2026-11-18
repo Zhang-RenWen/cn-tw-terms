@@ -16,6 +16,14 @@
   let mode = 'cn-twp', terms = [], files = [], matcher = null;
   const convCache = {};
 
+  // OpenCC 詞典沒收、會選錯「乾／幹」的簡體詞：干炒 → 幹炒（應為乾炒）、干点啥 → 乾點啥（應為幹點啥）。
+  // render() 切詞前先把這些詞的「干」換成佔位字，OpenCC 轉完再換回正確的字；字數不變，改過的字一樣會標示
+  const GAN_DRY = ['干炒', '干拌', '干炸', '干煎', '干扁', '干豆腐', '干辣椒', '干烹', '干蒸', '干捞', '炒干'];
+  const GAN_DO = ['干点啥', '干点什么', '干点儿啥', '干点儿什么', '干点别的', '干点正事', '干点活', '干点坏事'];
+  const CN_FIX = [...GAN_DRY.map(w => [w, w.replace('干', '\uE001')]), ...GAN_DO.map(w => [w, w.replace('干', '\uE002')])];
+  const unfix = s => s.replace(/\uE001/g, '乾').replace(/\uE002/g, '幹');
+  let fixer = null;
+
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const flash = (id, msg) => { const el = $(id); el.textContent = msg; setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 2400); };
 
@@ -24,7 +32,8 @@
     const k = from + '>' + to;
     if (!convCache[k]) {
       // 台灣繁體統一用「台」：OpenCC 轉出來的「臺」改成「台」，原文本來就寫的「臺」（正式名稱）先用佔位字保護、保留不動
-      const c = OpenCC.Converter({ from, to });
+      const base = OpenCC.Converter({ from, to });
+      const c = from === 'cn' ? s => unfix(base(s)) : base;
       convCache[k] = to === 'tw' || to === 'twp'
         ? s => c(s.replace(/臺/g, '\uE000')).replace(/臺/g, '台').replace(/\uE000/g, '臺')
         : c;
@@ -95,23 +104,25 @@
     const { idx } = buildMatcher();
     if (pickedFor !== mode + '\n' + src) { picks.clear(); pickedFor = mode + '\n' + src; }
     pickOpts.clear();
-    const occ = {};
+    const text = (fixer || (fixer = OpenCC.CustomConverter(CN_FIX)))(src), occ = {};
     let html = '', changed = 0, plain = '';
     const hits = new Map();
     const flush = () => { if (!plain) return; const d = diffHtml(plain, conv(plain)); html += d.html; changed += d.changed; plain = ''; };
 
-    for (let i = 0; i < src.length;) {
-      const cand = idx.get(src[i]);
+    for (let i = 0; i < text.length;) {
+      const cand = idx.get(text[i]);
       let hit = null;
-      if (cand) for (const c of cand) { if (src.startsWith(c.pat, i)) { hit = c; break; } }
-      if (!hit) { plain += src[i]; i++; continue; }
+      if (cand) for (const c of cand) { if (text.startsWith(c.pat, i)) { hit = c; break; } }
+      if (!hit) { plain += text[i]; i++; continue; }
       flush();
       const t = hit.t, raw = hit.pat;
+      // 只標示的詞（評價意涵、同字異義）只轉字形：twp 的詞典會自己把「數據」換成「資料」、「演算法」換成「演演算法」
+      const orig = t.kind === 'vocab' ? conv(raw) : getConv('cn', 'tw')(raw);
       let shown, cls;
       if (t.kind === 'vocab' && mode === 'cn-twp' && usable(firstAlt(t.tw))) { shown = firstAlt(t.tw); cls = 't-vocab'; }
-      else { shown = conv(raw); cls = t.kind === 'loaded' ? 't-loaded' : t.kind === 'false' ? 't-false' : 't-hint'; }
+      else { shown = orig; cls = t.kind === 'loaded' ? 't-loaded' : t.kind === 'false' ? 't-false' : 't-hint'; }
       let tip = '中國用語「' + t.cn + '」' + (t.tw ? '，台灣：' + t.tw : '') + (t.note ? '。' + t.note : '');
-      const key = t.cn + '#' + (occ[t.cn] = (occ[t.cn] || 0) + 1), orig = conv(raw);
+      const key = t.cn + '#' + (occ[t.cn] = (occ[t.cn] || 0) + 1);
       const opts = alts(t.tw).filter(x => x !== orig);
       let attrs = '';
       if (opts.length) {
