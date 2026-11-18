@@ -6,9 +6,7 @@
 
   const MODES = {
     'cn-twp': { from: 'cn', to: 'twp', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '簡體轉台灣正體，並套用兩岸用語詞彙庫' },
-    'cn-tw': { from: 'cn', to: 'tw', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '只轉台灣正體字形，用語只標示建議' },
-    'cn-hk': { from: 'cn', to: 'hk', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 香港繁體', desc: '簡體轉香港繁體字形' },
-    'tw-cn': { from: 'tw', to: 'cn', h: ['繁', '简'], inL: '原文 · 繁體', outL: '結果 · 简体', desc: '台灣繁體轉簡體，並把台灣用語換回中國用語' }
+    'cn-tw': { from: 'cn', to: 'tw', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '只轉台灣正體字形，用語只標示建議' }
   };
   const KIND_LABEL = { vocab: '一般用語', loaded: '評價意涵', false: '同字異義' };
   const SAMPLE = '我们的软件团队正在开发一个新的网络应用程序，默认使用充电宝供电的摄像头。\n这个项目的含金量很高，领导说要给用户提供情绪价值，下沉市场也要覆盖。\n请把文件发到我的邮箱，视频的质量也没有问题。';
@@ -40,29 +38,23 @@
   const alts = s => [...new Set((s || '').split(/[、，,／/；;]/).map(x => x.replace(/[（(][^）)]*[）)]/g, '').trim()).filter(usable))];
 
   /* 詞彙索引：首字 → 候選詞（長詞優先），同時收簡體與繁體寫法 */
-  function buildMatcher(m) {
-    if (matcher && matcher.mode === m && matcher.n === terms.length) return matcher;
+  function buildMatcher() {
+    if (matcher && matcher.n === terms.length) return matcher;
     const idx = new Map();
-    const add = (pat, t, role) => {
+    const add = (pat, t) => {
       if (!pat) return;
       if (!idx.has(pat[0])) idx.set(pat[0], []);
-      idx.get(pat[0]).push({ pat, t, role });
+      idx.get(pat[0]).push({ pat, t });
     };
     const toS = getConv('tw', 'cn'), toT = getConv('cn', 'tw');
     for (const t of terms) {
-      if (m === 'tw-cn') {
-        if (t.kind !== 'vocab' || t.oneway) continue;
-        const tw = firstAlt(t.tw);
-        if (usable(tw)) add(tw, t, 'rev');
-      } else {
-        const forms = new Set([t.cn]);
-        if (toS) forms.add(toS(t.cn));
-        if (toT) forms.add(toT(t.cn));
-        forms.forEach(f => add(f, t, 'fwd'));
-      }
+      const forms = new Set([t.cn]);
+      if (toS) forms.add(toS(t.cn));
+      if (toT) forms.add(toT(t.cn));
+      forms.forEach(f => add(f, t));
     }
     idx.forEach(list => list.sort((a, b) => b.pat.length - a.pat.length));
-    matcher = { mode: m, n: terms.length, idx };
+    matcher = { n: terms.length, idx };
     return matcher;
   }
 
@@ -100,10 +92,10 @@
     $('inCount').textContent = [...src.replace(/\s/g, '')].length + ' 字';
     const M = MODES[mode], conv = getConv(M.from, M.to);
     if (!conv) { output.textContent = ''; $('found').hidden = true; return; }
-    const { idx } = buildMatcher(mode);
+    const { idx } = buildMatcher();
     if (pickedFor !== mode + '\n' + src) { picks.clear(); pickedFor = mode + '\n' + src; }
     pickOpts.clear();
-    const canPick = mode === 'cn-twp' || mode === 'cn-tw', occ = {};
+    const occ = {};
     let html = '', changed = 0, plain = '';
     const hits = new Map();
     const flush = () => { if (!plain) return; const d = diffHtml(plain, conv(plain)); html += d.html; changed += d.changed; plain = ''; };
@@ -116,14 +108,11 @@
       flush();
       const t = hit.t, raw = hit.pat;
       let shown, cls;
-      if (hit.role === 'rev') { shown = conv(t.cn); cls = 't-vocab'; }
-      else if (t.kind === 'vocab' && mode === 'cn-twp' && usable(firstAlt(t.tw))) { shown = firstAlt(t.tw); cls = 't-vocab'; }
+      if (t.kind === 'vocab' && mode === 'cn-twp' && usable(firstAlt(t.tw))) { shown = firstAlt(t.tw); cls = 't-vocab'; }
       else { shown = conv(raw); cls = t.kind === 'loaded' ? 't-loaded' : t.kind === 'false' ? 't-false' : 't-hint'; }
-      let tip = hit.role === 'rev'
-        ? '台灣「' + raw + '」→ 中國「' + t.cn + '」'
-        : '中國用語「' + t.cn + '」' + (t.tw ? '，台灣：' + t.tw : '') + (t.note ? '。' + t.note : '');
+      let tip = '中國用語「' + t.cn + '」' + (t.tw ? '，台灣：' + t.tw : '') + (t.note ? '。' + t.note : '');
       const key = t.cn + '#' + (occ[t.cn] = (occ[t.cn] || 0) + 1), orig = conv(raw);
-      const opts = canPick && hit.role === 'fwd' ? alts(t.tw).filter(x => x !== orig) : [];
+      const opts = alts(t.tw).filter(x => x !== orig);
       let attrs = '';
       if (opts.length) {
         pickOpts.set(key, { opts, orig });
@@ -145,7 +134,7 @@
 
   function renderFound(list) {
     const box = $('found'), ul = $('foundList');
-    if (!list.length || mode === 'tw-cn') { box.hidden = true; ul.innerHTML = ''; return; }
+    if (!list.length) { box.hidden = true; ul.innerHTML = ''; return; }
     const order = { loaded: 0, false: 1, vocab: 2 };
     list.sort((a, b) => order[a.kind] - order[b.kind]);
     ul.innerHTML = list.map(t =>
@@ -297,9 +286,8 @@
   document.querySelectorAll('.mode').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
   input.addEventListener('input', render);
   $('clear').addEventListener('click', () => { input.value = ''; render(); input.focus(); });
-  $('paste').addEventListener('click', () => { input.value = SAMPLE; if (mode === 'tw-cn') setMode('cn-twp'); else render(); });
+  $('paste').addEventListener('click', () => { input.value = SAMPLE; render(); });
   $('hl').addEventListener('change', e => output.classList.toggle('plain', !e.target.checked));
-  $('swap').addEventListener('click', () => { input.value = output.textContent; setMode(mode === 'tw-cn' ? 'cn-twp' : 'tw-cn'); });
   $('copy').addEventListener('click', () => {
     const t = output.textContent, toast = $('toast');
     const done = () => { toast.textContent = '已複製'; setTimeout(() => toast.textContent = '', 1600); };
@@ -333,7 +321,7 @@
       files = loaded.map(({ file, category }) => ({ file, category }));
       terms = loaded.flatMap(f => f.terms.filter(t => t && t.cn).map(t => ({
         cn: String(t.cn), tw: String(t.tw || ''), kind: KIND_LABEL[t.kind] ? t.kind : 'vocab',
-        note: String(t.note || ''), oneway: t.oneway === true, cat: f.category, file: f.file
+        note: String(t.note || ''), cat: f.category, file: f.file
       })));
       matcher = null;
       $('libEmpty').textContent = '沒有符合條件的詞。';

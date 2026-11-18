@@ -45,14 +45,12 @@
     {
       "cn": "城鐵",
       "tw": "捷運",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "堵車",
       "tw": "塞車",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "駕校",
@@ -62,20 +60,17 @@
     {
       "cn": "換乘",
       "tw": "轉乘",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "手動檔",
       "tw": "手排",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "自動檔",
       "tw": "自排",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "小電驢",
@@ -85,8 +80,7 @@
     {
       "cn": "公交",
       "tw": "公車",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     }
   ]
 }

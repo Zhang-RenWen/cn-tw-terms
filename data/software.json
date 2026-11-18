@@ -46,8 +46,7 @@
       "cn": "文檔",
       "tw": "文件、檔案",
       "kind": "vocab",
-      "note": "中國「文檔」指 document，台灣說文件；中國「文件」指 file，台灣說檔案",
-      "oneway": true
+      "note": "中國「文檔」指 document，台灣說文件；中國「文件」指 file，台灣說檔案"
     },
     {
       "cn": "默認",
@@ -105,8 +104,7 @@
     {
       "cn": "調用",
       "tw": "呼叫",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "宏",
@@ -208,8 +206,7 @@
     {
       "cn": "因特網",
       "tw": "網際網路",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "萬維網",
@@ -220,8 +217,7 @@
     {
       "cn": "教程",
       "tw": "教學",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "彈窗",
@@ -256,14 +252,12 @@
     {
       "cn": "內置",
       "tw": "內建",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "分割線",
       "tw": "分隔線",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "文本編輯器",
@@ -288,20 +282,17 @@
     {
       "cn": "插件",
       "tw": "外掛、外掛程式、擴充功能",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "海量",
       "tw": "大量、巨量",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "反饋",
       "tw": "回饋",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "本地化",
@@ -311,20 +302,17 @@
     {
       "cn": "字符",
       "tw": "字元",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "後綴",
       "tw": "字尾",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "前綴",
       "tw": "字首",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "安裝包",
@@ -334,8 +322,7 @@
     {
       "cn": "自定義",
       "tw": "自訂",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "移動版",
@@ -375,8 +362,7 @@
     {
       "cn": "緩存",
       "tw": "快取",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "快捷鍵",
@@ -386,14 +372,12 @@
     {
       "cn": "批量",
       "tw": "批次、大量",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "殺毒",
       "tw": "防毒",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "用戶界面",
@@ -413,26 +397,22 @@
     {
       "cn": "密鑰",
       "tw": "金鑰",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "創建",
       "tw": "建立",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "構建",
       "tw": "建置",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "重置",
       "tw": "重設",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "重命名",
@@ -442,8 +422,7 @@
     {
       "cn": "重啟",
       "tw": "重新啟動、重開機",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "刷新頁面",
@@ -453,38 +432,32 @@
     {
       "cn": "頁腳",
       "tw": "頁尾",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "頁眉",
       "tw": "頁首",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "主頁",
       "tw": "首頁",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "存儲",
       "tw": "儲存",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "調試",
       "tw": "除錯",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "剪切",
       "tw": "剪下",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "剪貼板",
@@ -499,14 +472,12 @@
     {
       "cn": "只讀",
       "tw": "唯讀",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "快捷方式",
       "tw": "捷徑",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "控制面板",
@@ -526,14 +497,12 @@
     {
       "cn": "查找",
       "tw": "搜尋、尋找",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "光標",
       "tw": "游標",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "隱身模式",
@@ -553,14 +522,12 @@
     {
       "cn": "代碼",
       "tw": "程式碼",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "退出登錄",
       "tw": "登出",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "虛擬專用網",
@@ -570,8 +537,7 @@
     {
       "cn": "粘貼",
       "tw": "貼上",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "進度條",
@@ -611,20 +577,17 @@
     {
       "cn": "固件",
       "tw": "韌體",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "搜索",
       "tw": "搜尋",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "居中",
       "tw": "置中",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "數據中心",
@@ -649,8 +612,7 @@
     {
       "cn": "加載",
       "tw": "載入",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "連接超時",
@@ -675,8 +637,7 @@
     {
       "cn": "圖標",
       "tw": "圖示",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "對話框",
@@ -706,14 +667,12 @@
     {
       "cn": "域名",
       "tw": "網域",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "在線",
       "tw": "線上",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "高亮",
@@ -743,8 +702,7 @@
     {
       "cn": "模塊",
       "tw": "模組",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "回車鍵",
@@ -754,14 +712,12 @@
     {
       "cn": "示例",
       "tw": "範例",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "集成",
       "tw": "整合",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "圖像識別",
@@ -781,8 +737,7 @@
     {
       "cn": "文件名",
       "tw": "檔名",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "資源管理器",
@@ -792,20 +747,17 @@
     {
       "cn": "視圖",
       "tw": "檢視、視圖",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "縮進",
       "tw": "縮排",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "縮略圖",
       "tw": "縮圖",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "關鍵詞",
@@ -825,32 +777,27 @@
     {
       "cn": "補丁",
       "tw": "修補程式、更新檔",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "摳圖",
       "tw": "去背",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "實時",
       "tw": "即時",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "適配",
       "tw": "相容、適用",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "回車",
       "tw": "Enter、換行",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "任務欄",
@@ -860,8 +807,7 @@
     {
       "cn": "演示",
       "tw": "示範、展示、簡報",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "幻燈片",
@@ -871,14 +817,12 @@
     {
       "cn": "個性化",
       "tw": "個人化",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "黏貼",
       "tw": "貼上",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "裝系統",

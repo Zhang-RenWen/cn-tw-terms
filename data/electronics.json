@@ -165,8 +165,7 @@
     {
       "cn": "掃碼",
       "tw": "掃 QR Code、掃描條碼",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "觸控屏",
@@ -186,8 +185,7 @@
     {
       "cn": "手柄",
       "tw": "手把、搖桿",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "主板",
@@ -197,8 +195,7 @@
     {
       "cn": "光盤",
       "tw": "光碟",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "全屏",
@@ -238,32 +235,27 @@
     {
       "cn": "流媒體",
       "tw": "串流、串流媒體",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "低端",
       "tw": "低階",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "納米",
       "tw": "奈米",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "保修",
       "tw": "保固",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "相冊",
       "tw": "相簿",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "刷新率",
@@ -273,8 +265,7 @@
     {
       "cn": "音頻",
       "tw": "音訊",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "飛行模式",
@@ -284,20 +275,17 @@
     {
       "cn": "數碼",
       "tw": "數位",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "臺式機",
       "tw": "桌機、桌上型電腦",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "信號",
       "tw": "訊號",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "掃描儀",
@@ -307,8 +295,7 @@
     {
       "cn": "推送",
       "tw": "推播",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "視頻會議",
@@ -358,8 +345,7 @@
     {
       "cn": "死機",
       "tw": "當機",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "分辨率",
@@ -369,8 +355,7 @@
     {
       "cn": "寬帶",
       "tw": "寬頻",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "數字化",
@@ -385,8 +370,7 @@
     {
       "cn": "英偉達",
       "tw": "輝達、NVIDIA",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "人臉識別",
@@ -411,8 +395,7 @@
     {
       "cn": "噪聲",
       "tw": "雜訊、噪音",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "攝像機",
@@ -427,8 +410,7 @@
     {
       "cn": "回放",
       "tw": "重播",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "視頻電話",
@@ -443,8 +425,7 @@
     {
       "cn": "掉線",
       "tw": "斷線",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "臺式電腦",
@@ -459,8 +440,7 @@
     {
       "cn": "單反",
       "tw": "單眼",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "超清",

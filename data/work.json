@@ -10,8 +10,7 @@
       "cn": "領導",
       "tw": "主管",
       "kind": "vocab",
-      "note": "中國常把上司稱作「領導」；動詞「領導」（領導團隊）也會被換成主管，必要時手動改回",
-      "oneway": true
+      "note": "中國常把上司稱作「領導」；動詞「領導」（領導團隊）也會被換成主管，必要時手動改回"
     },
     {
       "cn": "食堂",
@@ -27,8 +26,7 @@
       "cn": "本科",
       "tw": "大學、學士",
       "kind": "vocab",
-      "note": "中國指四年制大學學歷（本科畢業、本科學歷）；台灣說大學或學士",
-      "oneway": true
+      "note": "中國指四年制大學學歷（本科畢業、本科學歷）；台灣說大學或學士"
     },
     {
       "cn": "本科系",
@@ -61,8 +59,7 @@
       "cn": "學渣",
       "tw": "成績差的學生、後段班的學生",
       "kind": "vocab",
-      "note": "把學生按成績分等級；同類詞有學霸、學神",
-      "oneway": true
+      "note": "把學生按成績分等級；同類詞有學霸、學神"
     },
     {
       "cn": "概率",
@@ -89,22 +86,19 @@
     {
       "cn": "計算機系",
       "tw": "資工系",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "渠道",
       "tw": "管道",
       "kind": "vocab",
-      "note": "銷售渠道 → 銷售管道",
-      "oneway": true
+      "note": "銷售渠道 → 銷售管道"
     },
     {
       "cn": "下崗",
       "tw": "失業、被裁員",
       "kind": "vocab",
-      "note": "中國指國營企業員工被裁撤",
-      "oneway": true
+      "note": "中國指國營企業員工被裁撤"
     },
     {
       "cn": "腦流失",
@@ -114,8 +108,7 @@
     {
       "cn": "車間",
       "tw": "廠房、生產線",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "終身號碼",
@@ -194,8 +187,7 @@
       "cn": "幼兒園",
       "tw": "幼稚園、幼兒園",
       "kind": "vocab",
-      "note": "台灣 2012 年幼托整合後正式名稱也是幼兒園，口語多說幼稚園",
-      "oneway": true
+      "note": "台灣 2012 年幼托整合後正式名稱也是幼兒園，口語多說幼稚園"
     },
     {
       "cn": "零花錢",
@@ -245,8 +237,7 @@
     {
       "cn": "績點",
       "tw": "成績、GPA",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "刷題",
@@ -261,14 +252,12 @@
     {
       "cn": "合同",
       "tw": "合約",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "營銷",
       "tw": "行銷",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "首席技術官",
@@ -283,8 +272,7 @@
     {
       "cn": "招聘",
       "tw": "招募、徵才",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "項目管理",
@@ -294,14 +282,12 @@
     {
       "cn": "掛科",
       "tw": "被當",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "單詞",
       "tw": "單字",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "遠程辦公",
@@ -311,8 +297,7 @@
     {
       "cn": "工資",
       "tw": "薪水、薪資",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "我司",
@@ -322,26 +307,22 @@
     {
       "cn": "短板",
       "tw": "弱點、缺點",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "對接",
       "tw": "接洽、串接",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "復盤",
       "tw": "檢討、回顧",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "調研",
       "tw": "調查、研究",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     }
   ]
 }

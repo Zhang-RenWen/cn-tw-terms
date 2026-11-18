@@ -7,7 +7,7 @@
 | 層面 | 技術 | 用途 |
 | --- | --- | --- |
 | 頁面 | 純 HTML、CSS、原生 JavaScript | 沒有框架、沒有打包工具，`app.js` 是一個 IIFE，直接用 `<script>` 載入 |
-| 字形轉換 | [opencc-js](https://github.com/nk2028/opencc-js) 1.0.5（jsDelivr CDN） | 簡體、台灣正體、香港繁體之間的字形轉換，在瀏覽器內完成 |
+| 字形轉換 | [opencc-js](https://github.com/nk2028/opencc-js) 1.0.5（jsDelivr CDN） | 簡體轉台灣正體的字形轉換，在瀏覽器內完成 |
 | 詞彙庫 | `data/*.json` | 每個分類一個檔案，由 `data/index.json` 列出要載入的檔案與版本 |
 | 字型 | Google Fonts（Noto Serif TC、Noto Sans TC） | 標題與內文字型 |
 | 檢查 | Node.js 20（`scripts/validate.mjs`） | 檢查詞彙檔格式、必填欄位、類型與重複詞，不需要安裝套件 |
@@ -60,7 +60,7 @@ style.css                  轉換器與詞彙頁共用的樣式
 app.js                     轉換、詞彙比對、詞彙庫列表、提議表單
 config.js                  GitHub repo 名稱與分支（編輯連結、靜態頁網址都由它推出）
 data/index.json            詞彙庫版本與要載入的檔案清單
-data/<分類>.json           { category, terms: [{ cn, tw, kind, note?, oneway? }] }
+data/<分類>.json           { category, terms: [{ cn, tw, kind, note? }] }
 scripts/validate.mjs       檢查詞彙檔
 scripts/build-pages.mjs    產生 terms/ 與 sitemap.xml（不進 git）
 .github/workflows/         validate.yml、deploy.yml
@@ -74,7 +74,6 @@ scripts/build-pages.mjs    產生 terms/ 與 sitemap.xml（不進 git）
 | `tw` | `vocab` 必填 | 台灣說法，多個用「、」分隔，第一個是預設替換 |
 | `kind` | 是 | `vocab` 一般用語、`loaded` 評價意涵、`false` 同字異義 |
 | `note` | 否 | 說明，顯示在提示與詞彙頁 |
-| `oneway` | 否 | `true` 時「繁→簡」模式不反向替換 |
 
 ## 轉換流程
 
@@ -89,29 +88,25 @@ flowchart TD
   flush --> kind{"詞的類型與模式"}
   kind -- "vocab 且是「簡→繁＋台灣詞彙」" --> replace["換成台灣說法<br/>（第一個說法）"]
   kind -- "loaded／false，或只轉字形的模式" --> mark["只轉字形，加上標示"]
-  kind -- "「繁→簡」模式" --> rev["換回中國用語"]
   replace --> pick["有多個說法時可點選切換"]
   mark --> pick
   pick --> scan
-  rev --> scan
   scan -- "到結尾" --> out["輸出結果＋「找到的用語」清單"]
 ```
 
 幾個實作重點：
 
-- **比對索引**：`buildMatcher()` 以詞的第一個字當 key，候選詞依長度由長到短排序，所以長詞優先（例如「菠蘿麵包」會先於「菠蘿」）。模式或詞彙數量改變時才重建。
+- **比對索引**：`buildMatcher()` 以詞的第一個字當 key，候選詞依長度由長到短排序，所以長詞優先（例如「菠蘿麵包」會先於「菠蘿」）。詞彙數量改變時才重建。
 - **台／臺**：轉成台灣繁體時，OpenCC 轉出的「臺」一律改成「台」；原文本來就寫「臺」的地方先用佔位字保護，保留不動。
 - **字形差異標示**：`diffHtml()` 逐字比對轉換前後，長度不同時在小範圍內找回同步點。
 - **點選其他說法**：使用者選的說法用「詞#第幾次出現」記住，原文或模式改變就清空。
 
-## 四種轉換模式
+## 兩種轉換模式
 
 | 模式 | OpenCC 設定 | 詞彙庫的處理 |
 | --- | --- | --- |
 | 簡→繁＋台灣詞彙（預設） | `cn → twp` | `vocab` 直接替換，`loaded`／`false` 只標示 |
 | 簡→繁 | `cn → tw` | 全部只標示，不替換 |
-| 香港字形 | `cn → hk` | 全部只標示 |
-| 繁→簡 | `tw → cn` | 把台灣說法換回中國用語，跳過 `oneway` 的詞 |
 
 ## 啟動順序
 

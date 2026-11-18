@@ -16,8 +16,7 @@
     {
       "cn": "二奶",
       "tw": "情婦、小三",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "三陪小姐",
@@ -34,8 +33,7 @@
       "cn": "團伙",
       "tw": "集團、幫派",
       "kind": "vocab",
-      "note": "犯罪團伙 → 犯罪集團",
-      "oneway": true
+      "note": "犯罪團伙 → 犯罪集團"
     },
     {
       "cn": "三八紅旗手",
@@ -59,61 +57,52 @@
       "cn": "中國台灣",
       "tw": "台灣",
       "kind": "vocab",
-      "note": "把台灣列為中國一部分的稱呼",
-      "oneway": true
+      "note": "把台灣列為中國一部分的稱呼"
     },
     {
       "cn": "中華台北",
       "tw": "台灣",
       "kind": "vocab",
-      "note": "國際體育賽事等場合使用的名稱（Chinese Taipei）；引用正式隊名時請手動改回",
-      "oneway": true
+      "note": "國際體育賽事等場合使用的名稱（Chinese Taipei）；引用正式隊名時請手動改回"
     },
     {
       "cn": "中國臺灣",
       "tw": "台灣",
       "kind": "vocab",
-      "note": "把台灣列為中國一部分的稱呼",
-      "oneway": true
+      "note": "把台灣列為中國一部分的稱呼"
     },
     {
       "cn": "中華臺北",
       "tw": "台灣",
       "kind": "vocab",
-      "note": "國際體育賽事等場合使用的名稱（Chinese Taipei）；引用正式隊名時請手動改回",
-      "oneway": true
+      "note": "國際體育賽事等場合使用的名稱（Chinese Taipei）；引用正式隊名時請手動改回"
     },
     {
       "cn": "灣灣",
       "tw": "台灣",
       "kind": "vocab",
-      "note": "中國網路上對台灣的暱稱，常帶戲謔或貶低意味",
-      "oneway": true
+      "note": "中國網路上對台灣的暱稱，常帶戲謔或貶低意味"
     },
     {
       "cn": "大陸",
       "tw": "中國",
       "kind": "vocab",
-      "note": "指中國時改用「中國」；地理用語（歐亞大陸、新大陸）會自動保留",
-      "oneway": true
+      "note": "指中國時改用「中國」；地理用語（歐亞大陸、新大陸）會自動保留"
     },
     {
       "cn": "中國大陸",
       "tw": "中國",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "大陸人",
       "tw": "中國人",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "大陸地區",
       "tw": "中國",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "歐亞大陸",
@@ -220,14 +209,12 @@
     {
       "cn": "大媽",
       "tw": "歐巴桑、阿姨",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "丁克",
       "tw": "頂客",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "綠茶婊",
@@ -244,20 +231,17 @@
     {
       "cn": "小姐姐",
       "tw": "小姐、正妹",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "小哥哥",
       "tw": "帥哥、小帥哥",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "妹紙",
       "tw": "女生、正妹",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     }
   ]
 }

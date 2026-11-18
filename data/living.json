@@ -68,8 +68,7 @@
       "cn": "狗子",
       "tw": "小狗、狗狗",
       "kind": "vocab",
-      "note": "口語對狗的暱稱",
-      "oneway": true
+      "note": "口語對狗的暱稱"
     },
     {
       "cn": "標間",
@@ -90,8 +89,7 @@
     {
       "cn": "短消息",
       "tw": "簡訊",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "台球",
@@ -108,14 +106,12 @@
       "cn": "居室",
       "tw": "房",
       "kind": "vocab",
-      "note": "兩居室 → 兩房",
-      "oneway": true
+      "note": "兩居室 → 兩房"
     },
     {
       "cn": "塔樓",
       "tw": "大廈",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "上星台",
@@ -182,8 +178,7 @@
       "cn": "公安",
       "tw": "警察",
       "kind": "vocab",
-      "note": "中國的警察機關叫公安",
-      "oneway": true
+      "note": "中國的警察機關叫公安"
     },
     {
       "cn": "公安意外",
@@ -259,15 +254,13 @@
       "cn": "民政局",
       "tw": "戶政事務所",
       "kind": "vocab",
-      "note": "中國辦結婚、離婚登記在民政局的婚姻登記處；台灣在戶政事務所。台灣各縣市也有「民政局」（督導戶政），談台灣機關時請手動改回",
-      "oneway": true
+      "note": "中國辦結婚、離婚登記在民政局的婚姻登記處；台灣在戶政事務所。台灣各縣市也有「民政局」（督導戶政），談台灣機關時請手動改回"
     },
     {
       "cn": "領證",
       "tw": "登記、登記結婚、結婚",
       "kind": "vocab",
-      "note": "指去民政局領結婚證，也就是登記結婚",
-      "oneway": true
+      "note": "指去民政局領結婚證，也就是登記結婚"
     },
     {
       "cn": "結婚證",
@@ -277,8 +270,7 @@
     {
       "cn": "裡頭",
       "tw": "裡面",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "早上好",
@@ -288,27 +280,23 @@
     {
       "cn": "聯繫",
       "tw": "聯絡",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "保安",
       "tw": "保全",
       "kind": "vocab",
-      "note": "台灣「保安」多指保安警察",
-      "oneway": true
+      "note": "台灣「保安」多指保安警察"
     },
     {
       "cn": "趕緊",
       "tw": "趕快",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "區別",
       "tw": "差別",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "小臂",
@@ -323,27 +311,23 @@
     {
       "cn": "打錢",
       "tw": "匯款、轉帳",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "打飯",
       "tw": "盛飯、裝飯",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "不捨得",
       "tw": "捨不得",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "合適",
       "tw": "適合",
       "kind": "vocab",
-      "note": "很合適 → 很適合",
-      "oneway": true
+      "note": "很合適 → 很適合"
     },
     {
       "cn": "衛生巾",
@@ -354,8 +338,7 @@
       "cn": "酒店",
       "tw": "飯店",
       "kind": "vocab",
-      "note": "台灣「酒店」多指有陪酒的店，中國指旅館",
-      "oneway": true
+      "note": "台灣「酒店」多指有陪酒的店，中國指旅館"
     },
     {
       "cn": "抑鬱",
@@ -381,20 +364,17 @@
     {
       "cn": "好疼",
       "tw": "好痛",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "很疼",
       "tw": "很痛",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "疼死了",
       "tw": "痛死了",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "水平",
@@ -456,27 +436,23 @@
     {
       "cn": "給你打電話",
       "tw": "打電話給你",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "給我打電話",
       "tw": "打電話給我",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "給他打電話",
       "tw": "打電話給他",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "立馬",
       "tw": "馬上、立刻",
       "kind": "vocab",
-      "note": "北方口語，意思是馬上",
-      "oneway": true
+      "note": "北方口語，意思是馬上"
     },
     {
       "cn": "破壁機",
@@ -531,26 +507,22 @@
     {
       "cn": "千克",
       "tw": "公斤",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "加息",
       "tw": "升息",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "月供",
       "tw": "月繳、房貸月付",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "發貨",
       "tw": "出貨",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "老年痴呆",
@@ -590,8 +562,7 @@
     {
       "cn": "包郵",
       "tw": "免運",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "電吹風",
@@ -601,8 +572,7 @@
     {
       "cn": "壞賬",
       "tw": "呆帳",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "抓娃娃機",
@@ -622,14 +592,12 @@
     {
       "cn": "垃圾箱",
       "tw": "垃圾桶",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "按揭",
       "tw": "房貸",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "易拉罐",
@@ -639,8 +607,7 @@
     {
       "cn": "服務員",
       "tw": "服務生",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "榨汁機",
@@ -660,8 +627,7 @@
     {
       "cn": "門店",
       "tw": "門市",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "避孕套",
@@ -676,14 +642,12 @@
     {
       "cn": "首單",
       "tw": "首購",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "哮喘",
       "tw": "氣喘",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "送貨上門",
@@ -693,8 +657,7 @@
     {
       "cn": "醫保",
       "tw": "健保",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "詳情頁",
@@ -704,14 +667,12 @@
     {
       "cn": "通脹",
       "tw": "通膨",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "衛衣",
       "tw": "帽T、大學T",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "棉籤",
@@ -721,14 +682,12 @@
     {
       "cn": "艾滋",
       "tw": "愛滋",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "煙花",
       "tw": "煙火",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "當日達",
@@ -738,8 +697,7 @@
     {
       "cn": "假肢",
       "tw": "義肢",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "次日達",
@@ -754,20 +712,17 @@
     {
       "cn": "電飯鍋",
       "tw": "電鍋",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "拼團",
       "tw": "團購",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "網吧",
       "tw": "網咖",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "直髮器",
@@ -777,8 +732,7 @@
     {
       "cn": "藥店",
       "tw": "藥局",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "魔方",
@@ -793,8 +747,7 @@
     {
       "cn": "標配",
       "tw": "標準配備、基本款",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "人字拖",
@@ -804,14 +757,12 @@
     {
       "cn": "大面積",
       "tw": "大範圍",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "面料",
       "tw": "布料",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "高光",
@@ -822,8 +773,7 @@
     {
       "cn": "志願者",
       "tw": "志工",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "二哈",
@@ -848,21 +798,18 @@
     {
       "cn": "高端",
       "tw": "高階、高檔",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "晚上好",
       "tw": "晚安",
       "kind": "vocab",
-      "note": "台灣晚上見面打招呼也說「晚安」",
-      "oneway": true
+      "note": "台灣晚上見面打招呼也說「晚安」"
     },
     {
       "cn": "中午好",
       "tw": "午安",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "平替",
@@ -872,8 +819,7 @@
     {
       "cn": "跳閘",
       "tw": "跳電",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "爆款",
@@ -893,26 +839,22 @@
     {
       "cn": "掙錢",
       "tw": "賺錢",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "啞光",
       "tw": "霧面",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "圈錢",
       "tw": "騙錢、斂財",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "攢錢",
       "tw": "存錢",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "高壓鍋",
@@ -922,15 +864,13 @@
     {
       "cn": "散粉",
       "tw": "蜜粉",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "扒臉",
       "tw": "服貼",
       "kind": "vocab",
-      "note": "形容妝容很貼合皮膚",
-      "oneway": true
+      "note": "形容妝容很貼合皮膚"
     },
     {
       "cn": "打響指",

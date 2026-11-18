@@ -5,29 +5,25 @@
       "cn": "剩女",
       "tw": "單身女性、未婚",
       "kind": "vocab",
-      "note": "晚婚者被視為「剩下」",
-      "oneway": true
+      "note": "晚婚者被視為「剩下」"
     },
     {
       "cn": "剩男",
       "tw": "單身男性、未婚",
       "kind": "vocab",
-      "note": "晚婚者被視為「剩下」",
-      "oneway": true
+      "note": "晚婚者被視為「剩下」"
     },
     {
       "cn": "婚戀市場",
       "tw": "交友圈、相親",
       "kind": "vocab",
-      "note": "把找對象當市場交易",
-      "oneway": true
+      "note": "把找對象當市場交易"
     },
     {
       "cn": "相親市場",
       "tw": "相親圈、相親",
       "kind": "vocab",
-      "note": "把找對象當市場交易",
-      "oneway": true
+      "note": "把找對象當市場交易"
     },
     {
       "cn": "鳳凰男",
@@ -45,14 +41,12 @@
       "cn": "舔狗",
       "tw": "工具人",
       "kind": "vocab",
-      "note": "卑微追求者，把人比作狗",
-      "oneway": true
+      "note": "卑微追求者，把人比作狗"
     },
     {
       "cn": "脫單",
       "tw": "脫離單身、交到對象",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "海王",
@@ -63,8 +57,7 @@
     {
       "cn": "單身狗",
       "tw": "單身、魯蛇",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "戀愛腦",

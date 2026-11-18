@@ -4,8 +4,7 @@
     {
       "cn": "民樂",
       "tw": "國樂",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "薌劇",
@@ -15,8 +14,7 @@
     {
       "cn": "動畫片",
       "tw": "卡通、動畫",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "文娛活動",
@@ -48,38 +46,32 @@
     {
       "cn": "氪金",
       "tw": "課金",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "愛豆",
       "tw": "偶像",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "塌房",
       "tw": "偶像幻滅、形象崩盤",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "萌新",
       "tw": "新手、新人",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "手辦",
       "tw": "公仔、模型",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "娛樂圈",
       "tw": "演藝圈",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     }
   ]
 }

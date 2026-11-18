@@ -166,14 +166,12 @@
     {
       "cn": "吞拿魚",
       "tw": "鮪魚",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "土豆片",
       "tw": "洋芋片",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "豬手",
@@ -206,8 +204,7 @@
       "cn": "硬菜",
       "tw": "大菜、主菜",
       "kind": "vocab",
-      "note": "指份量足、撐場面的大菜",
-      "oneway": true
+      "note": "指份量足、撐場面的大菜"
     },
     {
       "cn": "點外賣",
@@ -222,26 +219,22 @@
     {
       "cn": "冰棍",
       "tw": "冰棒",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "涼菜",
       "tw": "冷盤、涼拌菜",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "奶酪",
       "tw": "乳酪、起司",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "咖喱",
       "tw": "咖哩",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "蛋黃醬",
@@ -251,8 +244,7 @@
     {
       "cn": "夜宵",
       "tw": "宵夜",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "圓白菜",
@@ -267,8 +259,7 @@
     {
       "cn": "華夫餅",
       "tw": "鬆餅",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "海蠣煎",
@@ -283,8 +274,7 @@
     {
       "cn": "魔芋",
       "tw": "蒟蒻",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     },
     {
       "cn": "麻辣火鍋",
@@ -294,8 +284,7 @@
     {
       "cn": "八爪魚",
       "tw": "章魚",
-      "kind": "vocab",
-      "oneway": true
+      "kind": "vocab"
     }
   ]
 }
