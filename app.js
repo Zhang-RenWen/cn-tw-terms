@@ -16,13 +16,43 @@
   let mode = 'cn-twp', terms = [], files = [], matcher = null;
   const convCache = {};
 
-  // OpenCC 詞典沒收、會選錯「乾／幹」的簡體詞：干炒 → 幹炒（應為乾炒）、干点啥 → 乾點啥（應為幹點啥）。
-  // render() 切詞前先把這些詞的「干」換成佔位字，OpenCC 轉完再換回正確的字；字數不變，改過的字一樣會標示
-  const GAN_DRY = ['干炒', '干拌', '干炸', '干煎', '干扁', '干豆腐', '干辣椒', '干烹', '干蒸', '干捞', '炒干'];
-  const GAN_DO = ['干点啥', '干点什么', '干点儿啥', '干点儿什么', '干点别的', '干点正事', '干点活', '干点坏事'];
-  const CN_FIX = [...GAN_DRY.map(w => [w, w.replace('干', '\uE001')]), ...GAN_DO.map(w => [w, w.replace('干', '\uE002')])];
-  const unfix = s => s.replace(/\uE001/g, '乾').replace(/\uE002/g, '幹');
-  let fixer = null;
+  // 一個簡體字對多個繁體字（干：乾／幹、发：發／髮、面：面／麵、后：后／後）時 OpenCC 會選錯的詞，收在 data/char-fixes.json。
+  // fixChars() 先標出這些字該轉成哪個字（佔位字，字數不變；一個字被好幾個例外詞涵蓋時取最長的詞），
+  // 轉換時 OpenCC 照原文轉、保留前後文，再把標出的位置換成正確的字，最後才套台灣字形與用語
+  let fixIdx = new Map(), fixBack = {};
+  const PH = /[\uE001-\uF8FF]/g;
+  function setFixes(data) {
+    const idx = new Map(), back = {}, ph = {};
+    let code = 0xE001;
+    for (const [k, groups] of Object.entries(data || {})) {
+      if (k.length !== 1 || !groups || typeof groups !== 'object') continue;
+      for (const [to, words] of Object.entries(groups)) {
+        if (to.length !== 1 || !Array.isArray(words)) continue;
+        const id = k + to;
+        if (!ph[id]) { ph[id] = String.fromCharCode(code++); back[ph[id]] = [k, to]; }
+        for (const w of words.map(String)) {
+          const offs = [];
+          for (let j = w.indexOf(k); j >= 0; j = w.indexOf(k, j + 1)) offs.push(j);
+          if (!offs.length) continue;
+          if (!idx.has(k)) idx.set(k, []);
+          idx.get(k).push({ w, offs, ch: ph[id] });
+        }
+      }
+    }
+    idx.forEach(list => list.sort((a, b) => b.w.length - a.w.length));
+    fixIdx = idx; fixBack = back;
+  }
+  function fixChars(s) {
+    if (!fixIdx.size) return s;
+    let out = '';
+    for (let p = 0; p < s.length; p++) {
+      const list = fixIdx.get(s[p]);
+      let ch = s[p];
+      if (list) find: for (const f of list) for (const o of f.offs) if (p >= o && s.startsWith(f.w, p - o)) { ch = f.ch; break find; }
+      out += ch;
+    }
+    return out;
+  }
 
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const flash = (id, msg) => { const el = $(id); el.textContent = msg; setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 2400); };
@@ -31,12 +61,26 @@
     if (!window.OpenCC) return null;
     const k = from + '>' + to;
     if (!convCache[k]) {
-      // 台灣繁體統一用「台」：OpenCC 轉出來的「臺」改成「台」，原文本來就寫的「臺」（正式名稱）先用佔位字保護、保留不動
-      const base = OpenCC.Converter({ from, to });
-      const c = from === 'cn' ? s => unfix(base(s)) : base;
-      convCache[k] = to === 'tw' || to === 'twp'
-        ? s => c(s.replace(/臺/g, '\uE000')).replace(/臺/g, '台').replace(/\uE000/g, '臺')
-        : c;
+      if (from !== 'cn') convCache[k] = OpenCC.Converter({ from, to });
+      else {
+        // cn → tw／twp 等於 cn → t（簡轉繁，字數不變）再 t → tw／twp（台灣字形、用語），所以可以在中間換掉例外字
+        const toT = OpenCC.Converter({ from: 'cn', to: 't' }), toLocal = OpenCC.Converter({ from: 't', to });
+        const c = s => {
+          const pos = [];
+          const raw = s.replace(PH, (ch, i) => { const f = fixBack[ch]; if (!f) return ch; pos.push([i, f[1]]); return f[0]; });
+          let t = toT(raw);
+          if (pos.length) {
+            if (t.length === raw.length) { const a = t.split(''); pos.forEach(([i, ch]) => { a[i] = ch; }); t = a.join(''); }
+            // 罕用字轉成擴充區字元、字數對不上時，退回直接轉佔位字
+            else t = toT(s).replace(PH, ch => fixBack[ch] ? fixBack[ch][1] : ch);
+          }
+          return toLocal(t);
+        };
+        // 台灣繁體統一用「台」：OpenCC 轉出來的「臺」改成「台」，原文本來就寫的「臺」（正式名稱）先用佔位字保護、保留不動
+        convCache[k] = to === 'tw' || to === 'twp'
+          ? s => c(s.replace(/臺/g, '\uE000')).replace(/臺/g, '台').replace(/\uE000/g, '臺')
+          : c;
+      }
     }
     return convCache[k];
   }
@@ -104,20 +148,23 @@
     const { idx } = buildMatcher();
     if (pickedFor !== mode + '\n' + src) { picks.clear(); pickedFor = mode + '\n' + src; }
     pickOpts.clear();
-    const text = (fixer || (fixer = OpenCC.CustomConverter(CN_FIX)))(src), occ = {};
-    let html = '', changed = 0, plain = '';
+    // 詞彙比對用原文；轉換用換過例外字的 text（字數和原文一樣），所以例外詞不會擋到詞彙比對
+    let text = fixChars(src);
+    if (text.length !== src.length) text = src;
+    const occ = {};
+    let html = '', changed = 0, plain = '', plainSrc = '';
     const hits = new Map();
-    const flush = () => { if (!plain) return; const d = diffHtml(plain, conv(plain)); html += d.html; changed += d.changed; plain = ''; };
+    const flush = () => { if (!plain) return; const d = diffHtml(plainSrc, conv(plain)); html += d.html; changed += d.changed; plain = plainSrc = ''; };
 
-    for (let i = 0; i < text.length;) {
-      const cand = idx.get(text[i]);
+    for (let i = 0; i < src.length;) {
+      const cand = idx.get(src[i]);
       let hit = null;
-      if (cand) for (const c of cand) { if (text.startsWith(c.pat, i)) { hit = c; break; } }
-      if (!hit) { plain += text[i]; i++; continue; }
+      if (cand) for (const c of cand) { if (src.startsWith(c.pat, i)) { hit = c; break; } }
+      if (!hit) { plain += text[i]; plainSrc += src[i]; i++; continue; }
       flush();
-      const t = hit.t, raw = hit.pat;
+      const t = hit.t, raw = hit.pat, seg = text.slice(i, i + raw.length);
       // 只標示的詞（評價意涵、同字異義）只轉字形：twp 的詞典會自己把「數據」換成「資料」、「演算法」換成「演演算法」
-      const orig = t.kind === 'vocab' ? conv(raw) : getConv('cn', 'tw')(raw);
+      const orig = t.kind === 'vocab' ? conv(seg) : getConv('cn', 'tw')(seg);
       let shown, cls;
       if (t.kind === 'vocab' && mode === 'cn-twp' && usable(firstAlt(t.tw))) { shown = firstAlt(t.tw); cls = 't-vocab'; }
       else { shown = orig; cls = t.kind === 'loaded' ? 't-loaded' : t.kind === 'false' ? 't-false' : 't-hint'; }
@@ -325,6 +372,8 @@
   (async () => {
     try {
       const index = await (await fetch('data/index.json', { cache: 'no-cache' })).json();
+      // 例外詞載入失敗時只是少了修正，不影響詞彙庫
+      const fixes = index.fixes ? fetch('data/' + index.fixes, { cache: 'no-cache' }).then(r => r.json()).catch(() => null) : null;
       const loaded = await Promise.all(index.files.map(async file => {
         const d = await (await fetch('data/' + file, { cache: 'no-cache' })).json();
         return { file, category: d.category, terms: d.terms || [] };
@@ -334,6 +383,7 @@
         cn: String(t.cn), tw: String(t.tw || ''), kind: KIND_LABEL[t.kind] ? t.kind : 'vocab',
         note: String(t.note || ''), cat: f.category, file: f.file
       })));
+      setFixes(await fixes);
       matcher = null;
       $('libEmpty').textContent = '沒有符合條件的詞。';
       renderLib(); render();

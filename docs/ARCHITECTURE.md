@@ -59,8 +59,9 @@ index.html                 轉換器與詞彙庫兩個分頁的版面、SEO 標�
 style.css                  轉換器與詞彙頁共用的樣式
 app.js                     轉換、詞彙比對、詞彙庫列表、提議表單
 config.js                  GitHub repo 名稱與分支（編輯連結、靜態頁網址都由它推出）
-data/index.json            詞彙庫版本與要載入的檔案清單
+data/index.json            詞彙庫版本、要載入的檔案清單、字形例外詞檔名
 data/<分類>.json           { category, terms: [{ cn, tw, kind, note? }] }
+data/char-fixes.json       字形例外詞：{ 簡體字: { 正確的字: [簡體詞, ...] } }
 scripts/validate.mjs       檢查詞彙檔
 scripts/build-pages.mjs    產生 terms/ 與 sitemap.xml（不進 git）
 .github/workflows/         validate.yml、deploy.yml
@@ -81,7 +82,8 @@ scripts/build-pages.mjs    產生 terms/ 與 sitemap.xml（不進 git）
 
 ```mermaid
 flowchart TD
-  input["輸入文字"] --> scan{"從目前位置找<br/>索引中最長的詞"}
+  input["輸入文字"] --> fix["標出字形例外詞<br/>（data/char-fixes.json）"]
+  fix --> scan{"從目前位置找<br/>索引中最長的詞"}
   scan -- "沒有命中" --> buf["累積到一般文字"]
   buf --> scan
   scan -- "命中詞彙" --> flush["先把累積的一般文字<br/>交給 OpenCC 轉換，標出改過的字"]
@@ -98,7 +100,14 @@ flowchart TD
 
 - **比對索引**：`buildMatcher()` 以詞的第一個字當 key，候選詞依長度由長到短排序，所以長詞優先（例如「菠蘿麵包」會先於「菠蘿」）。詞彙數量改變時才重建。
 - **台／臺**：轉成台灣繁體時，OpenCC 轉出的「臺」一律改成「台」；原文本來就寫「臺」的地方先用佔位字保護，保留不動。
-- **干／乾／幹**：OpenCC 詞典沒收的詞會選錯字，例如「干炒」被轉成「幹炒」、「干点啥」被轉成「乾點啥」。`render()` 切詞前先把這些詞的「干」換成佔位字，OpenCC 轉完再換回正確的字，所以就算詞的後半被詞彙庫切開（「干点啥」的「啥」是詞彙），也不會轉錯。要補新的詞，加在 `app.js` 的 `GAN_DRY`（該轉「乾」）或 `GAN_DO`（該轉「幹」）。
+- **字形例外詞**：一個簡體字對多個繁體字時（干：乾／幹、发：發／髮、面：面／麵、后：后／後），OpenCC 常選錯字。原因有兩種：
+  - 詞典沒收的詞會用單字預設值，例如「干炒」→ 幹炒、「面线」→ 面線。
+  - 詞典的詞會跨詞誤配，例如「校长发言」裡的「长发」→ 校長髮言、「看完电影后」裡的「影后」→ 電影后。
+
+  `data/char-fixes.json` 列出這些詞。流程如下：
+  1. `render()` 先用 `fixChars()` 在整段原文標出每個例外字該轉成哪個字。一個字被好幾個例外詞涵蓋時，取最長的詞。
+  2. 轉換時把 `cn → twp` 拆成兩段：先 `cn → t`（簡轉繁，字數不變），換掉標出的位置，再 `t → twp`（台灣字形與用語）。這樣前後文和台灣用語都跟 OpenCC 原本一樣，只改那一個字。
+  3. 詞彙比對用原文，所以例外詞不會擋到詞彙。
 - **只標示的詞只轉字形**：`loaded`／`false` 的詞在「簡→繁＋台灣詞彙」模式也用 `cn → tw` 轉換，不用 `twp`，因為 `twp` 的詞典會自己替換用語（數據 → 資料、文件 → 檔案），甚至轉錯（演算法 → 演演算法）。
 - **字形差異標示**：`diffHtml()` 逐字比對轉換前後，長度不同時在小範圍內找回同步點。
 - **點選其他說法**：使用者選的說法用「詞#第幾次出現」記住，原文或模式改變就清空。
@@ -121,7 +130,7 @@ sequenceDiagram
   B->>P: 載入 config.js、app.js
   Note over B: 有 ?q= 就用它，否則放示範文字<br/>先只做字形轉換
   B->>P: fetch data/index.json
-  B->>P: 並行 fetch 每個 data/<分類>.json
+  B->>P: 並行 fetch 每個 data/<分類>.json 與 data/char-fixes.json
   Note over B: 合併成詞彙清單、重建索引<br/>重新轉換並顯示詞彙庫
 ```
 
