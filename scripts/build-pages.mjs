@@ -122,7 +122,7 @@ function termPage(t) {
 function indexPage() {
   const url = SITE + 'terms/';
   const title = `兩岸用語對照表：中國用語 vs 台灣用語（${all.length} 詞）`;
-  const desc = `整理 ${all.length} 個中國用語（常說的「中國用語」）與台灣用語的差異，分成 ${cats.length} 類：一般用語、評價意涵、同字異義，附說明與簡繁轉換器。`;
+  const desc = `整理 ${all.length} 個中國用語與台灣用語的差異，分成 ${cats.length} 類：一般用語、評價意涵、同字異義，附說明與簡繁轉換器。`;
   const body = `      <nav class="crumbs"><a href="../">簡繁轉換器</a> › 兩岸用語對照表</nav>
       <header><div>
         <h1>兩岸用語對照表</h1>
