@@ -12,6 +12,8 @@ const repo = (read('config.js').match(/repo:\s*["']([^"']+)["']/) || [])[1] || '
 const [owner, name] = repo.split('/');
 const SITE = `https://${owner.toLowerCase()}.github.io/${name}/`;
 const GA = (read('index.html').match(/gtag\("config",\s*"(G-[A-Z0-9]+)"/) || [])[1];
+// 詞彙庫的授權（見 data/LICENSE.md），放在頁尾與結構化資料
+const LICENSE_URL = 'https://creativecommons.org/licenses/by-sa/4.0/';
 
 const KIND = { vocab: '一般用語', loaded: '評價意涵', false: '同字異義' };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -79,7 +81,7 @@ ${fontLinks(headings(body))}
     <div class="wrap doc">
 ${body}
       <footer>
-        <a href="../">簡繁轉換器</a>：簡體轉台灣正體，並套用兩岸用語詞彙庫。詞彙庫由社群維護，<a href="https://github.com/${repo}">歡迎在 GitHub 提議或修正</a>。
+        <a href="../">簡繁轉換器</a>：簡體轉台灣正體，並套用兩岸用語詞彙庫。詞彙庫由社群維護，<a href="https://github.com/${repo}">歡迎在 GitHub 提議或修正</a>。詞彙內容採 <a href="${LICENSE_URL}deed.zh-hant" rel="license">CC BY-SA 4.0</a> 授權。
       </footer>
     </div>
   </body>
@@ -124,7 +126,7 @@ function termPage(t) {
   const jsonld = {
     '@context': 'https://schema.org', '@type': 'DefinedTerm',
     name: t.cn, description: desc, url,
-    inDefinedTermSet: { '@type': 'DefinedTermSet', name: '兩岸用語對照表', url: SITE + 'terms/' }
+    inDefinedTermSet: { '@type': 'DefinedTermSet', name: '兩岸用語對照表', url: SITE + 'terms/', license: LICENSE_URL }
   };
   return page({ title, desc, url, body, jsonld });
 }
@@ -145,6 +147,7 @@ ${cats.map(c => `      <section class="pane cat" id="${esc(encodeURIComponent(c.
       </section>`).join('\n')}`;
   const jsonld = {
     '@context': 'https://schema.org', '@type': 'DefinedTermSet', name: '兩岸用語對照表', description: desc, url,
+    license: LICENSE_URL,
     hasDefinedTerm: all.map(t => ({ '@type': 'DefinedTerm', name: t.cn, url: SITE + 'terms/' + slug(t.cn) }))
   };
   return page({ title, desc, url, body, jsonld });

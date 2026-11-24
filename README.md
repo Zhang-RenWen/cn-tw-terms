@@ -73,3 +73,12 @@ python3 -m http.server 8000
 - [關鍵評論網：支語警察](https://www.thenewslens.com/article/242817)
 - [國立國語院：兩岸常用詞典介紹](https://www.korean.go.kr/nkview/nklife/2018_3/28_0310.pdf)
 - [ToneOZ：普通話與國語語音差異](https://toneoz.com/blog/?p=309)
+
+## 授權
+
+- **程式碼**（`app.js`、`scripts/`、頁面、樣式與工作流程）：[MIT](LICENSE)
+- **詞彙庫**（`data/` 裡的 JSON）與由它產生的詞彙頁：[CC BY-SA 4.0](data/LICENSE.md)，轉載或改作請註明出處，並用同一個授權釋出
+
+字形轉換用的 opencc-js 是從 jsDelivr CDN 載入，不包含在這個 repo 裡，依它自己的授權使用。
+
+Code is MIT-licensed; the term data in `data/` is CC BY-SA 4.0.

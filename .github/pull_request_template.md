@@ -15,3 +15,4 @@
 
 - [ ] 已在本機跑過 `node scripts/validate.mjs`（或等 GitHub Actions 通過）
 - [ ] 「評價意涵」的備註寫的是意涵本身，沒有加入個人情緒用語
+- [ ] 同意詞彙依 CC BY-SA 4.0、程式碼依 MIT 授權釋出；備註是自己寫的，引用的文字有附出處（見 CONTRIBUTING.md 的「授權」）
