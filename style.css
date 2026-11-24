@@ -21,9 +21,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 40px}
 .wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
 header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
-h1{font-family:var(--f-display);font-weight:900;font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0;letter-spacing:.02em;text-wrap:balance}
-h1 .arrow{color:var(--jade);font-weight:600;margin:0 .15em}
-h1 .from{color:var(--muted);font-weight:600}
+/* 首頁的大字「简→繁 轉換器」是 .brand，h1 是下面那行說明（放搜尋用的關鍵字）；詞彙頁的 h1 用大字 */
+h1,.brand{font-family:var(--f-display);font-weight:900;font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0;letter-spacing:.02em;text-wrap:balance}
+.brand .arrow{color:var(--jade);font-weight:600;margin:0 .15em}
+.brand .from{color:var(--muted);font-weight:600}
+h1.sub{font-family:var(--f-body);font-weight:400;line-height:1.6;letter-spacing:normal}
 h2{font-family:var(--f-display);font-weight:600;font-size:20px;margin:0}
 .sub{color:var(--muted);margin:6px 0 0;font-size:14px}
 .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
@@ -120,6 +122,13 @@ a{color:var(--jade)}
 .rel a{font-weight:500;white-space:nowrap}
 .rel span{color:var(--muted);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .intro{font-size:14px;color:var(--muted);max-width:70ch;margin:0}
+/* 常見問題：預設收合，內容一樣會被搜尋引擎讀到 */
+.faq{max-width:70ch;display:flex;flex-direction:column}
+.faq h2{font-size:17px;margin-bottom:6px}
+.faq details{border-top:1px solid var(--line);padding:8px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-size:14px;font-weight:500}
+.faq p{font-size:14px;color:var(--muted);margin:6px 0 2px}
 /* 點選其他說法 */
 .out .pick{cursor:pointer}
 /* 小箭頭提示可以點；用 ::after 不會被複製進結果 */

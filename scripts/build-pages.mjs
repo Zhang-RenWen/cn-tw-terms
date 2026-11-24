@@ -54,6 +54,11 @@ const page = ({ title, desc, url, body, jsonld }) => `<!doctype html>
     <meta property="og:description" content="${esc(desc)}" />
     <meta property="og:url" content="${url}" />
     <meta property="og:locale" content="zh_TW" />
+    <meta property="og:image" content="${SITE}og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="兩岸用語對照・簡繁轉換器：簡體轉繁體，同時把中國用語轉成台灣用語" />
+    <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>${gaTag}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" />
@@ -117,7 +122,7 @@ function termPage(t) {
 function indexPage() {
   const url = SITE + 'terms/';
   const title = `兩岸用語對照表：中國用語 vs 台灣用語（${all.length} 詞）`;
-  const desc = `整理 ${all.length} 個中國與台灣的用語差異，分成 ${cats.length} 類：一般用語、評價意涵、同字異義，附說明與簡繁轉換器。`;
+  const desc = `整理 ${all.length} 個中國用語（常說的「中國用語」）與台灣用語的差異，分成 ${cats.length} 類：一般用語、評價意涵、同字異義，附說明與簡繁轉換器。`;
   const body = `      <nav class="crumbs"><a href="../">簡繁轉換器</a> › 兩岸用語對照表</nav>
       <header><div>
         <h1>兩岸用語對照表</h1>

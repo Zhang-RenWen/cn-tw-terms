@@ -3,10 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>兩岸用語對照・簡繁轉換器｜中國用語轉台灣用語</title>
+    <title>兩岸用語對照・簡繁轉換器｜簡體轉繁體、中國用語轉台灣用語</title>
     <meta
       name="description"
-      content="免費線上簡繁轉換器，把簡體轉成台灣正體，同時把中國用語換成台灣用語（視頻→影片、軟件→軟體），並標出評價意涵與同字異義。附兩岸用語對照表。"
+      content="免費線上簡繁轉換器：簡體轉繁體（台灣正體），同時把中國用語（常說的「中國用語」）換成台灣用語，例如 視頻→影片、軟件→軟體，並標出評價意涵與同字異義。附兩岸用語對照表。"
+    />
+    <meta
+      name="keywords"
+      content="簡轉繁,簡體轉繁體,简体转繁体,簡繁轉換,簡繁轉換器,簡體字轉繁體字,線上簡繁轉換,台灣正體,中國用語,大陸用語,台灣用語,兩岸用語對照,OpenCC"
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
@@ -18,24 +22,36 @@
     <meta property="og:site_name" content="兩岸用語對照・簡繁轉換器" />
     <meta
       property="og:title"
-      content="兩岸用語對照・簡繁轉換器｜中國用語轉台灣用語"
+      content="兩岸用語對照・簡繁轉換器｜簡體轉繁體、中國用語轉台灣用語"
     />
     <meta
       property="og:description"
-      content="簡體轉台灣正體，同時把中國用語換成台灣用語，並標出評價意涵與同字異義。"
+      content="簡體轉繁體（台灣正體），同時把中國用語換成台灣用語，並標出評價意涵與同字異義。"
     />
     <meta
       property="og:url"
       content="https://zhang-renwen.github.io/cn-tw-terms/"
     />
     <meta property="og:locale" content="zh_TW" />
+    <meta
+      property="og:image"
+      content="https://zhang-renwen.github.io/cn-tw-terms/og.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="兩岸用語對照・簡繁轉換器：簡體轉繁體，同時把中國用語轉成台灣用語"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "兩岸用語對照・簡繁轉換器",
+        "alternateName": ["簡繁轉換器", "CN–TW Terms Converter"],
         "url": "https://zhang-renwen.github.io/cn-tw-terms/",
-        "description": "簡體轉台灣正體，同時把中國用語換成台灣用語，並標出評價意涵與同字異義。",
+        "description": "簡體轉繁體（台灣正體），同時把中國用語換成台灣用語，並標出評價意涵與同字異義。",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Any",
         "inLanguage": "zh-Hant-TW",
@@ -67,11 +83,13 @@
     <div class="wrap">
       <header>
         <div>
-          <h1>
+          <p class="brand">
             <span class="from" id="hFrom">简</span><span class="arrow">→</span
             ><span id="hTo">繁</span> 轉換器
+          </p>
+          <h1 class="sub" id="modeDesc">
+            簡體轉繁體（台灣正體），並把中國用語換成台灣用語
           </h1>
-          <p class="sub" id="modeDesc">簡體轉台灣正體，並套用兩岸用語詞彙庫</p>
         </div>
         <div class="modes" role="group" aria-label="轉換模式" id="modes">
           <button class="mode" data-mode="cn-twp" aria-pressed="true">
@@ -276,7 +294,7 @@
       </section>
 
       <p class="intro">
-        這是一個免費的線上簡繁轉換工具：貼上簡體中文，會轉成台灣正體字，並把中國用語換成台灣習慣的說法，例如視頻→影片、軟件→軟體、充電寶→行動電源。帶有評價意涵的詞（如顏值、下沉市場）和兩岸意思不同的詞（如窩心、愛人）會另外標示說明。想查單一詞彙，可以看<a
+        這是一個免費的線上簡繁轉換工具：貼上簡體中文，會轉成台灣正體字，並把中國用語換成台灣習慣的說法，例如視頻→影片、軟件→軟體、充電寶→行動電源。帶有評價意涵的詞（如顏值、內卷）和兩岸意思不同的詞（如窩心、愛人）會另外標示說明。想查單一詞彙，可以看<a
           href="terms/"
           >兩岸用語對照表</a
         >。
@@ -284,6 +302,34 @@
       <p class="intro">
         為什麼要標示「評價意涵」？有些新詞習慣把人貼上標籤、分成等第，或把感受和關係量化成輸贏。這類說法不是哪裡獨有，台灣也有類似的詞，但常說常用之後，就更容易用那套標準看人。標示出來，是讓你在用之前多想一下，有沒有不貼標籤也能說清楚的講法。
       </p>
+
+      <section class="faq" aria-labelledby="faqTitle">
+        <h2 id="faqTitle">常見問題</h2>
+        <details>
+          <summary>簡轉繁跟一般的簡繁轉換有什麼不同？</summary>
+          <p>一般的簡轉繁（簡體轉繁體）只換字形。這裡除了把簡體字轉成繁體字（台灣正體），也會把中國用語換成台灣用語，例如「视频」→ 影片、「软件」→ 軟體、「充电宝」→ 行動電源。</p>
+        </details>
+        <details>
+          <summary>可以直接貼上簡體中文嗎？</summary>
+          <p>可以。貼上簡體字就會轉成繁體字，例如「简体转繁体」會轉成「簡體轉繁體」。台灣的文字也可以貼進來，檢查裡面有沒有中國用語。</p>
+        </details>
+        <details>
+          <summary>中國用語跟「大陸用語」一樣嗎？</summary>
+          <p>一樣，指中國常用、台灣比較少用的說法，也就是常說的「大陸用語」。這裡一律寫「中國用語」，並分成一般用語、評價意涵、同字異義三類。</p>
+        </details>
+        <details>
+          <summary>文字會上傳嗎？</summary>
+          <p>不會。簡繁轉換用開源的 OpenCC 在瀏覽器裡完成，文字不會離開你的裝置，文章、文件、程式碼都可以放心貼上。</p>
+        </details>
+        <details>
+          <summary>哪裡可以查兩岸用語對照？</summary>
+          <p>上方的「詞彙庫」分頁可以搜尋全部的詞；也可以看<a href="terms/">兩岸用語對照表</a>，每個詞都有自己的頁面，說明台灣怎麼說。</p>
+        </details>
+        <details lang="en">
+          <summary>In English</summary>
+          <p>A free online Simplified to Traditional Chinese converter for Taiwan. Besides converting the characters, it replaces Mainland Chinese terms with the words used in Taiwan and flags terms whose meaning differs. Everything runs in your browser, so no text is uploaded.</p>
+        </details>
+      </section>
 
       <footer>
         字形轉換使用開源字典

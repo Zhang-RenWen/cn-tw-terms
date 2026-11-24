@@ -5,7 +5,7 @@
   const hasRepo = CFG.repo && !CFG.repo.startsWith('YOUR-');
 
   const MODES = {
-    'cn-twp': { from: 'cn', to: 'twp', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '簡體轉台灣正體，並套用兩岸用語詞彙庫' },
+    'cn-twp': { from: 'cn', to: 'twp', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '簡體轉繁體（台灣正體），並把中國用語換成台灣用語' },
     'cn-tw': { from: 'cn', to: 'tw', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '只轉台灣正體字形，用語只標示建議' }
   };
   const KIND_LABEL = { vocab: '一般用語', loaded: '評價意涵', false: '同字異義' };

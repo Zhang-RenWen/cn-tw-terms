@@ -59,6 +59,7 @@ index.html                 轉換器與詞彙庫兩個分頁的版面、SEO 標�
 style.css                  轉換器與詞彙頁共用的樣式
 app.js                     轉換、詞彙比對、詞彙庫列表、提議表單
 config.js                  GitHub repo 名稱與分支（編輯連結、靜態頁網址都由它推出）
+og.png                     分享到社群時的預覽圖（1200×630）
 data/index.json            詞彙庫版本、要載入的檔案清單、字形例外詞檔名
 data/<分類>.json           { category, terms: [{ cn, tw, kind, note? }] }
 data/char-fixes.json       字形例外詞：{ 簡體字: { 正確的字: [簡體詞, ...] } }
