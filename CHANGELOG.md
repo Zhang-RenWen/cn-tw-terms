@@ -1,5 +1,20 @@
 # 更新紀錄
 
+## v1.3.1（2026-11-24）
+
+詞彙庫沒有變動（925 個詞）。這一版改善搜尋引擎收錄，並修正部署常失敗的問題。
+
+- 搜尋引擎收錄：
+  - 首頁標題與描述加上「簡體轉繁體」；h1 改用大字下面那行說明文字，畫面不變。
+  - 首頁新增「常見問題」，用一般句子帶到 簡轉繁、简体转繁体、大陸用語、兩岸用語對照，最後一題是英文說明。
+  - 新增分享預覽圖 `og.png`（1200×630），首頁與每個詞彙頁都有 `og:image` 與 `twitter:card`。
+  - 加上 `meta keywords`、結構化資料的別名，以及 Google Search Console 驗證標籤。
+  - 首頁介紹裡評價意涵的例子 下沉市場（現在是一般用語）改成 內卷。
+- 部署：
+  - 修正 push 後部署常找不到剛上傳的網站檔案（`No artifacts named "github-pages" were found`）：上傳完 0.24 秒就去查，GitHub 的清單還沒更新。工作流程拆成 build、deploy 兩個 job 後就不會搶在前面。
+  - 升級 Actions（checkout v7、setup-node v7、configure-pages v6、upload-pages-artifact v5、deploy-pages v5），CI 改用 Node.js 24。
+  - `.github/workflows/` 有改動時也會跑詞彙檢查。
+
 ## v1.3.0（2026-11-20）
 
 詞彙庫從 924 個詞擴充到 925 個（新增 1 個）。修正一個簡體字對多個繁體字時 OpenCC 選錯的字。
