@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  actions: read # deploy-pages 要讀取這個 run 上傳的網站檔案
   pages: write
   id-token: write
 
@@ -23,16 +24,16 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
       - run: node scripts/validate.mjs
       - run: node scripts/build-pages.mjs
       - run: mkdir _site && cp -r index.html style.css app.js config.js favicon.svg favicon-32.png apple-touch-icon.png og.png sitemap.xml data terms _site/
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
