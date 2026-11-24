@@ -17,12 +17,11 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+# 分成 build、deploy 兩個 job：同一個 job 裡上傳完馬上部署，偶爾會查不到剛上傳的網站檔案
+# （"No artifacts named github-pages were found"）；deploy 等 build 結束才開始，就不會搶在前面
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -35,5 +34,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v5
