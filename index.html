@@ -74,10 +74,26 @@
       gtag("config", "G-VGBPHXS2PR");
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- 字型不擋畫面：先用系統字顯示，字型下載好再換上。
+         標題字 Noto Serif TC 只用在 .brand 與 h2，用 text= 只載入這些字；
+         改了這些地方的文字，scripts/build-pages.mjs 會提醒要補哪些字 -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&amp;display=swap&amp;text=PRelqstu%E2%86%92%E5%85%A9%E5%87%BA%E5%95%8F%E5%99%A8%E5%A2%9E%E5%AD%97%E5%B2%B8%E5%B8%B8%E5%BD%99%E6%8F%90%E6%8F%9B%E6%96%87%E6%96%B0%E6%AE%B5%E7%94%A8%E7%9A%84%E7%AE%80%E7%B9%81%E8%A3%A1%E8%A6%8B%E8%A9%9E%E8%AA%9E%E8%AD%B0%E8%BD%89%E9%80%81%E9%80%99%E9%A1%8C"
+      media="print"
+      onload="this.media='all'"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&amp;display=swap&amp;text=PRelqstu%E2%86%92%E5%85%A9%E5%87%BA%E5%95%8F%E5%99%A8%E5%A2%9E%E5%AD%97%E5%B2%B8%E5%B8%B8%E5%BD%99%E6%8F%90%E6%8F%9B%E6%96%87%E6%96%B0%E6%AE%B5%E7%94%A8%E7%9A%84%E7%AE%80%E7%B9%81%E8%A3%A1%E8%A6%8B%E8%A9%9E%E8%AA%9E%E8%AD%B0%E8%BD%89%E9%80%81%E9%80%99%E9%A1%8C" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" />
+    </noscript>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -135,12 +151,15 @@
               <span class="label" id="inLabel">原文 · 简体</span
               ><span class="count" id="inCount">0 字</span>
             </div>
+            <!-- 示範文字直接寫在 HTML，畫面不用等 JavaScript 就能顯示；app.js 的 SAMPLE 讀這裡的內容 -->
             <textarea
               class="main"
               id="input"
               spellcheck="false"
               aria-label="輸入原文"
-            ></textarea>
+            >我们的软件团队正在开发一个新的网络应用程序，默认使用充电宝供电的摄像头。
+这个项目的含金量很高，领导说要给用户提供情绪价值，下沉市场也要覆盖。
+请把文件发到我的邮箱，视频的质量也没有问题。</textarea>
             <div class="pane-foot">
               <button class="btn" id="paste">貼上範例</button>
               <button class="btn" id="clear">清除</button>

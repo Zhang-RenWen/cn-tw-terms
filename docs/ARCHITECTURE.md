@@ -9,7 +9,7 @@
 | 頁面 | 純 HTML、CSS、原生 JavaScript | 沒有框架、沒有打包工具，`app.js` 是一個 IIFE，直接用 `<script>` 載入 |
 | 字形轉換 | [opencc-js](https://github.com/nk2028/opencc-js) 1.0.5（jsDelivr CDN） | 簡體轉台灣正體的字形轉換，在瀏覽器內完成 |
 | 詞彙庫 | `data/*.json` | 每個分類一個檔案，由 `data/index.json` 列出要載入的檔案與版本 |
-| 字型 | Google Fonts（Noto Serif TC、Noto Sans TC） | 標題與內文字型 |
+| 字型 | Google Fonts（Noto Serif TC、Noto Sans TC） | 標題與內文字型。字型 CSS 不擋畫面（先用系統字，載好再換）；標題字用 `text=` 只載入標題用到的字 |
 | 檢查 | Node.js 24（`scripts/validate.mjs`） | 檢查詞彙檔格式、必填欄位、類型與重複詞，不需要安裝套件 |
 | 靜態頁產生 | Node.js 24（`scripts/build-pages.mjs`） | 每個詞產生一頁 `terms/<詞>.html`，另外產生總表與 `sitemap.xml`，供搜尋引擎收錄 |
 | CI／部署 | GitHub Actions、GitHub Pages | PR 自動檢查；合併到 `main` 後產生靜態頁並部署 |

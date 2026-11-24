@@ -18,6 +18,16 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
 const firstAlt = s => (s || '').split(/[、，,／/；]/)[0].replace(/[（(].*$/, '').trim();
 const noMatch = tw => !tw || /^(無|—|-$)/.test(tw);
 const slug = cn => encodeURIComponent(cn) + '.html';
+const unesc = s => s.replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+const uniq = s => [...new Set(s.replace(/\s/g, ''))].sort().join('');
+
+// 字型：標題字 Noto Serif TC 只用在 h1、h2，用 text= 只載入這頁標題用到的字（中文字型整套有上百個分割檔）；
+// 字型 CSS 用 media="print" 先不擋畫面，載入後才套用
+const FONT_SANS = 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap';
+const serifUrl = text => 'https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&display=swap&text=' + encodeURIComponent(uniq(text));
+const headings = html => [...html.matchAll(/<h[12][^>]*>([\s\S]*?)<\/h[12]>/g)].map(m => unesc(m[1])).join('');
+const fontLinks = serif => [serifUrl(serif), FONT_SANS].map(u => `    <link rel="stylesheet" href="${esc(u)}" media="print" onload="this.media='all'" />`).join('\n')
+  + `\n    <noscript>${[serifUrl(serif), FONT_SANS].map(u => `<link rel="stylesheet" href="${esc(u)}" />`).join('')}</noscript>`;
 
 const files = JSON.parse(read('data/index.json')).files;
 const cats = files.map(f => {
@@ -61,7 +71,8 @@ const page = ({ title, desc, url, body, jsonld }) => `<!doctype html>
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>${gaTag}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+${fontLinks(headings(body))}
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
@@ -150,3 +161,10 @@ writeFileSync(join(ROOT, 'sitemap.xml'),
   urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n') + '\n</urlset>\n');
 
 console.log(`產生 ${all.length} 個詞彙頁、1 個總表、sitemap.xml（${urls.length} 個網址），網址前綴 ${SITE}`);
+
+// 首頁標題字型的 text= 是手寫的：.brand 與 h2 用到的字少了就提醒
+const home = read('index.html');
+const homeNeed = uniq(unesc((home.match(/<p class="brand">([\s\S]*?)<\/p>/) || [, ''])[1]) + headings(home.replace(/<h1[\s\S]*?<\/h1>/g, '')));
+const homeHave = decodeURIComponent((home.match(/Noto\+Serif\+TC[^"]*?text=([^"&]+)/) || [, ''])[1]);
+const missing = [...homeNeed].filter(c => !homeHave.includes(c)).join('');
+if (missing) console.warn(`提醒：index.html 標題字型的 text= 少了「${missing}」，請補上，不然這些字會用備用字型`);

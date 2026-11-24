@@ -9,10 +9,11 @@
     'cn-tw': { from: 'cn', to: 'tw', h: ['简', '繁'], inL: '原文 · 简体', outL: '結果 · 繁體', desc: '只轉台灣正體字形，用語只標示建議' }
   };
   const KIND_LABEL = { vocab: '一般用語', loaded: '評價意涵', false: '同字異義' };
-  const SAMPLE = '我们的软件团队正在开发一个新的网络应用程序，默认使用充电宝供电的摄像头。\n这个项目的含金量很高，领导说要给用户提供情绪价值，下沉市场也要覆盖。\n请把文件发到我的邮箱，视频的质量也没有问题。';
 
   const $ = id => document.getElementById(id);
   const input = $('input'), output = $('output');
+  // 示範文字寫在 index.html 的 <textarea> 裡（畫面不用等 JavaScript 就有內容）
+  const SAMPLE = input.defaultValue;
   let mode = 'cn-twp', terms = [], files = [], matcher = null;
   const convCache = {};
 
