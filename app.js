@@ -56,7 +56,7 @@
   }
 
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  const flash = (id, msg) => { const el = $(id); el.textContent = msg; setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, 2400); };
+  const flash = (id, msg, ms = 2400) => { const el = $(id); el.textContent = msg; setTimeout(() => { if (el.textContent === msg) el.textContent = ''; }, ms); };
 
   function getConv(from, to) {
     if (!window.OpenCC) return null;
@@ -174,11 +174,16 @@
       const opts = alts(t.tw).filter(x => x !== orig);
       let attrs = '';
       if (opts.length) {
-        pickOpts.set(key, { opts, orig });
+        pickOpts.set(key, { opts, orig, cn: t.cn, kind: t.kind });
         if (picks.has(key)) { shown = picks.get(key); cls = 't-picked ' + (shown === orig ? 't-hint' : 't-vocab'); }
         tip += '（點一下選擇其他說法）';
         attrs = ' data-k="' + esc(key) + '" tabindex="0" role="button" aria-haspopup="menu"';
         cls += ' pick';
+      } else if (t.kind === 'loaded') {
+        // 評價意涵（紅字）點一下捲到下方「這段文字裡的兩岸用語」的說明；有其他說法的改在選單裡放「看說明」
+        tip += '（點一下看說明）';
+        attrs = ' data-cn="' + esc(t.cn) + '" tabindex="0" role="button"';
+        cls += ' jump';
       }
       html += '<span class="t ' + cls + '" title="' + esc(tip) + '"' + attrs + '>' + esc(shown) + '</span>';
       if (shown !== raw) changed += [...shown].length;
@@ -197,7 +202,7 @@
     const order = { loaded: 0, false: 1, vocab: 2 };
     list.sort((a, b) => order[a.kind] - order[b.kind]);
     ul.innerHTML = list.map(t =>
-      '<li class="' + t.kind + '"><span class="pair">' + esc(t.cn) + ' → ' + esc(t.tw || '無固定對應') +
+      '<li class="' + t.kind + '" data-cn="' + esc(t.cn) + '" tabindex="-1"><span class="pair">' + esc(t.cn) + ' → ' + esc(t.tw || '無固定對應') +
       '</span><span class="note">' + esc(KIND_LABEL[t.kind]) + (t.note ? ' · ' + esc(t.note) : '') + '</span></li>').join('');
     box.hidden = false;
   }
@@ -248,8 +253,9 @@
     const q = fQ.trim().toLowerCase();
     const list = terms.filter(t => (!fKind || t.kind === fKind) && (!fCat || t.cat === fCat) &&
       (!q || [t.cn, t.tw, t.note, t.cat].join(' ').toLowerCase().includes(q)));
+    // 中國用語連到該詞的詞彙頁，另開分頁，詞彙庫的搜尋與篩選才不會不見；檔名跟 scripts/build-pages.mjs 的 slug 一樣是 encodeURIComponent(詞).html
     $('rows').innerHTML = list.map(t =>
-      '<tr><td class="cn">' + esc(t.cn) + '</td><td>' + esc(t.tw || '—') + '</td><td><span class="kind ' + t.kind + '">' +
+      '<tr><td class="cn"><a href="terms/' + encodeURIComponent(t.cn) + '.html" target="_blank" rel="noopener">' + esc(t.cn) + '</a></td><td>' + esc(t.tw || '—') + '</td><td><span class="kind ' + t.kind + '">' +
       esc(KIND_LABEL[t.kind]) + '</span></td><td class="category">' + esc(t.cat) + '</td><td class="note">' + esc(t.note || '') + '</td></tr>').join('');
     const empty = $('libEmpty');
     empty.hidden = list.length > 0;
@@ -307,7 +313,8 @@
     const cur = span.textContent;
     menu.innerHTML = '<div class="hd">選擇說法</div>' +
       o.opts.map(x => '<button type="button" role="menuitem" data-v="' + esc(x) + '"' + (x === cur ? ' class="cur"' : '') + '>' + esc(x) + '</button>').join('') +
-      '<button type="button" role="menuitem" data-v="' + esc(o.orig) + '"' + (o.orig === cur ? ' class="cur"' : '') + '>保留「' + esc(o.orig) + '」</button>';
+      '<button type="button" role="menuitem" data-v="' + esc(o.orig) + '"' + (o.orig === cur ? ' class="cur"' : '') + '>保留「' + esc(o.orig) + '」</button>' +
+      (o.kind === 'loaded' ? '<button type="button" role="menuitem" class="note-item" data-note="' + esc(o.cn) + '">看說明 ↓</button>' : '');
     menu.hidden = false; menuKey = k;
     const r = span.getBoundingClientRect(), w = menu.offsetWidth, h = menu.offsetHeight;
     menu.style.left = Math.max(8, Math.min(r.left, innerWidth - w - 8)) + 'px';
@@ -315,17 +322,33 @@
     (menu.querySelector('.cur') || menu.querySelector('button')).focus({ preventScroll: true });
   }
 
+  // 捲到「這段文字裡的兩岸用語」裡這個詞的說明，並短暫標亮
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  function showNote(cn) {
+    const li = [...$('foundList').children].find(x => x.dataset.cn === cn);
+    if (!li) return;
+    li.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'center' });
+    li.focus({ preventScroll: true });
+    li.classList.remove('flash'); void li.offsetWidth; li.classList.add('flash');
+    setTimeout(() => li.classList.remove('flash'), 1600);
+  }
+
   output.addEventListener('click', e => {
     const s = e.target.closest('.pick');
-    if (s) { if (menuKey === s.dataset.k) closeMenu(); else openMenu(s); }
+    if (s) { if (menuKey === s.dataset.k) closeMenu(); else openMenu(s); return; }
+    const j = e.target.closest('.jump');
+    if (j) showNote(j.dataset.cn);
   });
   output.addEventListener('keydown', e => {
-    const s = e.target.closest('.pick');
-    if (s && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openMenu(s); }
+    const s = e.target.closest('.pick, .jump');
+    if (!s || (e.key !== 'Enter' && e.key !== ' ')) return;
+    e.preventDefault();
+    if (s.classList.contains('pick')) openMenu(s); else showNote(s.dataset.cn);
   });
   menu.addEventListener('click', e => {
     const b = e.target.closest('button');
     if (!b || !menuKey) return;
+    if (b.dataset.note != null) { closeMenu(); showNote(b.dataset.note); return; }
     const k = menuKey;
     picks.set(k, b.dataset.v); closeMenu(); render();
     const s = findSpan(k); if (s) s.focus();
@@ -345,7 +368,21 @@
   document.querySelectorAll('.mode').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
   input.addEventListener('input', render);
   $('clear').addEventListener('click', () => { input.value = ''; render(); input.focus(); });
-  $('paste').addEventListener('click', () => { input.value = SAMPLE; render(); });
+  $('sample').addEventListener('click', () => { input.value = SAMPLE; render(); });
+  // 「貼上」用 Clipboard API 讀剪貼簿，取代輸入框的內容。只能在 HTTPS 或 localhost 使用，不支援的瀏覽器不顯示按鈕。
+  // Chrome 第一次會詢問權限，Safari、Firefox 會先跳出「貼上」讓使用者確認；被拒絕時提示改用鍵盤貼上
+  const pasteBtn = $('paste');
+  if (!(navigator.clipboard && navigator.clipboard.readText)) pasteBtn.hidden = true;
+  pasteBtn.addEventListener('click', async () => {
+    try {
+      const t = await navigator.clipboard.readText();
+      if (!t) { flash('status', '剪貼簿裡沒有文字'); return; }
+      input.value = t; render();
+    } catch (e) {
+      flash('status', '無法讀取剪貼簿，請在輸入框按 Ctrl+V（Mac 按 ⌘V）', 4000);
+      input.focus();
+    }
+  });
   $('hl').addEventListener('change', e => output.classList.toggle('plain', !e.target.checked));
   $('copy').addEventListener('click', () => {
     const t = output.textContent, toast = $('toast');

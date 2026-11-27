@@ -118,25 +118,29 @@
         </div>
       </header>
 
-      <div class="tabs" role="tablist">
-        <button
-          class="tab"
-          role="tab"
-          id="tabConv"
-          aria-selected="true"
-          aria-controls="viewConv"
-        >
-          轉換器
-        </button>
-        <button
-          class="tab"
-          role="tab"
-          id="tabLib"
-          aria-selected="false"
-          aria-controls="viewLib"
-        >
-          詞彙庫<span class="n" id="libCount">0</span>
-        </button>
+      <!-- 前兩個是切換畫面的分頁；「兩岸用語對照表」是連到 terms/ 的一般連結，所以放在 tablist 外面 -->
+      <div class="tabs">
+        <div class="tablist" role="tablist">
+          <button
+            class="tab"
+            role="tab"
+            id="tabConv"
+            aria-selected="true"
+            aria-controls="viewConv"
+          >
+            轉換器
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            id="tabLib"
+            aria-selected="false"
+            aria-controls="viewLib"
+          >
+            詞彙庫<span class="n" id="libCount">0</span>
+          </button>
+        </div>
+        <a class="tab" href="terms/">兩岸用語對照表</a>
       </div>
 
       <!-- 轉換器 -->
@@ -161,7 +165,8 @@
 这个项目的含金量很高，领导说要给用户提供情绪价值，下沉市场也要覆盖。
 请把文件发到我的邮箱，视频的质量也没有问题。</textarea>
             <div class="pane-foot">
-              <button class="btn" id="paste">貼上範例</button>
+              <button class="btn" id="paste">貼上</button>
+              <button class="btn" id="sample">範例</button>
               <button class="btn" id="clear">清除</button>
               <span class="status" id="status">載入轉換字典中…</span>
             </div>
@@ -174,7 +179,7 @@
             </div>
             <div class="out" id="output" aria-live="polite"></div>
             <div class="pane-foot">
-              <button class="btn primary" id="copy">複製結果</button>
+              <button class="btn primary" id="copy">複製</button>
               <span class="toast" id="toast"></span>
               <label class="toggle"
                 ><input type="checkbox" id="hl" checked /> 標示變更</label

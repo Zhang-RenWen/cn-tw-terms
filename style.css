@@ -32,6 +32,9 @@ h2{font-family:var(--f-display);font-weight:600;font-size:20px;margin:0}
 .tab{border:0;background:transparent;color:var(--muted);font:inherit;font-size:15px;font-weight:500;padding:8px 14px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
 .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--jade)}
 .tab .n{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-left:4px}
+.tablist{display:flex;gap:4px}
+a.tab{text-decoration:none}
+a.tab:hover{color:var(--ink)}
 .modes,.chips{display:flex;flex-wrap:wrap;gap:6px}
 .mode,.chip{border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:14px;padding:7px 12px;border-radius:999px;cursor:pointer}
 .mode[aria-pressed="true"],.chip[aria-pressed="true"]{background:var(--jade);border-color:var(--jade);color:var(--panel);font-weight:500}
@@ -63,6 +66,8 @@ textarea.main:focus{outline:none}
 .toast{font-size:13px;color:var(--jade);min-width:4em}
 .status{font-size:13px;color:var(--muted)}
 .status.err{color:var(--loaded)}
+/* 手機：按鈕靠右比較好按；提示文字與「標示變更」移到左邊，「複製」放最右邊 */
+@media (max-width:760px){.pane-foot{justify-content:flex-end}.pane-foot .status,.pane-foot .toggle{order:-1;margin-left:0;margin-right:auto}.pane-foot .primary{order:1}.pane-foot .toast{text-align:right}}
 .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .sw{display:inline-block;width:22px;height:14px;border-radius:2px}
@@ -71,6 +76,7 @@ textarea.main:focus{outline:none}
 .found{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px}
 .found ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 .found li{display:flex;flex-direction:column;gap:2px;padding:8px 10px;border-left:3px solid var(--line);min-width:0}
+.found li{transition:background .4s} .found li:focus{outline:none} .found li.flash.loaded{background:var(--loaded-soft)}
 .found li.loaded{border-left-color:var(--loaded)} .found li.false{border-left-color:var(--false)} .found li.vocab{border-left-color:var(--vocab)}
 .found .pair{font-weight:500}
 .found .note{font-size:13px;color:var(--muted)}
@@ -81,7 +87,7 @@ textarea.main:focus{outline:none}
 table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
 th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:12px;letter-spacing:.08em;color:var(--muted);font-weight:700;position:sticky;top:0;background:var(--panel)}
-td.cn{font-weight:500;white-space:nowrap} td.category{white-space:nowrap} td.note{color:var(--muted);font-size:13px}
+td.cn{font-weight:500;white-space:nowrap} td.cn a{text-decoration:none} td.cn a:hover{text-decoration:underline} td.category{white-space:nowrap} td.note{color:var(--muted);font-size:13px}
 tr:last-child td{border-bottom:0}
 .kind{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;white-space:nowrap}
 .kind.vocab{background:var(--jade-soft);color:var(--vocab)} .kind.loaded{background:var(--loaded-soft);color:var(--loaded)} .kind.false{background:var(--false-soft);color:var(--false)}
@@ -134,6 +140,9 @@ a{color:var(--jade)}
 /* 小箭頭提示可以點；用 ::after 不會被複製進結果 */
 .out .pick::after{content:"▾";font-size:.7em;color:var(--muted);margin-left:1px;vertical-align:.15em;text-decoration:none;display:inline-block}
 .out .pick:hover,.out .pick:focus-visible{outline:1px solid var(--jade);outline-offset:1px}
+.out .jump{cursor:pointer}
+.out .jump:hover,.out .jump:focus-visible{outline:1px solid var(--loaded);outline-offset:1px}
+.alt-menu .note-item{border-top:1px solid var(--line);border-radius:0 0 6px 6px;margin-top:4px;color:var(--muted)}
 .out.plain .pick::after{content:none}
 .legend .caret{color:var(--muted);font-size:.85em}
 .out .t-picked{background:var(--jade-soft);text-decoration:underline solid var(--jade)}
