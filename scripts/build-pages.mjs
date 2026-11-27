@@ -12,6 +12,11 @@ const repo = (read('config.js').match(/repo:\s*["']([^"']+)["']/) || [])[1] || '
 const [owner, name] = repo.split('/');
 const SITE = `https://${owner.toLowerCase()}.github.io/${name}/`;
 const GA = (read('index.html').match(/gtag\("config",\s*"(G-[A-Z0-9]+)"/) || [])[1];
+// 深淺色切換：<head> 的 script 和右上角的按鈕都從 index.html 複製過來，只要改 index.html
+const HOME_HTML = read('index.html');
+const THEME_INIT = (HOME_HTML.match(/<script id="theme-init">[\s\S]*?<\/script>/) || [''])[0];
+const THEME_BTN = (HOME_HTML.match(/<button class="theme-btn"[\s\S]*?<\/button>/) || [''])[0];
+if (!THEME_INIT || !THEME_BTN) console.warn('提醒：index.html 找不到深淺色切換的 script 或按鈕，詞彙頁不會有切換按鈕');
 // 詞彙庫的授權（見 data/LICENSE.md），放在頁尾與結構化資料
 const LICENSE_URL = 'https://creativecommons.org/licenses/by-sa/4.0/';
 
@@ -52,6 +57,8 @@ const page = ({ title, desc, url, body, jsonld }) => `<!doctype html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#1e2725" />
+    ${THEME_INIT}
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(desc)}" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
@@ -79,6 +86,7 @@ ${fontLinks(headings(body))}
   </head>
   <body>
     <div class="wrap doc">
+      ${THEME_BTN}
 ${body}
       <footer>
         <a href="../">簡繁轉換器</a>：簡體轉台灣正體，並套用兩岸用語詞彙庫。詞彙庫由社群維護，<a href="https://github.com/${repo}">歡迎在 GitHub 提議或修正</a>。詞彙內容採 <a href="${LICENSE_URL}deed.zh-hant" rel="license">CC BY-SA 4.0</a> 授權。

@@ -1,25 +1,34 @@
 
 /* 版面：頂部字樣 + 分頁（轉換器／詞彙庫）；轉換器左右雙欄，詞彙庫為篩選列 + 表格 + 提議表單 */
+/* 配色：預設一律深色（頁面背景偏綠、面板偏黑、文字暖灰）。
+   同一個色相分三種用途：--jade 是文字與連結、--jade-line 是框線與底線、--jade-fill 是按鈕底色（上面的字用 --on-fill）；
+   紅（評價意涵）、紫（同字異義）也分文字、淡底色 -soft、框線 -line。
+   亮色版保留在 :root[data-theme="light"]，目前沒有切換按鈕 */
 :root{
-  --bg:#eef2f1; --panel:#ffffff; --ink:#18221f; --muted:#5d6b67; --line:#d3dcd9;
-  --jade:#1f7a63; --jade-soft:#d8ece5; --mark:#f4e3a1;
-  --vocab:#1f7a63; --loaded:#b4432e; --loaded-soft:#f7e1dc; --false:#6b4fa8; --false-soft:#e9e3f5;
+  --bg:#1e2725; --panel:#171a1b; --ink:#d6d2ce; --muted:#aaa196; --line:#3b4043;
+  --jade:#80dfc7; --jade-line:#2ba787; --jade-fill:#18634f; --on-fill:#e8e6e3; --jade-soft:#1c3a32; --mark:#4d400a;
+  --vocab:#80dfc7; --loaded:#d46c58; --loaded-soft:#3f170f; --loaded-line:#953726;
+  --false:#a58fd9; --false-soft:#2a2440; --false-line:#7a62b8;
   --f-display:"Noto Serif TC","Songti TC",serif;
   --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,monospace;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#121816; --panel:#1a2220; --ink:#e4ece9; --muted:#93a39e; --line:#2c3835;
-  --jade:#5cc2a3; --jade-soft:#1f3a32; --mark:#5a4b17;
-  --vocab:#5cc2a3; --loaded:#ee8a74; --loaded-soft:#43241e; --false:#b49ce6; --false-soft:#2e2643; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#121816; --panel:#1a2220; --ink:#e4ece9; --muted:#93a39e; --line:#2c3835;
-  --jade:#5cc2a3; --jade-soft:#1f3a32; --mark:#5a4b17;
-  --vocab:#5cc2a3; --loaded:#ee8a74; --loaded-soft:#43241e; --false:#b49ce6; --false-soft:#2e2643; color-scheme:dark}
+:root[data-theme="light"]{
+  --bg:#eef2f1; --panel:#ffffff; --ink:#18221f; --muted:#5d6b67; --line:#d3dcd9;
+  --jade:#1f7a63; --jade-line:#1f7a63; --jade-fill:#1f7a63; --on-fill:#ffffff; --jade-soft:#d8ece5; --mark:#f4e3a1;
+  --vocab:#1f7a63; --loaded:#b4432e; --loaded-soft:#f7e1dc; --loaded-line:#b4432e;
+  --false:#6b4fa8; --false-soft:#e9e3f5; --false-line:#6b4fa8; color-scheme:light}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 40px}
-.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:20px;position:relative}
+/* 深淺色切換：固定在右上角；深色時顯示太陽（切到淺色），淺色時顯示月亮（切到深色） */
+.theme-btn{position:absolute;top:0;right:0;display:grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--panel);color:var(--muted);cursor:pointer}
+.theme-btn:hover{color:var(--jade);border-color:var(--jade-line)}
+.theme-btn>span{display:flex}
+:root[data-theme="light"] .theme-btn .to-light,:root:not([data-theme="light"]) .theme-btn .to-dark{display:none}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
 /* 首頁的大字「简→繁 轉換器」是 .brand，h1 是下面那行說明（放搜尋用的關鍵字）；詞彙頁的 h1 用大字 */
 h1,.brand{font-family:var(--f-display);font-weight:900;font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0;letter-spacing:.02em;text-wrap:balance}
@@ -30,15 +39,15 @@ h2{font-family:var(--f-display);font-weight:600;font-size:20px;margin:0}
 .sub{color:var(--muted);margin:6px 0 0;font-size:14px}
 .tabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
 .tab{border:0;background:transparent;color:var(--muted);font:inherit;font-size:15px;font-weight:500;padding:8px 14px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
-.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--jade)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--jade-line)}
 .tab .n{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-left:4px}
 .tablist{display:flex;gap:4px}
 a.tab{text-decoration:none}
 a.tab:hover{color:var(--ink)}
 .modes,.chips{display:flex;flex-wrap:wrap;gap:6px}
 .mode,.chip{border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:14px;padding:7px 12px;border-radius:999px;cursor:pointer}
-.mode[aria-pressed="true"],.chip[aria-pressed="true"]{background:var(--jade);border-color:var(--jade);color:var(--panel);font-weight:500}
-button:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
+.mode[aria-pressed="true"],.chip[aria-pressed="true"]{background:var(--jade-fill);border-color:var(--jade-fill);color:var(--on-fill);font-weight:500}
+button:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--jade-line);outline-offset:2px}
 .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:stretch}
 @media (max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}textarea.main,.out{min-height:160px;max-height:30vh}}
 .pane{background:var(--panel);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;min-width:0}
@@ -49,35 +58,39 @@ textarea.main,.out{flex:1;min-height:220px;max-height:40vh;overflow:auto;width:1
 textarea.main:focus{outline:none}
 .out mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
 .out .t{border-radius:2px;padding:0 1px;cursor:help;text-decoration-thickness:2px;text-underline-offset:4px}
-.out .t-vocab{background:var(--jade-soft);text-decoration:underline var(--vocab)}
-.out .t-hint{text-decoration:underline dashed var(--vocab)}
+.out .t-vocab{background:var(--jade-soft);text-decoration:underline var(--jade-line)}
+.out .t-hint{text-decoration:underline dashed var(--jade-line)}
 .out .t-loaded{background:var(--loaded-soft);text-decoration:underline wavy var(--loaded)}
 .out .t-false{background:var(--false-soft);text-decoration:underline dotted var(--false)}
 .out.plain mark,.out.plain .t{background:none;text-decoration:none;padding:0}
 .out:empty::before{content:"轉換結果會出現在這裡";color:var(--muted)}
 .pane-foot{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px;border-top:1px solid var(--line);align-items:center}
 .btn{border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:13px;padding:6px 12px;border-radius:6px;cursor:pointer}
-.btn:hover{border-color:var(--jade);color:var(--jade)}
-.btn.primary{background:var(--jade);border-color:var(--jade);color:var(--panel)}
-.btn.primary:hover{opacity:.9;color:var(--panel)}
-.btn.danger{color:var(--loaded);border-color:var(--loaded)}
+.btn:hover{border-color:var(--jade-line);color:var(--jade)}
+.btn.primary{background:var(--jade-fill);border-color:var(--jade-fill);color:var(--on-fill)}
+.btn.primary:hover{opacity:.9;color:var(--on-fill)}
+.btn.danger{color:var(--loaded);border-color:var(--loaded-line)}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .toggle{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);margin-left:auto;cursor:pointer}
 .toast{font-size:13px;color:var(--jade);min-width:4em}
 .status{font-size:13px;color:var(--muted)}
 .status.err{color:var(--loaded)}
-/* 手機：按鈕靠右比較好按；提示文字與「標示變更」移到左邊，「複製」放最右邊 */
-@media (max-width:760px){.pane-foot{justify-content:flex-end}.pane-foot .status,.pane-foot .toggle{order:-1;margin-left:0;margin-right:auto}.pane-foot .primary{order:1}.pane-foot .toast{text-align:right}}
+/* 原文欄：電腦版「清除、貼上」在左，「範例」推到最右邊 */
+#sample{margin-left:auto}
+/* 手機：常用的按鈕靠右比較好按。原文欄是「範例」在左、「貼上、清除」在右；
+   結果欄是「標示變更」在左、「複製」在最右邊；提示文字放在中間 */
+@media (max-width:760px){.pane-foot{justify-content:flex-end}.pane-foot .status,.pane-foot .toggle{order:-1;margin-left:0;margin-right:auto}.pane-foot .primary{order:1}.pane-foot .toast{text-align:right}
+  #sample{order:-2;margin-left:0}#clear{order:1}}
 .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .sw{display:inline-block;width:22px;height:14px;border-radius:2px}
-.sw.c{background:var(--mark)} .sw.v{background:var(--jade-soft);border-bottom:2px solid var(--vocab)}
-.sw.l{background:var(--loaded-soft);border-bottom:2px solid var(--loaded)} .sw.f{background:var(--false-soft);border-bottom:2px dotted var(--false)}
+.sw.c{background:var(--mark)} .sw.v{background:var(--jade-soft);border-bottom:2px solid var(--jade-line)}
+.sw.l{background:var(--loaded-soft);border-bottom:2px solid var(--loaded-line)} .sw.f{background:var(--false-soft);border-bottom:2px dotted var(--false-line)}
 .found{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px}
 .found ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 .found li{display:flex;flex-direction:column;gap:2px;padding:8px 10px;border-left:3px solid var(--line);min-width:0}
 .found li{transition:background .4s} .found li:focus{outline:none} .found li.flash.loaded{background:var(--loaded-soft)}
-.found li.loaded{border-left-color:var(--loaded)} .found li.false{border-left-color:var(--false)} .found li.vocab{border-left-color:var(--vocab)}
+.found li.loaded{border-left-color:var(--loaded-line)} .found li.false{border-left-color:var(--false-line)} .found li.vocab{border-left-color:var(--jade-line)}
 .found .pair{font-weight:500}
 .found .note{font-size:13px;color:var(--muted)}
 .lib-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -115,7 +128,7 @@ body{margin:0}
 a{color:var(--jade)}
 /* 靜態詞彙頁（terms/，由 scripts/build-pages.mjs 產生） */
 .doc{max-width:760px}
-.crumbs{font-size:13px;color:var(--muted)}
+.crumbs{font-size:13px;color:var(--muted);padding-right:44px}
 .term{padding:20px 22px;gap:12px}
 .term .lead{font-size:17px;margin:0}
 .term dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 16px;margin:0}
@@ -139,13 +152,13 @@ a{color:var(--jade)}
 .out .pick{cursor:pointer}
 /* 小箭頭提示可以點；用 ::after 不會被複製進結果 */
 .out .pick::after{content:"▾";font-size:.7em;color:var(--muted);margin-left:1px;vertical-align:.15em;text-decoration:none;display:inline-block}
-.out .pick:hover,.out .pick:focus-visible{outline:1px solid var(--jade);outline-offset:1px}
+.out .pick:hover,.out .pick:focus-visible{outline:1px solid var(--jade-line);outline-offset:1px}
 .out .jump{cursor:pointer}
 .out .jump:hover,.out .jump:focus-visible{outline:1px solid var(--loaded);outline-offset:1px}
 .alt-menu .note-item{border-top:1px solid var(--line);border-radius:0 0 6px 6px;margin-top:4px;color:var(--muted)}
 .out.plain .pick::after{content:none}
 .legend .caret{color:var(--muted);font-size:.85em}
-.out .t-picked{background:var(--jade-soft);text-decoration:underline solid var(--jade)}
+.out .t-picked{background:var(--jade-soft);text-decoration:underline solid var(--jade-line)}
 .alt-menu{position:fixed;z-index:50;display:flex;flex-direction:column;min-width:140px;max-width:min(280px,calc(100vw - 16px));
   background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.18);padding:4px}
 .alt-menu[hidden]{display:none}
